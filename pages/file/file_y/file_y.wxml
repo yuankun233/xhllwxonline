@@ -1,0 +1,15 @@
+<!--pages/file/file_y/file_y.wxml-->
+<view class="file_y">
+  <view wx:for="{{list}}" class="file_y_1">
+    <view class="name">{{item.name}}
+      <span wx:if="{{item.sex==1}}" class="sex">男</span>
+    <span wx:else class="sex">女</span>
+    </view>
+    <view class="num">手机号：{{item.phone}}</view>
+    <view  bindtap="goFile_bj" data-id="{{item.id}}" data-index="{{index}}" class="bianji">编辑</view>
+    <view  bindtap="goFile_sc" data-id="{{item.id}}" data-index="{{index}}" class="bianji1">删除</view>
+  </view>
+  <view bindtap="goFile" class="aa">
+    新增健康档案
+  </view>
+</view>

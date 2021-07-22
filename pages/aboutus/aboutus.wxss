@@ -1,0 +1,124 @@
+.merdetails {
+  overflow: hidden;
+}
+.merdetails .backgroundimg {
+  width: 750rpx;
+  height: 750rpx;
+  position: absolute;
+  z-index: -1;
+}
+.merdetails .top {
+  width: 750rpx;
+  height: 50rpx;
+  margin-top: 107rpx;
+  text-align: center;
+  padding-left: 14rpx;
+  padding-right: 14rpx;
+  line-height: 50rpx;
+}
+.merdetails .top image {
+  width: 22rpx;
+  height: 37rpx;
+  float: left;
+}
+.merdetails .top span {
+  width: 117rpx;
+  height: 37rpx;
+  font-size: 37rpx;
+  font-family: PingFang;
+  font-weight: bold;
+  color: #FFFFFF;
+}
+.merdetails .list {
+  width: 730rpx;
+  height: hidden;
+  background-color: #fff;
+  margin: 0 auto;
+  margin-top: 101rpx;
+  border-radius: 15rpx;
+  box-shadow: 2px 2px 10px #888888;
+  overflow: hidden;
+  padding: 0 49rpx 0 49rpx;
+}
+.merdetails .list .list_pic {
+  width: 156rpx;
+  height: 174rpx;
+  border-radius: 50%;
+  position: absolute;
+  top: 160rpx;
+  left: 49rpx;
+}
+.merdetails .list .list_text {
+  height: 30rpx;
+  font-size: 24rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 500;
+  color: #4D4D4D;
+  margin-top: 19rpx;
+}
+.merdetails .list .list_top_left {
+  overflow: hidden;
+  margin-left: 181rpx;
+}
+.merdetails .list .list_top_left .list_name {
+  height: 40rpx;
+  font-size: 33rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: bold;
+  color: #333333;
+  margin-top: 28rpx;
+}
+.merdetails .list .list_time {
+  width: 362rpx;
+  height: 30rpx;
+  font-size: 28rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 500;
+  color: #999999;
+  margin-top: 49rpx;
+}
+.merdetails .list .list_content {
+  white-space: pre-wrap;
+  width: 650rpx;
+  height: hidden;
+  font-size: 26rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 500;
+  color: #666;
+  margin-top: 20rpx;
+  margin-bottom: 50rpx;
+}
+.merdetails .list .hr {
+  width: 650rpx;
+  border: 1rpx solid #a1a1a1;
+}
+.merdetails .list .list_address {
+  width: 650rpx;
+  height: 150rpx;
+  padding-top: 25rpx;
+  padding-bottom: 25rpx;
+}
+.merdetails .list .list_address .address_left {
+  float: left;
+}
+.merdetails .list .list_address .address_right {
+  float: left;
+  margin-left: 170rpx;
+  line-height: 38rpx;
+}
+.merdetails .list .list_address .address_right .daohang {
+  float: left;
+}
+.merdetails .list .list_address .address_right .daohang view {
+  font-family: PingFangSC-Regular;
+  font-weight: 500;
+  color: #265DD5;
+}
+.merdetails .list .list_address .address_right .henghr {
+  width: 1rpx;
+  height: 75rpx;
+  border: 1rpx dashed #000;
+  float: left;
+  margin-left: 41rpx;
+  margin-right: 41rpx;
+}

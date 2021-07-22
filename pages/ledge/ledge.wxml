@@ -1,0 +1,14 @@
+<!--pages/specialty/specialty.wxml-->
+<view class='help'>
+  <view class='help_item' wx:for="{{list}}">
+    <view class='title' data-index='{{item.id}}' catchtap='panel'>
+      <view class='title_1' style="font-family:PingFangSC-Regular;">{{item.title}}</view>
+      <view class='title_2'><image src="../../images/index/{{showIndex == item.id ? 'up':'down'}}.png"></image></view>
+    </view>
+    <view class='detail' wx:if="{{showIndex == item.id}}" style="font-family:PingFangSC-Regular;">
+    <block wx:for="{{item.msg}}">
+    {{item.msg}}
+    </block>
+    </view>
+  </view>
+</view>

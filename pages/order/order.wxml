@@ -1,0 +1,35 @@
+<!--pages/order/order.wxml-->
+<scroll-view scroll-x class="bg-white nav">
+  <view class="flex text-center">
+    <view class="cu-item flex-sub {{index==TabCur?'AA':''}}" wx:for="{{tab}}" wx:key bindtap="tabSelect" data-id="{{index}}">
+      {{item}}
+      <view class="{{index==TabCur?'BB':''}}">
+      </view>
+    </view>
+  </view>
+</scroll-view>
+<!-- 有订单 -->
+<view class="order">
+    <view class="order_list" wx:for="{{list}}"  bindtap="navto"  id="{{item.id}}">
+      <image class="order_list_1" src="{{item.pic_url==null?'../../images/index/zanwu.png':item.pic_url}}"></image>
+      <view class="order_list_2">{{item.body}}</view>
+      <view class="order_list_3">{{item.status_text}}</view>
+      <view class="order_list_4">
+        <span style="font-size: 24rpx;font-family: PingFang SC;font-weight: 400;color: #666666;">实付款：</span>￥{{item.total_fee}}
+      </view>
+      <image src="https://www.xiaohulaile.com/wxcx/order1 (2).png" class="order_list_i"></image>
+      <view class="order_list_6"></view>
+      <view class="order_list_7">护理项目：</view>
+      <view class="order_list_8">{{item.body}}</view>
+    </view>
+    <!-- 无订单 -->
+<view class="order_over" wx:if="{{list==''}}">
+  <image src="https://www.xiaohulaile.com/wxcx/bg321.png">
+  </image>
+  <text>这里暂时没有服务订单~</text>
+</view>
+  <view wx:else>
+    <view class="loadmore" wx:if="{{zanwu==1}}" style="text-align:center;width:750rpx;height:100rpx;line-height:100rpx">正在加载...</view>
+    <view class="loadmore" wx:if="{{zanwu==2}}" style="text-align:center;width:750rpx;height:100rpx;line-height:100rpx">没有更多了</view>
+  </view>
+</view>

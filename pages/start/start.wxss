@@ -1,0 +1,162 @@
+page {
+  background-color: #E9EEFA;
+}
+.merdetails {
+  overflow: hidden;
+}
+.merdetails .backgroundimg {
+  width: 750rpx;
+  height: 700rpx;
+  position: absolute;
+  z-index: -1;
+}
+.merdetails .top {
+  width: 750rpx;
+  height: 50rpx;
+  margin-top: 107rpx;
+  text-align: center;
+  padding-left: 14rpx;
+  padding-right: 14rpx;
+  line-height: 50rpx;
+}
+.merdetails .top image {
+  width: 22rpx;
+  height: 37rpx;
+  float: left;
+}
+.merdetails .top span {
+  width: 117rpx;
+  height: 37rpx;
+  font-size: 37rpx;
+  font-family: PingFang;
+  font-weight: bold;
+  color: #FFFFFF;
+}
+.merdetails .list {
+  width: 730rpx;
+  height: hidden;
+  background-color: #fff;
+  margin: 0 auto;
+  margin-top: 101rpx;
+  border-radius: 15rpx;
+  box-shadow: 0px 0px 8px rgba(38, 93, 213, 0.19);
+  overflow: hidden;
+  padding: 0 49rpx 0 49rpx;
+  margin-bottom: 30rpx;
+}
+.merdetails .list .list_pic {
+  width: 156rpx;
+  height: 160rpx;
+  border-radius: 50%;
+  position: absolute;
+  top: 200rpx;
+  left: 49rpx;
+}
+.merdetails .list .list_top_left {
+  overflow: hidden;
+  margin-left: 181rpx;
+}
+.merdetails .list .list_top_left .list_name image {
+  width: 176rpx;
+  height: 45rpx;
+  left: 280rpx;
+  margin-top: 22rpx;
+}
+.merdetails .list .hr {
+  width: 730rpx;
+  height: 1rpx;
+  position: absolute;
+  left: 12rpx;
+  box-shadow: 0px -1px 0px 0px rgba(38, 93, 213, 0.19);
+  margin-top: 52rpx;
+}
+.merdetails .list .detil .detilname {
+  margin-top: 70rpx;
+  height: 70rpx;
+  font-size: 52rpx;
+  font-family: PingFang SC;
+  font-weight: bold;
+  color: #333333;
+}
+.merdetails .list .detil .detilname .detilxm {
+  height: 26rpx;
+  font-size: 28rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: #333333;
+  margin-left: 36rpx;
+}
+.merdetails .list .detil .detiltype {
+  margin-top: 31rpx;
+}
+.merdetails .list .detil .detiltype image {
+  width: 109rpx;
+  height: 25rpx;
+}
+.merdetails .list .detil .detiltype span {
+  height: 30srpx;
+  font-size: 28rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: #333333;
+  margin-left: 36rpx;
+}
+.merdetails .list .detil .detilcontent {
+  font-size: 24rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  margin-top: 22rpx;
+}
+.merdetails .list .detil .detilbottom {
+  height: 50rpx;
+  overflow: hidden;
+  margin-top: 60rpx;
+  margin-bottom: 20rpx;
+}
+.merdetails .list .detil .detilbottom image {
+  width: 18rpx;
+  height: 19rpx;
+  line-height: 30rpx;
+}
+.merdetails .xm {
+  width: 730rpx;
+  height: hidden;
+  background-color: #fff;
+  margin: 0 auto;
+  border-radius: 15rpx;
+  box-shadow: 0px 0px 8px rgba(38, 93, 213, 0.19);
+  overflow: hidden;
+  padding: 0 49rpx 0 49rpx;
+  margin-bottom: 30rpx;
+}
+.merdetails .xm .xm1 {
+  width: 631rpx;
+  height: 100rpx;
+  margin-top: 36rpx;
+}
+.merdetails .xm .xm1 .imagespan {
+  float: left;
+  margin-top: 9rpx;
+}
+.merdetails .xm .xm1 .imagespan image {
+  width: 93rpx;
+  height: 64rpx;
+}
+.merdetails .xm .xm1 .xmname {
+  margin-left: 17rpx;
+  float: left;
+}
+.merdetails .xm .xm1 .godetil {
+  width: 148rpx;
+  height: 51rpx;
+  background: #4178F0;
+  border-radius: 26px 25px 25px 25px;
+  float: right;
+  text-align: center;
+  line-height: 51rpx;
+  margin-top: 20rpx;
+}
+.merdetails .xm .xm1 .godetil image {
+  width: 13rpx;
+  height: 19rpx;
+}

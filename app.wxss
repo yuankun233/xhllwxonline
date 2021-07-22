@@ -1,0 +1,50 @@
+/**app.wxss**/
+@import "colorui/main.wxss";
+@import "colorui/icon.wxss";
+@font-face{
+  font-family: 'DIN-BlackItalic';
+  src: url('https://www.xiaohulaile.com/xh/p/font/DIN-BlackItalic.otf');
+}
+
+@font-face{
+  font-family: 'PingFang-SC-Light';
+  src: url('https://www.xiaohulaile.com/xh/p/font/PingFangSC-Light_0.otf');
+}
+@font-face{
+  font-family: 'PingFang-SC-Medium';
+  src: url('https://www.xiaohulaile.com/xh/p/font/PingFangSC-Medium_0.otf');
+}
+@font-face{
+  font-family: 'PingFangSC-Regular';
+  src: url('https://www.xiaohulaile.com/xh/p/font/PingFangSC-Regular_0.otf');
+}
+@font-face{
+  font-family: 'PingFang-SC-Semibold';
+  src: url('https://www.xiaohulaile.com/xh/p/font/PingFangSC-Semibold_0.otf');
+}
+@font-face{
+  font-family: 'PingFang-SC-Thin';
+  src: url('https://www.xiaohulaile.com/xh/p/font/PingFangSC-Thin_0.otf');
+}
+@font-face{
+  font-family: 'PingFang-SC-Ultralight';
+  src: url('https://www.xiaohulaile.com/xh/p/font/PingFangSC-Ultralight_0.otf');
+}
+@font-face{
+  font-family: 'PingFang-SC-Bold';
+  src: url('https://www.xiaohulaile.com/xh/p/font/PingFang_Bold.ttf');
+}
+@font-face{
+  font-family: 'DIN-Medium';
+  src: url('https://www.xiaohulaile.com/xh/p/font/DIN-Medium.otf');
+}
+
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 200rpx 0;
+  box-sizing: border-box;
+} 

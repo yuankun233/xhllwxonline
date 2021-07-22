@@ -1,0 +1,94 @@
+<!--pages/message/message.wxml-->
+<view class="message">
+  <!-- <input placeholder="请输入你想要搜索的内容" type="text" /> -->
+  <!-- 热搜 -->
+  <!-- <view class="message_hot">
+    <image src="https://www.xiaohulaile.com/wxcx/huo.png"></image>
+    <view>热搜</view>
+  </view>
+  <view class="tab">
+    <view class="tab_1">新管疫苗接种指南 <image src="https://www.xiaohulaile.com/wxcx/hb.png"></image></view>
+    <view class="tab_2">睡前7个动作，受益终生 <image src="https://www.xiaohulaile.com/wxcx/hb.png"></image></view>
+    <view class="tab_3">炒菜别有5个坏习惯，胃不好 <image src="https://www.xiaohulaile.com/wxcx/lb.png"></image></view>
+    <view class="tab_4">炒菜别有5个坏习惯 </view>
+    <view class="tab_5">一招告别腰腿…… <image src="https://www.xiaohulaile.com/wxcx/lb.png"></image></view>
+    <view class="tab_6">炒菜别有5个坏习惯，胃不好 <image src="https://www.xiaohulaile.com/wxcx/lb.png"></image></view>
+  </view> -->
+  <!-- 热门推荐 -->
+  <view class="message_rec">
+    <image src="../../images/index/tuijian.png"></image>
+    <view>每日推荐</view>
+  </view>
+  <view class='message_banner'>
+    <navigator url="/pages/message_details/message_details?id=1">
+    <image src="../../images/index/recbanner.png"></image>
+    <view>关于高血压，你知道多少?</view>
+    </navigator>
+  </view>
+  <navigator url="/pages/message_details/message_details?id=2">
+  <view class="message_list">
+    <view class="list_left">
+    <view class="list_title">"香椿有毒不能吃"…这些与春天相关的传言都是真的吗？</view>
+    <view class="list_dz">
+      <image src="../../images/index/dianzan.png"></image>
+      <span>3.62w</span>
+    </view>
+    <view class="list_dz">
+      <image src="../../images/index/shoucang.png"></image>
+      <span>841</span>
+    </view>
+    <view class="list_dz">
+      <image src="../../images/index/pinglun.png"></image>
+      <span>32</span>
+    </view>
+    </view>
+    <view class="list_right">
+    <image src="../../images/index/py.jpg"></image>
+    </view>
+  </view>
+</navigator>
+<navigator url="/pages/message_details/message_details?id=3">
+  <view class="message_list">
+    <view class="list_left">
+    <view class="list_title">老年痴呆早期的症状识别，这个疾病尽早的就医、尽早的干预非常重要</view>
+    <view class="list_dz">
+      <image src="../../images/index/dianzan.png"></image>
+      <span>0.62w</span>
+    </view>
+    <view class="list_dz">
+      <image src="../../images/index/shoucang.png"></image>
+      <span>10</span>
+    </view>
+    <view class="list_dz">
+      <image src="../../images/index/pinglun.png"></image>
+      <span>3</span>
+    </view>
+    </view>
+    <view class="list_right">
+    <image src="../../images/index/cd.jpg"></image>
+    </view>
+  </view>
+</navigator>
+  <navigator url="/pages/message_details/message_details?id=4">
+  <view class="message_list">
+    <view class="list_left">
+    <view class="list_title">初级的骨质疏松预防是对于有骨质疏松症高危因素的这一大类人开始。人体的骨质都是处在一个代谢平衡的状态的。</view>
+    <view class="list_dz">
+      <image src="../../images/index/dianzan.png"></image>
+      <span>3.62w</span>
+    </view>
+    <view class="list_dz">
+      <image src="../../images/index/shoucang.png"></image>
+      <span>841</span>
+    </view>
+    <view class="list_dz">
+      <image src="../../images/index/pinglun.png"></image>
+      <span>32</span>
+    </view>
+    </view>
+    <view class="list_right">
+    <image src="../../images/index/ss.jpg"></image>
+    </view>
+  </view>
+</navigator>
+</view>

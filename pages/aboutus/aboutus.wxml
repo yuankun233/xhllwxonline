@@ -1,0 +1,47 @@
+<!--pages/merdetails/merdetails.wxml-->
+<view class="merdetails">
+  <!-- 背景 -->
+  <image class="backgroundimg" src="../../images/index/background.png"></image>
+  <!-- 头部 -->
+  <view class="top">
+    <image src="../../images/index/back.png" bindtap="back"></image>
+    <span>公司简介</span>
+  </view>
+  <!-- 详情 -->
+  <view class="list">
+    <image class="list_pic" src="http://www.xiaohulaile.com/wxcx/banner/aboutlogo.png"></image>
+    <view class="list_top_left">
+      <view class="list_name">上海小护来了信息科技有限公司</view>
+      <view class="list_text">精准居家照护平台--要照护，找小护</view>
+
+    </view>
+    <view class="list_content">嗨，你好！我们是《小护来了》网约护士平台，也是大数据居家护理服务平台。2018年，在上海交通大学老年长期照护研究所的支持下，我们在上海诞生了。两年多来，我们一直在探索建立“互联网+整体护理”模式，为客户提供安全、专业、可靠、便捷的居家护理服务。目前，在充分了解客户需求的基础上，我们已能实现为客户定制个性化护理项目包，具体包括专业护理、生活护理和康复指导等服务内容。只要你通过我们《小护来了》完成线上下单，执业护士和护理康复人员就会第一时间上门为你或家人提供服务，并能进行全程实时跟踪，确保安全可控。
+
+我们线下合作机构有医院、护理院、护理站等；旗下注册的执业护士大多来自三甲医院，并拥有丰富的临床护理经验；旗下注册的护理人员和康复师均经过专业化培训，并有合法合规的执业资格证明。我们《小护来了》平台有一整套护理服务规范和质量控制标准，并对签约的护理康复人员进行系统性、标准化的实训。我们既注重服务过程监管，也重视服务后客户反馈，并以不断提升服务质量和客户体验为己任。
+
+“三分治疗，七分护理”！无论你或家人出院后的延续护理，还是老年居家护理，都可以交给我们《小护来了》。为了你和家人的健康，“小护来了”！
+    </view>
+    <view class="hr"></view>
+    <view class="list_address">
+      <view class="address_left">
+        <view
+          style="width: 277rpx;height: 36rpx;font-size: 30rpx;font-family: PingFangSC-Regular;font-weight: 500;color: #333333;overflow:hidden; //超出的文本隐藏text-overflow:ellipsis; //用省略号显示white-space:nowrap; //不换行">
+          东软软件园</view>
+        <view
+          style="width: 277rpx;height: 28rpx;font-size: 22rpx;font-family: PingFangSC-Regular;font-weight: 500;color: #666; margin-top:10rpx">
+          上海市闵行区紫月路1000号</view>
+      </view>
+      <view class="address_right">
+        <view class="daohang" style="text-align:center;font-family:PingFangSC-Regular;" bindtap="daohang">
+          <image src="../../images/index/lo.png" style="width:39rpx;height:39rpx;"></image>
+          <view>导航</view>
+        </view>
+        <view class="henghr"></view>
+        <view class="daohang" style="text-align:center;font-family:PingFangSC-Regular;" bindtap="goSpecialty">
+          <image src="../../images/index/phone.png" style="width:39rpx;height:39rpx;"></image>
+          <view>致电</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

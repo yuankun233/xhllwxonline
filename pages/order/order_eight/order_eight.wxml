@@ -1,0 +1,201 @@
+<!--pages/order/order_eight/order_eight.wxml-->
+<view class="order_eight">
+<view class="order_eight_top">
+  <view class="order_eight_t_bottom">
+    <view class="order_eight_t_left">
+      <image bindtap="back" class="order_eight_t_left_p" src="https://xiaohulaile.com/xh/p/back.png"></image>
+    </view>
+    <view class="order_eight_t_mid">
+      <view class="order_eight_t_mid_left {{top == 1 ?'click':''}}" bindtap="xiangshang">规格</view>
+      <view class="order_eight_t_mid_left {{top == 2 ?'click':''}}" bindtap="xiangqing">详情</view>
+    </view>
+  </view>
+</view>
+<view class="order_eight_project">
+  <view class="order_eight_project_p">
+    <image src="{{eightList.pic_url}}" class="order_eight_project_p"></image>
+  </view>
+  <view class="order_eight_project_titleall">
+    <view class="order_eight_project_title">{{eightList.title}}</view>
+    <view class="order_eight_project_num">已选 X {{nums}}</view>
+  </view>
+  <view class="order_eight_project_price" style="float:right">
+    <view style="color:#EF1515;font-size:34rpx;float:left;">￥{{eightList.price}}</view><view style="float:left;line-height:52rpx;color:#EF1515;">.00</view><view style="float:left;font-size:34rpx;margin-left:10rpx">元/次</view>
+  </view>
+</view>
+<view class="order_eight_project_detil">
+  <view class="order_eight_project_top" bindtap="showModal" data-target="RadioModal">
+    服务对象/地址
+    <image class="order_eight_project_top_right_p" src="https://xiaohulaile.com/xh/p/right.png" style="width:30rpx;height:30rpx;float:right;margin-top:26rpx"></image>
+    <div class="order_eight_project_top_right">{{name}}</div>
+  </view>
+  <view class="order_eight_project_top">
+    服务日期
+    <picker mode="date"start="{{now}}" end="2021-12-31" bindchange="DateChange" style="float:right">
+      <image class="order_eight_project_top_right_p" src="https://xiaohulaile.com/xh/p/right.png" style="width:30rpx;height:30rpx;float:right;margin-top:26rpx"></image>
+      <div class="order_eight_project_top_right">{{data}}</div>
+    </picker>
+  </view>
+  <view class="order_eight_project_top" bindtap="showModal" data-target="RadioModal_1">
+    服务时间段
+    <image class="order_eight_project_top_right_p" src="https://xiaohulaile.com/xh/p/right.png" style="width:30rpx;height:30rpx;float:right;margin-top:26rpx"></image>
+    <div class="order_eight_project_top_right">{{time}}</div>
+  </view>
+</view>
+<view class="order_eight_project_detils">
+  <view class="order_eight_project_top">
+    选择次数
+    <view style="width:70rpx;height:70rpx;float:right;">
+    <view bindtap="jiaFN" data-id="1" style="width:30rpx;height:30rpx;float:right;background-color:#E9EEFA;margin-top: 26rpx;text-align:center;line-height:25rpx;border-radius: 30rpx; color:#333333;margin-right:15rpx">+</view>
+    </view>
+    <view class="order_eight_project_top_right;" style="line-height: 85.5rpx;font-size:34rpx; color:#333333">{{nums}}</view>
+    <view style="width:70rpx;height:70rpx;float:right;">
+    <view bindtap="jiaFN" data-id="-1" style="width:30rpx;height:30rpx;float:right;background-color:#E9EEFA;margin-top: 26rpx;text-align:center;line-height:25rpx;border-radius: 30rpx; color:#333333;margin-right:25rpx">-</view>
+    </view>
+  </view>
+  <view class="order_eight_project_top" wx:if="{{eightList.p_price !== 0}}">
+    选择耗材
+    <view style="float:left;font-size:34rpx;margin-left:10rpx;float:right;line-height: 85.5rpx;">元/个</view><view style="float:left;line-height:52rpx;color:#EF1515;float:right;margin-top:19rpx;font-family: DIN-Medium;">.00</view><view style="color:#EF1515;font-size:34rpx;float:right;font-family: DIN-Medium;line-height: 85.5rpx;">￥{{eightList.p_price}}</view>
+  </view>
+  <view wx:if="{{eightList.p_price !== 0 }}">
+  <view class="order_eight_project_Material" wx:if="{{eightList.p_price !== 0}}">
+    <view class="order_eight_project_Material_left {{xbxy == 1 ?'click':''}}" bindtap="xuyao">需要耗材包</view>
+    <view class="order_eight_project_Material_left {{xbxy == 2 ?'click':''}}" bindtap="bxuyao">无需耗材包</view>
+  </view>
+  <view class="order_eight_project_content" wx:if="{{xbxy == 1}}">
+    {{eightList.p_package}}
+  </view>
+<view style="height:50rpx;margin-bottom:20rpx;font-family: PingFangSC-Regular;" wx:if="{{xbxy == 1}}">
+  <view style="width:70rpx;height:70rpx;float:right;">
+  <view bindtap="jiaFNs" data-id="1" style="width:30rpx;height:30rpx;float:right;background-color:#E9EEFA;margin-top: 26rpx;text-align:center;line-height:25rpx;border-radius: 30rpx; color:#333333;margin-right:15rpx">+</view>
+  </view>  
+  <div class="order_eight_project_top_right;" style="line-height: 85.5rpx; float:right;font-size:34rpx; color:#333333">{{numes}}</div>
+  <view style="width:70rpx;height:70rpx;float:right;">
+  <view bindtap="jiaFNs" data-id="-1" style="width:30rpx;height:30rpx;float:right;background-color:#E9EEFA;margin-top: 26rpx;text-align:center;line-height:25rpx;border-radius: 30rpx; color:#333333;margin-right:25rpx">-</view>
+  </view>
+</view>
+</view>
+</view>
+<view class="order_eight_mark">
+  <view class="order_eight_mark_text">备注信息</view>
+  <view class="order_eight_mark_content">
+    <textarea maxlength="101" placeholder="如需备注，请说明情况..." bindinput="texts">
+      <view class="textareas">{{textnum}}/100</view>
+    </textarea>
+  </view>
+  <view class="order_eight_mark_text2">温馨提示：详细的病情说明可以帮助我们更好的为您服务哦～</view>
+</view>
+<view class="order_eight_Discount">
+  <view class="order_eight_project_top">
+    优惠券
+    <image class="order_eight_project_top_right_p" src="https://xiaohulaile.com/xh/p/right.png" style="width:30rpx;height:30rpx;float:right;margin-top:26rpx"></image>
+    <div class="order_eight_project_top_right">暂无</div>
+  </view>
+</view>
+  <view class="order_eight_2">
+    <view class="order_eight_22">服务内容与流程</view>
+    <view class="order_eight_23">
+      <view wx:for="{{eightList.msg}}">{{item.msg}}</view>
+    </view>
+    <view class="order_eight_24">服务须知</view>
+    <view class="order_eight_25">{{eightList.notice}}</view>
+<image src="https://xiaohulaile.com/wxcx/tuikuan/tuikuan.png" style="width:662rpx;height:602rpx;margin-left:18rpx"></image>
+
+  </view>
+
+  <view class="order_eight_button_flexs" style="font-family:PingFangSC-Regular;bottom:150rpx" wx:if="{{mingxi == 2}}">
+    费用明细
+  <view class="order_eight_project_top" bindtap="showModal" data-target="RadioModal_1" style="margin-top:10rpx">
+    服务费X{{nums}}
+    <div class="order_eight_project_top_right">￥{{price}}.00</div>
+  </view>
+  <view class="order_eight_project_top" bindtap="showModal" data-target="RadioModal_1" wx:if="{{eightList.pid !== null}}">
+    耗材费X{{numes}}
+    <div class="order_eight_project_top_right">￥{{p_price}}.00</div>
+  </view>
+  <view class="order_eight_project_top" bindtap="showModal" data-target="RadioModal_1">
+    优惠金额
+    <div class="order_eight_project_top_right">-￥0.00</div>
+  </view>
+  </view>
+  <view class="order_eight_button_flex" style="font-family:DIN-Medium;">
+    <view style="font-family:PingFangSC-Regular;color:#999999;font-size:24rpx;float:left;margin-top:20rpx">合计：</view>
+    <view style="color:#EF1515;font-size:34rpx;float:left;margin-top:12rpx">￥{{total_fee}}</view><view style="float:left;line-height:54rpx;color:#EF1515;margin-top:11rpx">.00</view>
+    <view style="overflow:hidden;font-family:PingFangSC-Regular;color:#999999;font-size:24rpx;float:left;margin-top:19rpx;margin-left:150rpx" bindtap="mingxis">明细<image style="width:19rpx;height:12rpx; margin-left:10rpx;" src="{{mingxi == 1 ?'https://www.xiaohulaile.com/xh/p/up.png':'https://www.xiaohulaile.com/xh/p/down.png'}}"></image></view>
+    <view bindtap="showModal"  data-target="Modal" class="bottom_n37">提交订单</view>
+  </view>
+</view>
+  <!-- 单选拟态框 -->
+  <view class="cu-modal {{modalName=='RadioModal'?'show':''}}" bindtap="hideModal">
+    <view class="cu-dialog" catchtap>
+      <radio-group class="block" bindchange="radioChange">
+        <view class="cu-list menu text-left">
+          <view class="cu-item"wx:for="{{user_list}}"  wx:if="{{user_list!==''}}"  wx:key>
+            <label class="flex justify-between align-center flex-sub">
+              <view class="flex-sub">{{item.name}}</view>
+              <radio value="{{item.id}}" class="round" style="right: 5px;"></radio>
+            </label>
+          </view>
+        </view>
+        <view wx:if="{{user_list==''}}">您还没有被服务人员 <navigator url="/pages/file/file" style="color:red">点击前去添加</navigator></view>
+      </radio-group>
+    </view>
+  </view>
+    <!-- 单选拟态框_时间段 -->
+    <view class="cu-modal {{modalName=='RadioModal_1'?'show':''}}" bindtap="hideModal">
+    <view class="cu-dialog" catchtap>
+      <radio-group class="block" bindchange="radioChange_1">
+        <view class="cu-list menu text-left">
+          <view class="cu-item" wx:for="{{times}}" wx:key>
+            <label class="flex justify-between align-center flex-sub">
+              <view class="flex-sub">{{item.time}}</view>
+              <radio value="{{item.id}}" class="round"></radio>
+            </label>
+          </view>
+        </view>
+      </radio-group>
+    </view>
+  </view>
+<!-- 选择拟态框 -->
+  <!-- 预约拟态框 -->
+  <view class="cu-modal {{modalName=='Modal'?'show':''}}">
+    <view class="modal">
+      <view class="modal_1">
+        预约须知
+      </view>
+      <view class="modal_2">
+        <view class="modal_21">小护来了居家服务须知</view>
+        <scroll-view scroll-y style="height: 580rpx;margin-top:20rpx;" bindscrolltolower="yuyuebottom">
+          <view class="modal_22">     尊敬的先生/女士：
+为了更好的给您和您的家人提供优质的居家专业服务，请务必仔细阅读本须知：
+一、请如实告知疾病诊断，不要隐瞒传染类、精神类疾病等病史，或可能影响服务人员和自身安全的因素。
+二、请在服务人员的服务时间内，尽可能保证有二人或二人以上人员在家。
+三、安全告知：小护来了居家服务项目都是常规专业内容，是帮助患者维护健康所采取的医学护理服务。由于个体的差异性、疾病的复杂性及不可抗拒的因素等，服务人员不能预测服务中或服务后患者的并发症等不良事件发生，特告知如下:
+1、心脑疾病的突发；
+2、伤口出血、疼痛、感染、异常生长等；
+3、肠造口出血感染，造口狭窄，造口突出等并发症；
+4、导管滑脱、移位、堵塞、感染等；
+5、康复功能恢复不良等；
+6、其他意外情况发生：如跌倒等。
+四、您在下单后如需要更改服务时间，请提前6小时联系客服。
+五、若服务人员已经接单，则所支付的金额不能全额退回。特告知：
+1.服务人员已接单，扣除支付金额的30%
+2.服务人员已出发，扣除支付金额的50%
+3.服务人员已到达，扣除支付金额的80%
+4.若用户下了多个订单，已服务过的项目正常结算。
+请仔细阅读确认后下单。谢谢配合！</view>
+        </scroll-view>
+        <view class="modal_23">
+          <checkbox-group bindchange="checkboxChange">
+            <checkbox disabled="{{check}}" color="#ff9c00" value="1"></checkbox>
+          </checkbox-group>
+          <view>下滑至底并勾选、即同意“预约须知”</view>
+        </view>
+      </view>
+      <view class="modal_3">
+        <view class="modal_31" bindtap="hideModal">取消</view>
+        <view wx:if="{{checkbox.length==1}}" bindtap="payFn" data-target="bottomModal" class="modal_32">同意</view>
+        <view wx:else class="modal_32">同意</view>
+      </view>
+    </view>
+  </view>

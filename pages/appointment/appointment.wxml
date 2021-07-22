@@ -1,0 +1,11 @@
+<!--pages/appointment/appointment.wxml-->
+<view class="appointment">
+  <view wx:for="{{list}}" wx:key="{{index}}" class="appointment_1" bindtap="goOrder" data-id="{{item.id}}">
+    <image src="{{item.map}}"></image>
+    <view class="appointment_11">{{item.title}}护理护士上门服务居家照护便捷服务</view>
+    <!-- <view class="appointment_12">肿瘤科 | 肿瘤内科</view> -->
+    <view class="appointment_13">￥{{item.price}}</view>
+    <view class="appointment_15">{{item.order_num}}人付款</view>
+    <view class="appointment_16">...</view>
+  </view>
+</view>

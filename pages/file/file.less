@@ -1,0 +1,170 @@
+.file {
+  .JBXX {
+    color: #333333;
+    font-size: 34rpx;
+    font-family: PingFang-SC-Bold;
+    font-weight: 900;
+    margin-top: 31rpx;
+    margin-left: 13rpx;
+  }
+  .file_I {
+    display: flex;
+    height: 107rpx;
+    border-bottom: 1px solid #f7f7f7;
+    // padding-left: 13rpx;
+    width: 724rpx;
+    margin: 0 auto;
+    position: relative;
+    view {
+      line-height: 107rpx;
+      color: #333333;
+      font-size: 34rpx;
+      font-family: PingFang-SC-Regular;
+      // font-weight: 100;
+    }
+    .file_I_1 {
+      margin-left: 194rpx;
+      margin-top: 34rpx;
+    }
+    .sex {
+      margin-right: 33rpx;
+      display: flex;
+    }
+    radio {
+      margin-right: 33rpx;
+      margin-top: 31rpx;
+    }
+    .sex_1 {
+      margin-right: 182rpx;
+    }
+    text {
+      color: #333333;
+      font-size: 34rpx;
+      display: block;
+      margin-top: 28rpx;
+    }
+    radio-group {
+      display: flex;
+    }
+    .file_I_CS {
+      margin-right: 150rpx;
+    }
+    .file_I_cc {
+      position: absolute;
+      width: 9.6rpx;
+      height: 18rpx;
+      top: 45rpx;
+      right: 16rpx;
+    }
+    .file_I_number {
+      margin-left: 83rpx;
+      margin-top: 34rpx;
+    }
+    .file_I_dz {
+      margin-right: 234rpx;
+      input {
+        margin-top: 34rpx;
+      }
+    }
+  }
+  .file_bottom {
+    padding-left: 13rpx;
+    width: 275rpx;
+    height: 33rpx;
+    margin-top: 31rpx;
+    .file_bottom_1 {
+      display: flex;
+      view {
+        color: #333333;
+        font-size: 34rpx;
+        font-weight: 900;
+        line-height: 33rpx;
+      }
+      text {
+        color: #cccccc;
+        font-size: 20rpx;
+        line-height: 24px;
+      }
+    }
+    textarea {
+      height: 332rpx;
+      width: 724rpx;
+      margin-top: 36rpx;
+      // background-color: red;
+    }
+  }
+  .push {
+    width: 690rpx;
+    height: 88rpx;
+    background-color: #4178f0;
+    line-height: 88rpx;
+    text-align: center;
+    margin: 0 auto;
+    border-radius: 44rpx;
+    margin-top: 458rpx;
+    font-size: 44rpx;
+    font-family: PingFang SC;
+    font-weight: 500;
+    color: #ffffff;
+  }
+}
+.mm {
+  margin-right: 87rpx !important;
+}
+page {
+  background-color: #ffffff;
+}
+radio .wx-radio-input.wx-radio-input-checked::before {
+  border-radius: 50% !important;
+  width: 20rpx !important;
+  height: 20rpx !important;
+  text-align: center !important;
+  font-size: 0rpx; /* 对勾大小 去掉 */
+  background-color: #00f !important;
+  transform: translate(-50%, -50%) scale(1) !important;
+  -webkit-transform: translate(-50%, -50%) scale(1) !important;
+}
+radio {
+  border-radius: 50% !important;
+  width: 40rpx !important; /* 最好是4的倍数，不然会不在中间 */
+  height: 40rpx !important;
+  border: 1rpx solid #666 !important; /* 设置边框（外圆） */
+  font-size: 0; /* 让边框重合 */
+  // background-color: #4178f0;
+}
+radio .wx-radio-input {
+  border-radius: 50% !important;
+  width: 40rpx !important;
+  height: 40rpx !important;
+  border: none !important; /* 替换边框（隐藏原有边框） */
+  // background-color: #4178f0;
+}
+radio .wx-radio-input.wx-radio-input-checked {
+  border: none !important;
+  background: #4178f0 !important;
+}
+radio::before,
+checkbox::before {
+  font-family: 'cuIcon';
+  content: '\e645';
+  position: absolute;
+  color: var(--white) !important;
+  top: 50%;
+  margin-top: -8px;
+  right: 2px;
+  font-size: 32rpx;
+  line-height: 16px;
+  pointer-events: none;
+  transform: scale(1, 1);
+  transition: all 0.3s ease-in-out 0s;
+  z-index: 9;
+}
+.picker {
+  width: 400rpx;
+  color: #cccccc !important;
+  font-size: 34rpx;
+}
+.CC {
+  color: #cccccc !important;
+  font-size: 34rpx;
+}

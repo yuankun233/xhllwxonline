@@ -1,0 +1,65 @@
+<!--pages/file/file.wxml-->
+
+<view class="file">
+  <view class="JBXX">基本信息<view style="font-size:24rpx">仅填写名字、手机号、姓名即可，其他选项选填</view></view>
+  <!-- 姓名 -->
+  <view class="file_I">
+    <view>姓名</view>
+    <input class="file_I_1 CC" value="{{name}}" type="text" bindinput="nameFn" placeholder-class="CC" placeholder="请填写真实姓名" />
+  </view>
+  <view class="file_I">
+    <view class="sex_1">性别</view>
+    <radio-group bindchange="radioChange">
+      <label class="sex">
+        <radio color="#fff" value="1" checked="{{sex==1?true:false}}"/><text>男</text>
+      </label>
+      <label class="sex">
+        <radio color='#fff' value="2"  checked="{{sex==2?true:false}}" /> <text>女</text>
+      </label>
+    </radio-group>
+  </view>
+  <view class="file_I">
+    <view class="file_I_CS">年龄 </view>
+    <!-- <picker mode="date" value="{{date}}" start="1900-01-01" end="2021-03-18" bindchange="DateChange">
+			<view class="picker">
+				{{date}}
+			</view>
+    </picker> -->
+    <input bindinput="dataFn" value="{{date}}" class="file_I_2 file_I_number CC aa" placeholder-class="CC" placeholder="请输入"
+      type="number" maxlength="3" />
+    <image class="file_I_cc" src="../../images/you.png"></image>
+  </view>
+  <view class="file_I">
+    <view>联系电话/手机</view>
+    <input class="file_I_2 file_I_number CC" value="{{number}}" type="number" maxlength="11" bindinput="numberFn" placeholder-class="CC"
+      placeholder="请输入" />
+    <image class="file_I_cc" src="../../images/you.png"></image>
+  </view>
+  <view class="file_I">
+    <view class="file_I_dz">地址</view>
+    <picker mode="region" bindchange="RegionChange" value="{{region}}" custom-item="{{customItem}}">
+      <view class="picker">
+        {{region}}
+      </view>
+    </picker>
+    <!-- <input placeholder="请输入" placeholder-class="CC" type="text"/> -->
+  </view>
+  <view class="file_I">
+    <view class="file_I_dz mm">详情地址</view>
+    <input bindinput="addressFn" value="{{address}}" class="file_I_2 file_I_number CC" placeholder="请输入" placeholder-class="CC" type="text"/>
+  </view>
+  <!-- 疾病信息 -->
+  <view class="file_bottom">
+    <view class="file_bottom_1">
+      <view>疾病信息</view>
+      <text>（护士填写）</text>
+    </view>
+    <textarea value="{{text}}" placeholder="请输入" bindinput="textFn" maxlength="50" name="textarea" />
+    </view>
+  <view wx:if="{{bj}}" class="push" bindtap="CUser">
+    修改
+  </view>
+  <view wx:else class="push" bindtap="addUser">
+    立即添加
+  </view>
+</view>

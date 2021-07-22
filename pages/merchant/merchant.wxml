@@ -1,0 +1,15 @@
+<!--pages/merchant/merchant.wxml-->
+<view class="merchant" >
+  <block  wx:for="{{list}}" wx:key="{{index}}">
+  <view class="merchant_1" bindtap="navto" id="{{item.id}}">
+    <view class="merchant_11">{{item.name}}</view>
+    <view class="merchant_12">距离：{{item.qm}}km</view>
+    <view class="merchant_13">评分：{{item.score}}</view>
+    <view class="merchant_14">{{item.address}}</view>
+    <image class="img_1" src="https://www.xiaohulaile.com/wxcx/mer.png"></image>
+    <image class="img_2" src="https://www.xiaohulaile.com/wxcx/mer1.png"></image>
+    <image class="img_3" src="{{item.pic_url==''?'../../images/index/zanwu.png':item.pic_url}}"></image>
+    <view class="list_rightbottom"> 查看详情 > </view>
+  </view>
+  </block>
+</view>

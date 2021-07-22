@@ -1,0 +1,132 @@
+<!--pages/order/order_item/order_item.wxml-->
+<!-- <text>pages/order/order_item/order_item.wxml</text> -->
+<view class="order_item">
+  <view class="order_item_1">
+    <image src="{{order.pic_url}}"></image>
+    <view class="order_item_11">{{order.title}}</view>
+    <view class="order_item_12">
+      已选　X{{num}}
+    </view>
+    <view class="order_item_13">
+      ¥ {{order.price}}
+    </view>
+  </view>
+  <view class="order_item_2">
+    <view bindtap="showModal" data-target="RadioModal" class="order_item_21">
+      <view class="order_item_211">服务对象</view>
+      <view class="order_item_212">
+        <text wx:if="{{archive_id==''}}">请选择信息</text>
+        <text wx:else>{{name}}</text>
+        <image src="../../../images/you.png"></image>
+      </view>
+    </view>
+    <!-- <view class="order_item_21">
+      <view class="order_item_211">服务地址</view>
+      <view class="order_item_212">
+        <text>请选择服务人员上门地址</text>
+        <image src="../../../images/you.png"></image>
+      </view>
+    </view> -->
+    <view class="order_item_21">
+      <view class="order_item_211">预约日期</view>
+      <view class="order_item_212">
+        <picker mode="date" value="{{date}}" start="{{now}}" end="2121-03-20" bindchange="DateChange">
+          <text wx:if="{{data==''}}">请选择服务人员首次上门时间</text>
+          <text wx:else>{{data}}</text>
+          <image src="../../../images/you.png"></image>
+        </picker>
+      </view>
+    </view>
+    <view class="order_item_21" bindtap="showModal" data-target="RadioModal_1">
+      <view class="order_item_211">预约时间段</view>
+      <view class="order_item_212">
+        <text wx:if="{{time_slot==''}}">请选择服务人员首次上门时间</text>
+        <text wx:else>{{time}}</text>
+        <image src="../../../images/you.png"></image>
+      </view>
+    </view>
+    <!-- 提示 -->
+    <view class="order_item_22">温馨提示：除首次上门时间，其它时间可自行和护士拟定。</view>
+  </view>
+  <view class="order_item_3">
+    <view class="order_item_31">
+      补充说明（非必填）
+    </view>
+    <textarea placeholder="请输入10-100字对自身情况说明……" bindinput="textFn" maxlength="50" name="textarea"></textarea>
+    <text>温馨提示：详细的病情说明可以帮助我们更好的为您服务哦～</text>
+    <view style="color:#999999;font-size:22rpx; line-height:20px;"><span style="color:red;font-size:30rpx;">*</span>用此护理项目需家属陪同，如家属无法陪同请慎用此护理服务；
+  如服务人员接单后用户取消订单，服务开始前3小时全额退款，如服务开始前3小时内退单，则平台会收取50%的服务费，如服务人员已经出发在路上，不予退款。
+  如有问题，请联系客服热线400-9155-291。</view>
+  </view>
+
+  <view class="order_item_4">
+    <!-- <view class="order_item_41"></view> -->
+    <view class="order_item_41">应付</view>
+    <view class="order_item_42">
+      <text>合计</text>
+      <view>¥ {{num*order.price}}</view>
+    </view>
+  </view>
+  <view bindtap="payFn" class="order_item_5">提交订单</view>
+  <!-- 拟态框 -->
+  <view class="cu-modal {{modalName=='Modal'?'show':''}}">
+    <view class="modal">
+      <view class="modal_1">
+        预约须知
+      </view>
+      <view class="modal_2">
+        <view class="modal_21">小护来了居家服务安全告知</view>
+        <view class="modal_22">小护来了居家服务项目都是常规的专业内容，是为了帮助患者维护健康所采取的健康指导，术后护理康复，专业技术等。但是由于个体差异，疾病复杂性，不可抗拒的原因等，医护人员不能预测服务中或服务后并发症等不良事件发生。特告知如下
+1.心脑疾病的突发
+2.伤口出血，疼痛，感染，异常生长
+3.肠造口出血感染，造口狭窄，造口突出等并发症
+4.导管滑脱，移位，堵塞，感染等
+5.术后康复功能恢复不良。
+6.其他意外，跌倒等</view>
+        <view class="modal_23">
+          <checkbox-group bindchange="checkboxChange">
+            <checkbox color="#ff9c00" value="1"></checkbox>
+          </checkbox-group>
+          <view>勾选即表示同意“上门禁忌”内容</view>
+        </view>
+      </view>
+      <view class="modal_3">
+        <view class="modal_31" bindtap="hideModal_1">取消</view>
+        <view wx:if="{{checkbox.length==1}}" bindtap="showModal" data-target="bottomModal" class="modal_32">同意</view>
+        <view wx:else class="modal_32">同意</view>
+      </view>
+    </view>
+
+  </view>
+  <!-- 单选拟态框 -->
+  <view class="cu-modal {{modalName=='RadioModal'?'show':''}}" bindtap="hideModal">
+    <view class="cu-dialog" catchtap>
+      <radio-group class="block" bindchange="radioChange">
+        <view class="cu-list menu text-left">
+          <view class="cu-item"wx:for="{{user_list}}"  wx:if="{{user_list!==''}}"  wx:key>
+            <label class="flex justify-between align-center flex-sub">
+              <view class="flex-sub">{{item.name}}</view>
+              <radio value="{{item.id}}" class="round"></radio>
+            </label>
+          </view>
+        </view>
+        <view wx:if="{{user_list==''}}">您还没有被服务人员 <navigator url="/pages/file/file" style="color:red">点击前去添加</navigator></view>
+      </radio-group>
+    </view>
+  </view>
+  <!-- 单选拟态框_时间段 -->
+  <view class="cu-modal {{modalName=='RadioModal_1'?'show':''}}" bindtap="hideModal">
+    <view class="cu-dialog" catchtap>
+      <radio-group class="block" bindchange="radioChange_1">
+        <view class="cu-list menu text-left">
+          <view class="cu-item" wx:for="{{times}}" wx:key>
+            <label class="flex justify-between align-center flex-sub">
+              <view class="flex-sub">{{item.time}}</view>
+              <radio value="{{item.id}}" class="round"></radio>
+            </label>
+          </view>
+        </view>
+      </radio-group>
+    </view>
+  </view>
+</view>

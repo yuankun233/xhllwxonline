@@ -1,0 +1,5 @@
+/* pages/message_details/message_details.wxss */
+image{
+  width: 750px;
+  height: 100vh;
+}

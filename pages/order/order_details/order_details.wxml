@@ -1,0 +1,166 @@
+<!--pages/order/order_details/order_details.wxml-->
+<view class="order_details">
+  <!-- 订单头部 -->
+  <!-- <view class="order_top">
+    <image></image>
+    <span>订单已完成</span>
+  </view> -->
+  <!-- 订单地址 -->
+  <view class="order_address">
+    <view class="addres_top">
+      <image src="https://www.xiaohulaile.com/wxcx/ditu.png"></image>
+      <span class="top_name">服务人：{{list.archivename}}</span>
+      <span class="top_phone">{{list.archivephone}}</span>
+    </view>
+    <view class="order_bottoms">
+      地址：{{list.archiveaddress}}
+    </view>
+  </view>
+  <!-- 商品详情 -->
+  <view class="order_list">
+    <view class="list_modelname">上海小护来了 精准居家照护平台</view>
+    <view class="list_details">
+      <image src="{{list.pic_url}}"></image>
+      <view class="list_content">
+        <view class="list_title">{{list.body}}</view>
+        <view class="list_type">
+          {{list.body}}
+        </view>
+        <span class="list_price">￥{{list.project_price}}</span>
+        <span class="list_additional">赠送服务</span>
+        <span class="list_num">x{{list.num}}</span>
+      </view>
+    </view>
+    <view class="hr"></view>
+    <view class="list_chose">已选：{{list.body}}</view>
+    <view class="list_workuser" wx:if="{{list.attend_id!==null}}">护理人员：王小蒙
+      <!-- <span style="margin-left:30rpx">178****2600</span> -->
+    </view>
+    <!-- 时间段 -->
+    <!-- <view class="list_time">初次服务时间：
+      <span class="time_right">
+        <image></image>
+        <text>10:00-11:00 2021-03-17</text>
+      </span>
+    </view>
+    <view class="list_time">第2/5服务时间：
+      <span class="time_right">
+        <image></image>
+        <text>10:00-11:00 2021-03-17</text>
+      </span>
+    </view>
+    <view class="list_time">第3/5服务时间：
+      <span class="time_right">
+        <image></image>
+        <text>10:00-11:00 2021-03-17</text>
+      </span>
+    </view>
+    <view class="list_time">第4/5服务时间：
+      <span class="time_right">
+        <image></image>
+        <text>10:00-11:00 2021-03-17</text>
+      </span>
+    </view>
+    <view class="list_time">第5/5服务时间：
+      <span class="time_right">
+        <image></image>
+        <text>10:00-11:00 2021-03-17</text>
+      </span>
+    </view> -->
+  </view>
+  <!-- 订单详情 -->
+  <view class="order_info">
+    <view class="list_time">订单信息
+      <span class="time_right" bindtap="goSpecialty">
+        <image style="width:44rpx;height:39rpx;" src="../../../images/index/kf.png"></image>
+        <text>联系客服</text>
+      </span>
+    </view>
+    <view class="list_time">订单编号
+      <span class="time_right">
+        <text>{{list.out_trade_no}}</text>
+      </span>
+    </view>
+    <view class="list_time" style="margin-bottom:21rpx">创建时间
+      <span class="time_right">
+        <text>{{list.create_time}}</text>
+      </span>
+    </view>
+    <view class="hr"></view>
+    <view class="list_time">订单金额
+      <span class="time_right">
+        <text>￥{{list.project_price}}</text>
+      </span>
+    </view>
+    <!-- <view class="list_time">优惠金额
+      <span class="time_right">
+        <text>￥-20</text>
+      </span>
+    </view> -->
+    <view class="list_time" style="margin-top:25rpx;">总价
+      <span class="time_right">
+        <text
+          style="font-size: 28rpx;font-family: PingFang SC;font-weight: 400;color: #4178F0;">￥{{list.total_fee}}</text>
+      </span>
+    </view>
+  </view>
+  <!-- 订单底部 -->
+  <view wx:if="{{list.status==2}}" class="order_bottom">
+    <!-- <view class="button_left">立即评价</view> -->
+    <view bindtap="shows" class="button_right">退款</view>
+  </view>
+  <view wx:if="{{list.status==1}}" class="order_bottom">
+    <!-- <view class="button_left">立即评价</view> -->
+    <view bindtap="payFn" class="button_right">去支付</view>
+    <view
+      bindtap="quxiao"
+      class="button_right"
+      style="background-color:#fff;color:#c1c1c1;border:1rpx solid #c1c1c1;"
+    >取消订单
+    </view>
+  </view>
+  <!-- 预约拟态框 -->
+  <view class="cu-modal {{modalName=='Modal'?'show':''}}">
+    <view class="modal">
+      <view class="modal_1">
+        退款须知
+      </view>
+      <view class="modal_2">
+        <view class="modal_21">小护来了居家服务退款须知</view>
+        <view class="modal_22"> 用此护理项目需家属陪同，如家属无法陪同请慎用此护理服务；
+          如服务人员接单后用户取消订单，服务开始前3小时全额退款，如服务开始前3小时内退单，则平台会收取50%的服务费，如服务人员已经出发在路上，不予退款。
+          如有问题，请联系客服热线400-9155-291。
+        </view>
+        <view class="modal_23">
+          <checkbox-group bindchange="checkboxChange">
+            <checkbox value="1"></checkbox>
+          </checkbox-group>
+          <view>勾选即表示同意“退款须知”内容</view>
+        </view>
+      </view>
+      <view class="modal_3">
+        <view class="modal_31" bindtap="hideModal">取消</view>
+        <view
+          wx:if="{{checkbox.length==1}}"
+          bindtap="refund"
+          data-target="bottomModal"
+          class="modal_32"
+        >同意
+        </view>
+        <view wx:else class="modal_32">同意</view>
+      </view>
+    </view>
+    <!-- <view class="cu-dialog">
+    <view class="cu-bar bg-white justify-end">
+      <view class="content">Modal标题</view>
+      <view class="action" bindtap="hideModal">
+        <text class="cuIcon-close text-red"></text>
+      </view>
+    </view>
+    <view class="padding-xl">
+      Modal 内容。
+    </view>
+  </view> -->
+  </view>
+</view>
+

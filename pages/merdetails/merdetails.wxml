@@ -1,0 +1,71 @@
+<!--pages/merdetails/merdetails.wxml-->
+<view class="merdetails">
+  <!-- 背景 -->
+  <image class="backgroundimg" src="../../images/index/background.png" ></image>
+  <!-- 头部 -->
+  <view class="top">
+    <image src="../../images/index/back.png" bindtap="back"></image>
+    <span>护理站</span>
+  </view>
+  <!-- 详情 -->
+  <view class="list">
+    <image class="list_pic" src="{{list.pic_url}}"></image>
+    <view class="list_top_left">
+      <view class="list_name">{{list.name}}</view>
+      <!-- 小星星 -->
+      <view class="evaluate">
+        <view class="evaluate_left">
+          <view class="evaluate_left_1">
+            <image wx:if="{{list.score>=1}}" src="../../images/index/redstar.png"></image>
+            <image wx:else src="../../images/index/huistar.png"></image>
+          </view>
+          <view class="evaluate_left_1">
+            <image wx:if="{{list.score>=2}}" src="../../images/index/redstar.png"></image>
+            <image wx:else src="../../images/index/huistar.png"></image>
+          </view>
+          <view class="evaluate_left_1">
+            <image wx:if="{{list.score>=3}}" src="../../images/index/redstar.png"></image>
+            <image wx:else src="../../images/index/huistar.png"></image>
+          </view>
+          <view class="evaluate_left_1">
+            <image wx:if="{{list.score>=4}}" src="../../images/index/redstar.png"></image>
+            <image wx:else src="../../images/index/huistar.png"></image>
+          </view>
+          <view class="evaluate_left_1">
+            <image wx:if="{{list.score==5}}" src="../../images/index/redstar.png"></image>
+            <image wx:else src="../../images/index/huistar.png"></image>
+          </view>
+          <view class="evaluate_left_title" style="margin-left: 10rpx;">
+            {{list.score}}分
+          </view>
+          <view class="evaluate_right">服务次数:<span style="font-size: 30rpx;font-family: DINPro;font-weight: 400;color: #F5B759;">{{list.num}}</span></view>
+        </view>
+      </view>
+    </view>
+    <view class="list_time">
+      门店营业时间：07:30-23:00
+    </view>
+    <view class="list_content">
+      {{list.introduce}}
+    </view>
+    <view class="hr"></view>
+    <view class="list_address">
+      <view class="address_left">
+        <view
+style="width: 347rpx;height: 36rpx;overflow:hidden;text-overflow:ellipsis;white-space:nowrap; font-size: 30rpx;font-family: PingFang;font-weight: 500;color: #333333;">{{list.address}}</view>
+        <view style="width: 347rpx;height: 36rpx;overflow:hidden;text-overflow:ellipsis;white-space:nowrap; font-size: 30rpx;font-family: PingFang;font-weight: 500;color: #999999; margin-top:20rpx">{{list.name}}</view>
+      </view>
+      <view class="address_right">
+        <view class="daohang" style="text-align:center" bindtap="daohang">
+          <image src="../../images/index/lo.png" style="width:39rpx;height:39rpx;"></image>
+          <view>导航</view>
+        </view>
+        <view class="henghr"></view>
+        <view class="daohang" style="text-align:center" bindtap="goSpecialty">
+          <image src="../../images/index/phone.png" style="width:39rpx;height:39rpx;"></image>
+          <view>致电</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

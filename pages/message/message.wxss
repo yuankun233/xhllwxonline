@@ -1,0 +1,195 @@
+page {
+  background-color: #ffffff;
+}
+.message input {
+  width: 722rpx;
+  height: 60rpx;
+  background: #ffffff;
+  box-shadow: 0rpx 0rpx 1rpx 0rpx #b3b3b3;
+  border: 1rpx solid #e0e0e0;
+  border-radius: 30rpx;
+  text-align: center;
+  margin: 0 auto;
+  margin-top: 22rpx;
+}
+.message .message_hot {
+  display: flex;
+  margin-top: 19rpx;
+  margin-left: 14rpx;
+}
+.message .message_hot image {
+  width: 23rpx;
+  height: 29rpx;
+  margin-right: 10rpx;
+}
+.message .message_hot view {
+  width: 60rpx;
+  height: 27rpx;
+  line-height: 27rpx;
+  font-size: 28rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: #212121;
+}
+.tab {
+  height: 213rpx;
+  position: relative;
+  margin-top: 18rpx;
+}
+.tab view {
+  line-height: 56rpx;
+  position: absolute;
+  font-size: 26rpx;
+  font-family: PingFang;
+  font-weight: 400;
+  color: #252525;
+  padding-left: 15rpx;
+}
+.tab view image {
+  width: 30rpx;
+  height: 27rpx;
+  position: absolute;
+  right: 9rpx;
+  top: 50%;
+  transform: translateY(-40%);
+}
+.tab .tab_1 {
+  width: 263rpx;
+  height: 56rpx;
+  background: #F7F7F7;
+  border-radius: 10rpx;
+  top: 0;
+  left: 16rpx;
+}
+.tab .tab_2 {
+  width: 381rpx;
+  height: 56rpx;
+  background: #F7F7F7;
+  border-radius: 10rpx;
+  top: 0;
+  left: 313rpx;
+}
+.tab .tab_3 {
+  width: 381rpx;
+  height: 56rpx;
+  background: #F7F7F7;
+  border-radius: 10rpx;
+  top: 81rpx;
+  left: 16rpx;
+}
+.tab .tab_4 {
+  width: 247rpx;
+  height: 56rpx;
+  background: #F7F7F7;
+  border-radius: 10rpx;
+  top: 81rpx;
+  left: 425rpx;
+}
+.tab .tab_5 {
+  width: 288rpx;
+  height: 56rpx;
+  background: #F7F7F7;
+  border-radius: 10rpx;
+  top: 157rpx;
+  left: 16rpx;
+}
+.tab .tab_6 {
+  width: 381rpx;
+  height: 56rpx;
+  background: #F7F7F7;
+  border-radius: 10rpx;
+  top: 157rpx;
+  left: 328rpx;
+}
+.message_rec {
+  display: flex;
+  margin-left: 14rpx;
+}
+.message_rec image {
+  width: 23rpx;
+  height: 29rpx;
+  margin-right: 10rpx;
+}
+.message_rec view {
+  width: 133rpx;
+  height: 27rpx;
+  line-height: 27rpx;
+  font-size: 28rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: #212121;
+}
+.message_banner {
+  width: 718rpx;
+  height: 270rpx;
+  margin-left: 14rpx;
+  margin-top: 38rpx;
+}
+.message_banner image {
+  width: 732rpx;
+  height: 270rpx;
+}
+.message_banner view {
+  width: 390rpx;
+  height: 34rpx;
+  font-size: 30rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: #FFFFFF;
+  position: relative;
+  top: -66rpx;
+  margin-left: 32rpx;
+}
+.message_list {
+  width: 722rpx;
+  height: 181rpx;
+  background-color: #ffffff;
+  margin-left: 14rpx;
+  border-bottom: 1rpx solid #f0f0f0;
+  display: flex;
+  padding-bottom: 200rpx;
+  margin-top: 23rpx;
+}
+.message_list .list_title {
+  width: 448rpx;
+  height: 66rpx;
+  font-size: 26rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: #666666;
+  margin-left: 26rpx;
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+  white-space: normal !important;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+.message_list .list_dz {
+  width: 127rpx;
+  height: 26rpx;
+  margin-left: 27rpx;
+  margin-top: 50rpx;
+  line-height: 26rpx;
+  float: left;
+}
+.message_list .list_dz image {
+  width: 25rpx;
+  height: 26rpx;
+}
+.message_list .list_dz span {
+  width: 82rpx;
+  height: 23rpx;
+  font-size: 26rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: #666666;
+  margin-left: 15rpx;
+}
+.message_list .list_right image {
+  width: 235rpx;
+  height: 165rpx;
+  border-radius: 16rpx;
+  margin-top: 7rpx;
+}

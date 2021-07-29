@@ -70,13 +70,13 @@ page {
 .order_eight .order_eight_project .order_eight_project_title {
   height: 40rpx;
   margin-left: 20rpx;
-  font-size: 30rpx;
+  font-size: 36rpx;
   font-family: PingFangSC-Regular;
 }
 .order_eight .order_eight_project .order_eight_project_num {
   margin-top: 75rpx;
   margin-left: 20rpx;
-  font-size: 24rpx;
+  font-size: 28.8rpx;
   font-family: PingFang SC;
 }
 .order_eight .order_eight_project .order_eight_project_price {
@@ -95,10 +95,10 @@ page {
   height: 85.5rpx;
   line-height: 85.5rpx;
   font-family: PingFangSC-Regular;
-  font-size: 28rpx;
+  font-size: 33.6rpx;
 }
 .order_eight .order_eight_project_detil .order_eight_project_top .order_eight_project_top_right {
-  font-size: 24rpx;
+  font-size: 28.8rpx;
   font-family: PingFangSC-Regular;
   color: #999999;
   float: right;
@@ -117,7 +117,7 @@ page {
   height: 85.5rpx;
   line-height: 85.5rpx;
   font-family: PingFangSC-Regular;
-  font-size: 28rpx;
+  font-size: 33.6rpx;
 }
 .order_eight .order_eight_project_detils .order_eight_project_top .order_eight_project_top_right {
   font-size: 24rpx;
@@ -168,7 +168,7 @@ page {
   padding: 20rpx 30rpx 20rpx 30rpx;
 }
 .order_eight .order_eight_mark .order_eight_mark_text {
-  font-size: 28rpx;
+  font-size: 33.6rpx;
   font-family: PingFangSC-Regular;
   font-weight: 400;
 }
@@ -192,7 +192,7 @@ page {
   color: #999999;
 }
 .order_eight .order_eight_mark .order_eight_mark_text2 {
-  font-size: 22rpx;
+  font-size: 26.4rpx;
   font-family: PingFang SC;
   font-weight: 400;
   color: #999999;
@@ -210,10 +210,10 @@ page {
   height: 85.5rpx;
   line-height: 85.5rpx;
   font-family: PingFangSC-Regular;
-  font-size: 28rpx;
+  font-size: 33.6rpx;
 }
 .order_eight .order_eight_Discount .order_eight_project_top .order_eight_project_top_right {
-  font-size: 24rpx;
+  font-size: 28.8rpx;
   font-family: PingFangSC-Regular;
   color: #999999;
   float: right;
@@ -280,34 +280,34 @@ page {
   line-height: 27rpx;
 }
 .order_eight .order_eight_2 .order_eight_22 {
-  height: 27rpx;
-  line-height: 27rpx;
-  font-size: 28rpx;
+  height: 32.6rpx;
+  line-height: 32.6rpx;
+  font-size: 33.6rpx;
   font-family: PingFang-SC-Medium;
   color: #4178F0;
   padding-left: 10rpx;
   border-left: 4px solid #ff9c00;
+  margin-top:20rpx ;
 }
 .order_eight .order_eight_2 .order_eight_23 {
   width: 696rpx;
   margin-top: 15rpx;
 }
 .order_eight .order_eight_2 .order_eight_23 view {
-  font-size: 26rpx;
+  font-size: 31.2rpx;
   font-family: PingFangSC-Regular;
   font-weight: 400;
   color: #585858;
   line-height: 60rpx;
 }
 .order_eight .order_eight_2 .order_eight_24 {
-  width: 137rpx;
-  height: 26rpx;
-  line-height: 26rpx;
-  font-size: 28rpx;
+  height: 32.6rpx;
+  line-height: 32.6rpx;
+  font-size: 33.6rpx;
   font-family: PingFang-SC-Medium;
   color: #4178F0;
   border-left: 4px solid #ff9c00;
-  text-align: center;
+  padding-left:10rpx ;
   margin-top: 20rpx;
 }
 .order_eight .order_eight_2 .order_eight_25 {
@@ -317,7 +317,7 @@ page {
   width: 702rpx;
   background: #f7f7f7;
   border-radius: 10rpx;
-  font-size: 26rpx;
+  font-size: 31.2rpx;
   font-family: PingFangSC-Regular;
   font-weight: 300;
   color: #303030;

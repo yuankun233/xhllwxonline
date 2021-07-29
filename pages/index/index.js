@@ -11,11 +11,43 @@ Page({
     duration: 500,
     address: '加载中..',
     list:'',
+    lists:'',
+    nurseList: [
+      {
+        name: "富护士",
+        pic_url: "https://www.xiaohulaile.com/wxcx/startdoc/fhs.png",
+        hlz: "上海常护通康护理站",
+        message:
+          "毕业于齐齐哈尔市医学院护理系，从事临床工作8年，持有专业护理证书，具有临床护理方面工作经验，熟练掌握长期卧床病人的各类导管护理（PICC维护、胃管插管、女病人导尿管更换），压疮换药，肌肉注射，导管维护的护理。"
+      },
+      {
+        name: "李护士",
+        pic_url: "https://www.xiaohulaile.com/wxcx/startdoc/lhs.png",
+        hlz: "上海常护庙康护理站",
+        message:
+          "毕业于郑州医学院校护理专业，从事临床工作30年，持有执业护士证书，特别擅长造口、胃管、导尿管、各类外伤、换药。"
+      },
+      {
+        name: "蒋护士",
+        pic_url: "https://www.xiaohulaile.com/wxcx/startdoc/jhs.png",
+        hlz: "上海常护通康护理站",
+        message:
+          "毕业于山西省太原市卫生学校，后就读于山西省职工医学院高级护理专业，从事急诊  ICU工作30年，具有丰富的临床抢救，日常护理常规，各项护理操作的经验。"
+      },
+      {
+        name: "武护士",
+        pic_url: "https://www.xiaohulaile.com/wxcx/startdoc/whs.png",
+        hlz: "上海常护霞康护理站",
+        message:
+          "毕业于九江学院护理专业，从事临床护理工作9年，持有执业护士证书，具有丰富的内科、妇科等护理工作经验，熟练掌握肌肉注射、静脉穿刺、女性导尿管插管、Picc维护、造口护理等护理操作。尤其擅长肌肉注射、女性导尿管插管及维护、picc维护。"
+      }
+    ]
   },
   gostart(e) {
-    console.log(e.currentTarget.dataset);
+    console.log(e);
+    const nurse = JSON.stringify(e.currentTarget.dataset.nurse);
     wx.navigateTo({
-      url: `/pages/start/start?id=${e.currentTarget.dataset.num}&name=${e.currentTarget.dataset.name}`,
+      url: `/pages/start/start?nurse=${nurse}`,
     });
   },
   tobanner1() {
@@ -83,14 +115,19 @@ Page({
     });
     console.log(e.currentTarget.dataset.id);
     if (
-      e.currentTarget.dataset.id == '1' ||
-      e.currentTarget.dataset.id == '3' ||
-      e.currentTarget.dataset.id == '5' ||
-      e.currentTarget.dataset.id == '6' ||
+      // e.currentTarget.dataset.id == '1' ||
+      // e.currentTarget.dataset.id == '3' ||
+      // e.currentTarget.dataset.id == '5' ||
+      // e.currentTarget.dataset.id == '6' ||
       e.currentTarget.dataset.id == '13' ||
-      e.currentTarget.dataset.id == '14' ||
+      // e.currentTarget.dataset.id == '14' ||
+      // e.currentTarget.dataset.id == '16' ||
+      // e.currentTarget.dataset.id == '15'  ||
+      e.currentTarget.dataset.id == '30' ||
+      e.currentTarget.dataset.id == '32' ||
+      e.currentTarget.dataset.id == '33' ||
       e.currentTarget.dataset.id == '16' ||
-      e.currentTarget.dataset.id == '15'
+      e.currentTarget.dataset.id == '35' 
     ) {
       wx.navigateTo({
         url: `/pages/order/order_eight/order_eight?index=${e.currentTarget.dataset.id}`,
@@ -126,6 +163,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    // console.log(this.data.lists,'没有赋值前')
     wx.showLoading({
       title: '加载中...',
     })
@@ -178,6 +216,7 @@ Page({
                 _this.setData({
                   lists: res.data.data.data,
                 });
+                // console.log(_this.data.lists);
                 wx.hideLoading()
               },
             });

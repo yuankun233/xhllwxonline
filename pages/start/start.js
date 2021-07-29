@@ -6,7 +6,8 @@ Page({
    */
   data: {
     name:'',
-    num:''
+    num:'',
+    nurse:''
   },
   back:function(){
     wx.navigateBack({})
@@ -37,11 +38,11 @@ Page({
     wx.showLoading({
       title: '加载中...',
     })
-    console.log(options)
+    const nurse = JSON.parse(options.nurse);
     this.setData({
-      name:options.name,
-      num:options.id
+      nurse,
     })
+    console.log(this.data.nurse);
     wx.hideLoading()
   },
 

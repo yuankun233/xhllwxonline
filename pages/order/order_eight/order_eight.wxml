@@ -53,7 +53,7 @@
     <view bindtap="jiaFN" data-id="-1" style="width:30rpx;height:30rpx;float:right;background-color:#E9EEFA;margin-top: 26rpx;text-align:center;line-height:25rpx;border-radius: 30rpx; color:#333333;margin-right:25rpx">-</view>
     </view>
   </view>
-  <view class="order_eight_project_top" wx:if="{{eightList.p_price !== 0}}">
+  <!-- <view class="order_eight_project_top" wx:if="{{eightList.p_price !== 0}}">
     选择耗材
     <view style="float:left;font-size:34rpx;margin-left:10rpx;float:right;line-height: 85.5rpx;">元/个</view><view style="float:left;line-height:52rpx;color:#EF1515;float:right;margin-top:19rpx;font-family: DIN-Medium;">.00</view><view style="color:#EF1515;font-size:34rpx;float:right;font-family: DIN-Medium;line-height: 85.5rpx;">￥{{eightList.p_price}}</view>
   </view>
@@ -74,7 +74,7 @@
   <view bindtap="jiaFNs" data-id="-1" style="width:30rpx;height:30rpx;float:right;background-color:#E9EEFA;margin-top: 26rpx;text-align:center;line-height:25rpx;border-radius: 30rpx; color:#333333;margin-right:25rpx">-</view>
   </view>
 </view>
-</view>
+</view> -->
 </view>
 <view class="order_eight_mark">
   <view class="order_eight_mark_text">备注信息</view>
@@ -93,35 +93,44 @@
   </view>
 </view>
   <view class="order_eight_2">
-    <view class="order_eight_22">服务内容与流程</view>
+    <view class="order_eight_22">耗材需求</view>
+    <view class="order_eight_25">{{eightList.p_package}}</view>
+    <view class="order_eight_22">下单流程</view>
+    <view class="order_eight_23">
+      <view wx:for="{{xdlc}}" wx:key="this">{{item.text}}</view>
+    </view>
+    <view class="order_eight_22">服务流程</view>
     <view class="order_eight_23">
       <view wx:for="{{eightList.msg}}">{{item.msg}}</view>
     </view>
     <view class="order_eight_24">服务须知</view>
-    <view class="order_eight_25">{{eightList.notice}}</view>
+    <view class="order_eight_25">
+    <view>{{eightList.notice}}</view>
+   <view>护士上门已备好基础的医疗耗材，如您需要特殊耗材，请自备。上门护理需至少一名家人居家陪同看护，为了您的权益保障，请在小程序上付款。</view> 
+    </view>
 <image src="https://xiaohulaile.com/wxcx/tuikuan/tuikuan.png" style="width:662rpx;height:602rpx;margin-left:18rpx"></image>
 
   </view>
 
   <view class="order_eight_button_flexs" style="font-family:PingFangSC-Regular;bottom:150rpx" wx:if="{{mingxi == 2}}">
     费用明细
-  <view class="order_eight_project_top" bindtap="showModal" data-target="RadioModal_1" style="margin-top:10rpx">
+  <view class="order_eight_project_top"  data-target="RadioModal_1" style="margin-top:10rpx">
     服务费X{{nums}}
     <div class="order_eight_project_top_right">￥{{price}}.00</div>
   </view>
-  <view class="order_eight_project_top" bindtap="showModal" data-target="RadioModal_1" wx:if="{{eightList.pid !== null}}">
+  <!-- <view class="order_eight_project_top"  data-target="RadioModal_1" wx:if="{{eightList.pid !== null}}">
     耗材费X{{numes}}
     <div class="order_eight_project_top_right">￥{{p_price}}.00</div>
-  </view>
-  <view class="order_eight_project_top" bindtap="showModal" data-target="RadioModal_1">
+  </view> -->
+  <view class="order_eight_project_top"  data-target="RadioModal_1">
     优惠金额
     <div class="order_eight_project_top_right">-￥0.00</div>
   </view>
   </view>
   <view class="order_eight_button_flex" style="font-family:DIN-Medium;">
-    <view style="font-family:PingFangSC-Regular;color:#999999;font-size:24rpx;float:left;margin-top:20rpx">合计：</view>
+    <view style="font-family:PingFangSC-Regular;color:#999999;font-size:28.8rpx;float:left;margin-top:20rpx">合计：</view>
     <view style="color:#EF1515;font-size:34rpx;float:left;margin-top:12rpx">￥{{total_fee}}</view><view style="float:left;line-height:54rpx;color:#EF1515;margin-top:11rpx">.00</view>
-    <view style="overflow:hidden;font-family:PingFangSC-Regular;color:#999999;font-size:24rpx;float:left;margin-top:19rpx;margin-left:150rpx" bindtap="mingxis">明细<image style="width:19rpx;height:12rpx; margin-left:10rpx;" src="{{mingxi == 1 ?'https://www.xiaohulaile.com/xh/p/up.png':'https://www.xiaohulaile.com/xh/p/down.png'}}"></image></view>
+    <view style="overflow:hidden;font-family:PingFangSC-Regular;color:#999999;font-size:28.8rpx;float:left;margin-top:19rpx;margin-left:150rpx" bindtap="mingxis">明细<image style="width:19rpx;height:12rpx; margin-left:10rpx;" src="{{mingxi == 1 ?'https://www.xiaohulaile.com/xh/p/up.png':'https://www.xiaohulaile.com/xh/p/down.png'}}"></image></view>
     <view bindtap="showModal"  data-target="Modal" class="bottom_n37">提交订单</view>
   </view>
 </view>

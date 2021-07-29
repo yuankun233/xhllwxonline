@@ -32,38 +32,22 @@
       </view>
       <!-- 专跳栏 -->
       <view class="my_C_1">
-        <view
-          bindtap="goOurder"
-          data-id="1"
-          class="my_C_11"
-        >
+        <view bindtap="goOurder" data-id="1" class="my_C_11">
           <image class="img_1" src="https://www.xiaohulaile.com/wxcx/gou (4).png"></image>
           <view>待付款</view>
           <view class="jiaobiao3" wx:if="{{statusnum1 > 0}}">{{statusnum1}}</view>
         </view>
-        <view
-          bindtap="goOurder"
-          data-id="2"
-          class="my_C_11"
-        >
+        <view bindtap="goOurder" data-id="2" class="my_C_11">
           <image class="img_2" src="https://www.xiaohulaile.com/wxcx/gou (3).png"></image>
           <view>待服务</view>
-          <view class="jiaobiao1" wx:if="{{statusnum > 0}}">{{statusnum}}</view>
+          <view class="jiaobiao1"  wx:if="{{statusnum > 0}}">{{statusnum}}</view>
         </view>
-        <view
-          bindtap="goOurder"
-          data-id="3"
-          class="my_C_11"
-        >
+        <view bindtap="goOurder" data-id="3" class="my_C_11">
           <image class="img_3" src="https://www.xiaohulaile.com/wxcx/gou (2).png"></image>
           <view>待评价</view>
-          <view class="jiaobiao2" wx:if="{{statusnum2 > 0}}">{{statusnum2}}</view>
+          <view class="jiaobiao2"  wx:if="{{statusnum2 > 0}}">{{statusnum2}}</view>
         </view>
-        <view
-          bindtap="goOurder"
-          data-id="0"
-          class="my_C_11"
-        >
+        <view bindtap="goOurder" data-id="0" class="my_C_11">
           <image class="img_4" src="https://www.xiaohulaile.com/wxcx/gou (1).png"></image>
           <view>全部订单</view>
         </view>
@@ -90,14 +74,9 @@
       <image src="https://www.xiaohulaile.com/wxcx/gou2 (5).png"></image>
       <view style="font-family:PingFangSC-Regular;"> 小护知识</view>
     </view>
-    <view
-      bindtap="goSpecialty"
-      class="my_bottom_1"
-      style="border-top:1rpx solid #ccc"
-    >
+    <view bindtap="goSpecialty" class="my_bottom_1" style="border-top:1rpx solid #ccc">
       <image src="https://www.xiaohulaile.com/wxcx/gou2 (3).png"></image>
       <view style="font-family:PingFangSC-Regular;"> 常见问答</view>
     </view>
   </view>
 </view>
-

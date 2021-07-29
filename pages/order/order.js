@@ -10,12 +10,13 @@ Page({
     user: '',
     list:[],
     page:1,
-    zanwu:'',
+    zanwu:''
   },
   navto:function(option){
     wx.navigateTo({
-      url: '/pages/order/order_details/order_details?id='+option.currentTarget.id,
+      url: '/pages/order/order_details/order_details?id='+option.currentTarget.id+'&time='+this.data.time,
     })
+    console.log(this.data.time,'看获取成功没有');
   },
   tabSelect(e) {
     wx.showLoading({
@@ -69,6 +70,7 @@ Page({
       title: '加载中...',
     })
     console.log(options.index);
+    console.log(options,'看参数');
     var _this = this;
     _this.setData({
       TabCur: options.index,

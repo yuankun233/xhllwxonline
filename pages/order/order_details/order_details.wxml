@@ -88,7 +88,7 @@
     </view>
     <view class="hr"></view>
     <view class="list_time">订单金额
-      <span class="time_right">
+      <span class="time_right" >
         <text>￥{{list.project_price}}</text>
       </span>
     </view>
@@ -112,12 +112,7 @@
   <view wx:if="{{list.status==1}}" class="order_bottom">
     <!-- <view class="button_left">立即评价</view> -->
     <view bindtap="payFn" class="button_right">去支付</view>
-    <view
-      bindtap="quxiao"
-      class="button_right"
-      style="background-color:#fff;color:#c1c1c1;border:1rpx solid #c1c1c1;"
-    >取消订单
-    </view>
+    <view bindtap="quxiao" class="button_right" style="background-color:#fff;color:#c1c1c1;border:1rpx solid #c1c1c1;">取消订单</view>
   </view>
   <!-- 预约拟态框 -->
   <view class="cu-modal {{modalName=='Modal'?'show':''}}">
@@ -127,9 +122,9 @@
       </view>
       <view class="modal_2">
         <view class="modal_21">小护来了居家服务退款须知</view>
-        <view class="modal_22"> 用此护理项目需家属陪同，如家属无法陪同请慎用此护理服务；
-          如服务人员接单后用户取消订单，服务开始前3小时全额退款，如服务开始前3小时内退单，则平台会收取50%的服务费，如服务人员已经出发在路上，不予退款。
-          如有问题，请联系客服热线400-9155-291。
+        <view class="modal_22">  用此护理项目需家属陪同，如家属无法陪同请慎用此护理服务；
+  如服务人员接单后用户取消订单，服务开始前3小时全额退款，如服务开始前3小时内退单，则平台会收取50%的服务费，如服务人员已经出发在路上，不予退款。
+  如有问题，请联系客服热线400-9155-291。
         </view>
         <view class="modal_23">
           <checkbox-group bindchange="checkboxChange">
@@ -140,13 +135,7 @@
       </view>
       <view class="modal_3">
         <view class="modal_31" bindtap="hideModal">取消</view>
-        <view
-          wx:if="{{checkbox.length==1}}"
-          bindtap="refund"
-          data-target="bottomModal"
-          class="modal_32"
-        >同意
-        </view>
+        <view wx:if="{{checkbox.length==1}}" bindtap="refund" data-target="bottomModal" class="modal_32">同意</view>
         <view wx:else class="modal_32">同意</view>
       </view>
     </view>
@@ -163,4 +152,3 @@
   </view> -->
   </view>
 </view>
-

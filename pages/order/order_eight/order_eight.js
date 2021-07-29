@@ -18,6 +18,14 @@ Page({
         time: '18:00-22:00',
       },
     ],
+    xdlc:[
+      {text:"1.预约上门"},
+      {text:"1.首诊评估"},
+      {text:"1.签订知情通知书"},
+      {text:"1.专项操作"},
+      {text:"1.宣教指导"},
+      {text:"1.记录、评价"}
+    ],
     textnum:0,
     archive_id:'',
     time: '请选择被服务时间段',
@@ -68,14 +76,14 @@ Page({
   total(){
     let that = this;
     that.setData({
-      total_fee:that.__data__.p_price + that.__data__.price
+      total_fee: that.__data__.price
     })
   },
   xuyao(){
     var that = this
     that.setData({
       xbxy:1,
-      p_price:that.__data__.eightList.p_price,
+      // p_price:that.__data__.eightList.p_price,
       numes:1
     })
     that.total();
@@ -84,7 +92,7 @@ Page({
     var that = this
     that.setData({
       xbxy:2,
-      p_price:0,
+      // p_price:0,
       numes:1
     })
     that.total();
@@ -196,11 +204,11 @@ Page({
       _this.setData({
         numes:_this.__data__.nums
       })
-      if(_this.__data__.xbxy == 1){
-        _this.setData({
-          p_price:_this.__data__.numes*_this.__data__.eightList.p_price
-        })
-      }
+      // if(_this.__data__.xbxy == 1){
+      //   _this.setData({
+      //     p_price:_this.__data__.numes*_this.__data__.eightList.p_price
+      //   })
+      // }
       _this.setData({
         price:_this.__data__.nums*_this.__data__.eightList.price
       })
@@ -216,9 +224,9 @@ Page({
         _this.setData({
           numes: _this.__data__.numes + parseInt(e.currentTarget.dataset.id),
         });
-        _this.setData({
-          p_price:_this.__data__.numes*_this.__data__.eightList.p_price
-        })
+        // _this.setData({
+        //   p_price:_this.__data__.numes*_this.__data__.eightList.p_price
+        // })
         _this.total();
       }
       return;
@@ -227,9 +235,9 @@ Page({
         _this.setData({
           numes: _this.__data__.numes + parseInt(e.currentTarget.dataset.id),
         });
-        _this.setData({
-          p_price:_this.__data__.numes*_this.__data__.eightList.p_price
-        })
+        // _this.setData({
+        //   p_price:_this.__data__.numes*_this.__data__.eightList.p_price
+        // })
         _this.total();
       }else{
         wx.showToast({
@@ -375,8 +383,9 @@ Page({
           consumables:_this.__data__.eightList.pid
         },
         success(res) {
-          console.log(res, '11');
+          console.log(res, '看一下11');
           console.log(res.data, '22');
+          console.log(res.header.Date,'时间')
           _this.setData({
             isPay: false,
           });
@@ -395,8 +404,9 @@ Page({
               },
               fail(res) {
                 console.log(res);
+                console.log(_this.__data__.now,'时间');
                 wx.redirectTo({
-                  url: '/pages/order/order?index=0',
+                  url: '/pages/order/order?index='+0,
                 });
               },
             });
@@ -469,12 +479,12 @@ Page({
             _this.setData({
               eightList: res.data.data,
               price: res.data.data.price,
-              p_price:res.data.data.p_price,
+              // p_price:res.data.data.p_price,
               total_fee: res.data.data.price
             });
-
+            // console.log(res.data.data,'数据')
             _this.setData({
-              total_fee:_this.__data__.p_price + _this.__data__.price
+              total_fee: _this.__data__.price
             })
             wx.hideLoading()
           },
@@ -498,15 +508,13 @@ Page({
     });
     var datetime = new Date();
     var year = datetime.getFullYear(); //获取完整的年份(4位,1970)
-    var month = datetime.getMonth() + 1; //获取月份(0-11,0代表1月,用的时候记得加上1)
-    if (month <= 9) {
-      month = '0' + month;
-    }
-    var date = datetime.getDate(); //获取日(1-31)
-    if (date <= 9) {
-      date = '0' + date;
-    }
-    var dateformat = year + '-' + month + '-' + date;
+    var month = (datetime.getMonth() + 1).toString().padStart(2,0); //获取月份(0-11,0代表1月,用的时候记得加上1)
+    var hours = datetime.getHours().toString().padStart(2,0);
+    var minute = datetime.getMinutes().toString().padStart(2,0);
+    var second = datetime.getSeconds().toString().padStart(2,0);
+    var date = datetime.getDate().toString().padStart(2,0); //获取日(1-31)
+
+    var dateformat = year + '-' + month + '-' + date + '-' + hours + '-' + minute + '-' + second;
     this.setData({
       now:dateformat
     })

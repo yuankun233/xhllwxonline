@@ -10,13 +10,6 @@ Page({
     statusnum:'',
     statusnum2:''
   },
-  // clickImg(){
-  //   console.log('123')
-
-  //   wx.previewImage({
-  //     urls: ['https://www.xiaohulaile.com/xh/p/upload/saoma.jpg'],
-  //   })
-  // },
   goFile() {
     var _this = this;
     wx.request({

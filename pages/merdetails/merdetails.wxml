@@ -1,4 +1,3 @@
-<!--pages/merdetails/merdetails.wxml-->
 <view class="merdetails">
   <!-- 背景 -->
   <image class="backgroundimg" src="../../images/index/background.png" ></image>

@@ -18,31 +18,32 @@
     </view>
     <view class="hr"></view>
     <view class="detil">
-      <view class="detilname" style="font-family:PingFang-SC-Medium;">{{name}}
-        <span class="detilxm" style="font-family:PingFang-SC-Medium">PICC导管维护 基础护理</span>
-      </view>
+      <view class="detilname" style="font-family:PingFang-SC-Medium;">{{nurse.name}}</view>
       <view class="detiltype">
-        <image src="http://www.xiaohulaile.com/xh/p/doc/typedoc.png"></image>
-        <span style="font-family: PingFang-SC-Medium;">上海长护庙康护理站</span>
+        <image src="http://www.xiaohulaile.com/xh/p/doc/typedoc.png"></image><span
+          style="font-family: PingFang-SC-Medium;">{{nurse.hlz}}</span>
       </view>
       <view class="detilcontent" style="font-family:PingFang-SC-Medium;">
-        <span style="color:#4178F0;">专业擅长：</span>
-        提供PICC的管道维护服务，包括检查皮肤及管路情况、换药、健康指导。
+        <span style="color:#4178F0;">专业擅长：</span>{{nurse.message}}
       </view>
       <view class="detilbottom">
         <image src="http://www.xiaohulaile.com/xh/p/doc/Bluestart.png"></image>
         <span style="font-family:DIN-BlackItalic;color:#4178F0;"> 5.0</span>
-        <span style="margin-left:24rpx;margin-right:14rpx;font-size: 20rpx; line-height: 30rpx;color:#4178F0;font-family:DIN-BlackItalic;">/</span>
-        <span style="line-height:30rpx;font-family:PingFang-SC-Regular;font-size: 20rpx;color:#999999;margin-right:14rpx;">已服务</span>
+        <span
+          style="margin-left:24rpx;margin-right:14rpx;font-size: 20rpx; line-height: 30rpx;color:#4178F0;font-family:DIN-BlackItalic;">/</span>
+        <span
+          style="line-height:30rpx;font-family:PingFang-SC-Regular;font-size: 20rpx;color:#999999;margin-right:14rpx;">已服务</span>
         <span style="font-family:DIN-BlackItalic;color:#4178F0;">{{num}}</span>
-        <span style="margin-left:24rpx;margin-right:14rpx;font-size: 20rpx; line-height: 30rpx;color:#4178F0;font-family:DIN-BlackItalic;">/</span>
-        <span style="line-height:30rpx;font-family:PingFang-SC-Regular;font-size: 20rpx;color:#999999;margin-right:14rpx;">上门时间</span>
+        <span
+          style="margin-left:24rpx;margin-right:14rpx;font-size: 20rpx; line-height: 30rpx;color:#4178F0;font-family:DIN-BlackItalic;">/</span>
+        <span
+          style="line-height:30rpx;font-family:PingFang-SC-Regular;font-size: 20rpx;color:#999999;margin-right:14rpx;">上门时间</span>
         <span style="font-family:DIN-BlackItalic;color:#4178F0;">48h</span>
       </view>
     </view>
   </view>
-  <view class="xm">
-    <view class="xm1">
+  <!-- <view class="xm">
+    <view class="xm1" >
       <view class="imagespan">
         <image src="https://www.xiaohulaile.com/wxcx/81.png"></image>
       </view>
@@ -52,13 +53,7 @@
         <view style="margin-left:10rpx;font-family:PingFang-SC-Medium;color: #CCCCCC;font-size: 22rpx;">48小时上门服务</view>
       </view>
       <view class="godetil">
-        <span
-          bindtap="go_eight"
-          data-id="1"
-          style="font-family:PingFang-SC-Light; color:#fff;font-size: 28rpx;"
-        >查看
-          <image src="http://www.xiaohulaile.com/xh/p/doc/goright.png"></image>
-        </span>
+        <span bindtap="go_eight" data-id="1" style="font-family:PingFang-SC-Light; color:#fff;font-size: 28rpx;">查看 <image src="http://www.xiaohulaile.com/xh/p/doc/goright.png"></image></span>
       </view>
     </view>
     <view class="xm1">
@@ -71,16 +66,9 @@
         <view style="margin-left:10rpx;font-family:PingFang-SC-Medium;color: #CCCCCC;font-size: 22rpx;">48小时上门服务</view>
       </view>
       <view class="godetil">
-        <span
-          bindtap="go_eight"
-          data-id="7"
-          style="font-family:PingFang-SC-Light; color:#fff;font-size: 28rpx;"
-        >查看
-          <image src="http://www.xiaohulaile.com/xh/p/doc/goright.png"></image>
-        </span>
+        <span bindtap="go_eight" data-id="7" style="font-family:PingFang-SC-Light; color:#fff;font-size: 28rpx;">查看 <image src="http://www.xiaohulaile.com/xh/p/doc/goright.png"></image></span>
       </view>
     </view>
-  </view>
-
+  </view> -->
+  
 </view>
-

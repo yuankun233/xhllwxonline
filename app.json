@@ -1,8 +1,7 @@
 {
   "pages": [
-    "pages/login/login",
-    "pages/fill/Fill",
     "pages/index/index",
+    "pages/fill/Fill",
     "pages/phone/phone",
     "pages/message/message",
     "pages/message_details/message_details",
@@ -21,7 +20,8 @@
     "pages/aboutus/aboutus",
     "pages/scancode/scancode",
     "pages/start/start",
-    "pages/ledge/ledge"
+    "pages/ledge/ledge",
+    "pages/login/login"
   ],
   "permission": {
     "scope.userLocation": {

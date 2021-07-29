@@ -9,6 +9,7 @@ Page({
     checkbox: '',
     modalName: '',
     isPay: false,
+    time:''
   },
   goSpecialty() {
     // wx.navigateTo({
@@ -85,7 +86,7 @@ Page({
       _this.setData({
         isPay: true,
       });
-      console.log('付钱');
+      console.log(_this.__data__.list.id,'付钱');
       wx.request({
         url: 'https://www.xiaohulaile.com/xh/p/wxcx/pay/pay',
         header: {
@@ -193,8 +194,11 @@ Page({
     wx.showLoading({
       title: '加载中...',
     })
-    console.log(option);
     let _this = this;
+    _this.setData({
+      time: option.time,
+    });
+    console.log(_this.data.time,'看时间参数');
     wx.getStorage({
       key: 'user',
       success(res) {
@@ -202,7 +206,6 @@ Page({
         _this.setData({
           user: res.data,
         });
-        // 获取订单信息
         wx.request({
           url: 'https://www.xiaohulaile.com/xh/p/wxcx/order/get_data',
           header: {
@@ -214,7 +217,7 @@ Page({
           },
           success(res) {
             {
-              console.log(res);
+              console.log(res,'订单数据');
               _this.setData({
                 list: res.data.data,
               });

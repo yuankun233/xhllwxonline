@@ -58,7 +58,7 @@
 }
 .merdetails .list .list_top_left {
   overflow: hidden;
-  margin-left: 181rpx;
+  margin-left: 140rpx;
 }
 .merdetails .list .list_top_left .list_name {
   height: 40rpx;

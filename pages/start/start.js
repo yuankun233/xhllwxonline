@@ -1,36 +1,42 @@
 // pages/start/start.js
+import {$myRequest} from '../../utils/request'
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    name:'',
-    num:'',
-    nurse:''
+    nurseList:'',
+    img:''
   },
   back:function(){
     wx.navigateBack({})
   },
-  go_eight(e) {
-    console.log(e.currentTarget.dataset.id);
-    if (
-      e.currentTarget.dataset.id == '1' ||
-      e.currentTarget.dataset.id == '3' ||
-      e.currentTarget.dataset.id == '5' ||
-      e.currentTarget.dataset.id == '6'
-    ) {
-      wx.navigateTo({
-        url: `/pages/order/order_eight/order_eight?index=${e.currentTarget.dataset.id}`,
-      });
-    } else {
-      wx.showToast({
-        title: '敬请期待....',
-        icon: 'none',
-        duration: 2000,
-      });
-    }
-  },
+ async getnurseList(res) {
+  const resList = await $myRequest({
+      url:'/nurse/index',
+      data:{
+        id: res
+      }
+  })
+  this.setData({
+    nurseList:resList
+  })
+  console.log(this.data.nurseList);
+  if(resList.level == '护师'){
+      this.setData({
+        img:'https://www.xiaohulaile.com/xh/p/doc/hushi2.png'
+      })
+  }else if (resList.level == '护士') {
+    this.setData({
+      img:'https://www.xiaohulaile.com/xh/p/doc/hushi1.png'
+    })
+  }else if (resList.level == '主管护师') {
+    this.setData({
+      img:'https://www.xiaohulaile.com/xh/p/doc/zhuguanhushi.png'
+    })
+  }
+},
   /**
    * 生命周期函数--监听页面加载
    */
@@ -38,12 +44,8 @@ Page({
     wx.showLoading({
       title: '加载中...',
     })
-    const nurse = JSON.parse(options.nurse);
-    this.setData({
-      nurse,
-    })
-    console.log(this.data.nurse);
     wx.hideLoading()
+    this.getnurseList(options.nurse);
   },
 
   /**

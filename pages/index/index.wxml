@@ -4,7 +4,6 @@
   <view class="index_top">
     <image class="index_top_1" src="https://www.xiaohulaile.com/wxcx/ditu.png"></image>
     <view class="index_top_2">{{address}}</view>
-    <!-- <image class="index_top_3" src="https://www.xiaohulaile.com/wxcx/xia.png"></image> -->
     <image class="index_top_4" src="https://www.xiaohulaile.com/wxcx/sosuo.png"></image>
     <input class="index_top_5" placeholder="可搜索服务项目..." placeholder-class="AA" cursor-spacing="10" type="text" />
   </view>
@@ -32,77 +31,35 @@
   <view class="index_bottom">
     <!-- 预约服务 -->
     <view class="index_bottom_1 index_bottom_AA" bindtap="goSpecialty">
-      <image src="https://www.xiaohulaile.com/wxcx/yuyue.png"></image>
+      <image src="https://www.xiaohulaile.com/wxcx/tel.png"></image>
       <view class="zy">联系客服</view>
       <view class="zy_1">专业人员解答</view>
     </view>
     <view class="index_bottom_2 index_bottom_AA" bindtap="goAppointment">
-      <image src="https://www.xiaohulaile.com/wxcx/zhuanye.png"></image>
+      <image src="https://www.xiaohulaile.com/wxcx/doct.png"></image>
       <view class="zy">预约服务</view>
       <view class="zy_1">按需求找服务</view>
     </view>
-    <!-- 居家护理项目 -->
-    <view class="bottom_Jujia">
-   专业护理
-    </view>
-    <!-- <view class="bottom_ckgd" bindtap="goAppointment">
-      查看更多>
-    </view> -->
-    <!-- <view class="bottom_8">
-      <view  class="bottom_box">
-      <view bindtap="go_eight" data-id="30" class="bottom_8_A">
-        <image class="amg_1" src="../../images/组 1.png"></image>
-        <view>肌肉注射</view>
-      </view>
-      <view bindtap="go_eight" data-id="13" class="bottom_8_A">
-        <image class="amg_2" src="../../images/组 2.png"></image>
-        <view>静脉采血</view>
-      </view>
-      <view bindtap="go_eight" data-id="32" class="bottom_8_A">
-        <image class="amg_3" src="../../images/组 3.png"></image>
-        <view>导尿(男)</view>
-      </view>
-      <view bindtap="go_eight" data-id="33" class="bottom_8_A">
-        <image class="amg_4" src="../../images/组 4.png"></image>
-        <view>导尿(女)</view>
-      </view>
-      </view>
-      <view class="bottom_box1">
-      <view bindtap="go_eight" data-id="16" class="bottom_8_A">
-        <image class="amg_5" src="../../images/组 5.png"></image>
-        <view>伤口换药</view>
-      </view>
-      <view bindtap="go_eight" data-id="35" class="bottom_8_A">
-        <image class="amg_6" src="../../images/组 6.png"></image>
-        <view>皮下注射</view>
-      </view>
-    </view>
-      <view bindtap="go_eight" data-id="16" class="bottom_8_A">
-        <image class="amg_7" src="https://www.xiaohulaile.com/wxcx/87.png"></image>
-        <view>伤口护理</view>
-      </view>
-      <view bindtap="go_eight" data-id="15" class="bottom_8_A">
-        <image class="amg_8" src="https://www.xiaohulaile.com/wxcx/90.png"></image>
-        <view>鼻饲管更换</view>
-      </view>
-</view>  -->
-    <!-- <swiper class="lbT"
-    display-multiple-items="{{shuL}}"
->
-  <block wx:for="{{one}}" wx:key="{{imG}}" >
-    <swiper-item>
-      <view class="szlb">
-        <view><image src="{{item.imG}}"></image></view>
-        <view>{{item.name}}</view>
-      </view>
-    </swiper-item>
-  </block>
-  </swiper> -->
-    <!-- 居家护理项目 -->
 
-    <!-- <view class="bottom_Jujia_2">
-    专业护理
-    </view> -->
+    <view class="top"></view>
+    <!-- 专科护理 -->
+    <view class="hlOne" wx:if="{{specialtyLists != ''}}">
+      <view class="bottom_Jujia1">
+      专科护理
+    </view>
+    <view class="bottom_mx2_1">
+     <view class="bottom_mx_1" wx:for="{{specialtyLists}}" wx:key="{{title}}" bindtap="goOrder" data-id="{{item.id}}">
+       <image class="bottom_mx_img" src="{{item.zy_pic}}"></image>
+       <view class="bottom_mx_title">{{item.title}}</view>
+       <view class="bottom_mx_price"><view style="float:left;">￥{{item.price}}</view><view style="font-size:22rpx;float:left;line-height:45rpx">.00</view></view>
+     </view> 
+    </view>
+    </view>
+    <!-- 居家护理项目 -->
+    <view class="hlTwo">
+    <view class="bottom_Jujia">
+      临床护理
+    </view>
     <view class="bottom_mx2">
      <view class="bottom_mx_1" wx:for="{{list}}" wx:key="{{index}}" bindtap="goOrder" data-id="{{item.id}}">
        <image class="bottom_mx_img" src="{{item.zy_pic}}"></image>
@@ -110,27 +67,15 @@
        <view class="bottom_mx_price"><view style="float:left;">￥{{item.price}}</view><view style="font-size:22rpx;float:left;line-height:45rpx">.00</view></view>
      </view> 
     </view>
-    <!-- <view class="bottom_Jujia_3">
-    生活照料
-    </view>
-    <view class="bottom_mx3">
-     <view class="bottom_mx_2" wx:for="{{lists}}" wx:key="{{index}}" bindtap="goOrder" data-id="{{item.id}}">
-       <image class="bottom_mx_img1" src="{{item.zy_pic}}"></image>
-       <view class="bottom_mx_title1">{{item.title}}</view>
-       <view class="bottom_mx_price1"><view style="float:left;">￥{{item.price}}</view><view style="font-size:22rpx;float:left;line-height:45rpx">.00</view></view>
-     </view> 
-    </view> -->
+  </view>
+  <view class="hlThree">
     <view class="bottom_Jujia_1">
       明星服务团队
     </view>
     <view class="bottom_mx">
-      <!-- <image src="https://www.xiaohulaile.com/wxcx/startdoc/ding.png" class="bottom_mx_1" bindtap="gostart" data-num="236" data-name="马护士"></image> -->
-      <!-- <image src="https://www.xiaohulaile.com/wxcx/startdoc/feng.png" class="bottom_mx_1" bindtap="gostart" data-num="398" data-name="富护士"></image>
-      <image src="https://www.xiaohulaile.com/wxcx/startdoc/jiang.png" class="bottom_mx_1" bindtap="gostart" data-num="398" data-name="蒋护士"></image>
-      <image src="https://www.xiaohulaile.com/wxcx/startdoc/li.png" class="bottom_mx_1" bindtap="gostart" data-num="236" data-name="李护士"></image>
-      <image src="https://www.xiaohulaile.com/wxcx/startdoc/sun.png" class="bottom_mx_1" bindtap="gostart" data-num="398" data-name="武护士"></image> -->
-      <image  wx:for="{{nurseList}}" wx:key="this" src="{{item.pic_url}}" class="bottom_mx_1" bindtap="gostart" data-nurse="{{item}}"></image>
+      <image  wx:for="{{nurseLists}}" wx:key="this" src="{{item.map}}" class="bottom_mx_1" bindtap="gostart" data-id="{{item.id}}"></image>
     </view>
+  </view>
   </view>
   <view style="width:750rpx;height:70rpx;line-height: 70rpx; text-align:center;font-size:28rpx;color:#ccc">目前服务范围：上海</view>
 </view>

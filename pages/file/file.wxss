@@ -163,6 +163,6 @@ checkbox::before {
   font-size: 34rpx;
 }
 .CC {
-  color: #cccccc !important;
+  /* color: #cccccc !important; */
   font-size: 34rpx;
 }

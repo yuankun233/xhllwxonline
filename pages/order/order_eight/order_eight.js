@@ -20,11 +20,11 @@ Page({
     ],
     xdlc:[
       {text:"1.预约上门"},
-      {text:"1.首诊评估"},
-      {text:"1.签订知情通知书"},
-      {text:"1.专项操作"},
-      {text:"1.宣教指导"},
-      {text:"1.记录、评价"}
+      {text:"2.首诊评估"},
+      {text:"3.签订知情通知书"},
+      {text:"4.专项操作"},
+      {text:"5.宣教指导"},
+      {text:"6.记录、评价"}
     ],
     textnum:0,
     archive_id:'',
@@ -100,7 +100,7 @@ Page({
   // 拟态框
   showModal(e) {
     console.log(1233);
-    console.log(e);
+    console.log(e,"这里");
     this.huoqubfw();
     this.setData({
       modalName: e.currentTarget.dataset.target,
@@ -171,6 +171,7 @@ Page({
       _this.setData({
         name: obj.name,
       });
+
     },
   // 订单数
   jiaFN(e) {
@@ -204,6 +205,7 @@ Page({
       _this.setData({
         numes:_this.__data__.nums
       })
+      //删除耗材包价格
       // if(_this.__data__.xbxy == 1){
       //   _this.setData({
       //     p_price:_this.__data__.numes*_this.__data__.eightList.p_price
@@ -224,6 +226,7 @@ Page({
         _this.setData({
           numes: _this.__data__.numes + parseInt(e.currentTarget.dataset.id),
         });
+        //删除耗材包价格
         // _this.setData({
         //   p_price:_this.__data__.numes*_this.__data__.eightList.p_price
         // })
@@ -235,6 +238,7 @@ Page({
         _this.setData({
           numes: _this.__data__.numes + parseInt(e.currentTarget.dataset.id),
         });
+        //删除耗材包价格
         // _this.setData({
         //   p_price:_this.__data__.numes*_this.__data__.eightList.p_price
         // })
@@ -344,7 +348,7 @@ Page({
       var _this = this;
       if (
         _this.__data__.archive_id == '' ||
-        _this.__data__.data == '' ||
+        _this.__data__.data == '请选择服务日期' ||
         _this.__data__.time_slot == ''
       ) {
         wx.showToast({
@@ -385,7 +389,7 @@ Page({
         success(res) {
           console.log(res, '看一下11');
           console.log(res.data, '22');
-          console.log(res.header.Date,'时间')
+          console.log(res.header.Date,'时间');
           _this.setData({
             isPay: false,
           });
@@ -480,11 +484,11 @@ Page({
               eightList: res.data.data,
               price: res.data.data.price,
               // p_price:res.data.data.p_price,
-              total_fee: res.data.data.price
+              total_fee:  _this.__data__.price
             });
             // console.log(res.data.data,'数据')
             _this.setData({
-              total_fee: _this.__data__.price
+              total_fee:_this.__data__.price
             })
             wx.hideLoading()
           },

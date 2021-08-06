@@ -5,26 +5,24 @@
   <!-- 头部 -->
   <view class="top">
     <image src="../../images/index/back.png" bindtap="back"></image>
-    <span>护理员简介</span>
   </view>
   <!-- 详情 -->
   <view class="list">
-    <image class="list_pic" src="http://www.xiaohulaile.com/xh/p/doc/doc1.png"></image>
+    <image class="list_pic" src="{{nurseList.img}}"></image>
     <view class="list_top_left">
       <view class="list_name">
         <image src="http://www.xiaohulaile.com/xh/p/doc/startdoc.png"></image>
       </view>
-
     </view>
     <view class="hr"></view>
     <view class="detil">
-      <view class="detilname" style="font-family:PingFang-SC-Medium;">{{nurse.name}}</view>
+      <view class="detilname" style="font-family:PingFang-SC-Medium;">{{nurseList.name}}</view>
       <view class="detiltype">
-        <image src="http://www.xiaohulaile.com/xh/p/doc/typedoc.png"></image><span
-          style="font-family: PingFang-SC-Medium;">{{nurse.hlz}}</span>
+        <image src="{{img}}"></image><span
+          style="font-family: PingFang-SC-Medium;">{{nurseList.nursing}}</span>
       </view>
       <view class="detilcontent" style="font-family:PingFang-SC-Medium;">
-        <span style="color:#4178F0;">专业擅长：</span>{{nurse.message}}
+        <span style="color:#4178F0; font-size:33.6rpx;">简介：</span>{{nurseList.content}}
       </view>
       <view class="detilbottom">
         <image src="http://www.xiaohulaile.com/xh/p/doc/Bluestart.png"></image>
@@ -33,7 +31,7 @@
           style="margin-left:24rpx;margin-right:14rpx;font-size: 20rpx; line-height: 30rpx;color:#4178F0;font-family:DIN-BlackItalic;">/</span>
         <span
           style="line-height:30rpx;font-family:PingFang-SC-Regular;font-size: 20rpx;color:#999999;margin-right:14rpx;">已服务</span>
-        <span style="font-family:DIN-BlackItalic;color:#4178F0;">{{num}}</span>
+        <span style="font-family:DIN-BlackItalic;color:#4178F0;">{{nurseList.num}}</span>
         <span
           style="margin-left:24rpx;margin-right:14rpx;font-size: 20rpx; line-height: 30rpx;color:#4178F0;font-family:DIN-BlackItalic;">/</span>
         <span
@@ -42,33 +40,4 @@
       </view>
     </view>
   </view>
-  <!-- <view class="xm">
-    <view class="xm1" >
-      <view class="imagespan">
-        <image src="https://www.xiaohulaile.com/wxcx/81.png"></image>
-      </view>
-      <view class="xmname">
-        <span style="margin-left:10rpx;font-family:PingFang-SC-Bold;font-size: 34rpx;">PICC导管维护</span>
-        <span style="font-family:PingFang-SC-Bold;color:#808080;margin-left:10rpx;">￥366/次</span>
-        <view style="margin-left:10rpx;font-family:PingFang-SC-Medium;color: #CCCCCC;font-size: 22rpx;">48小时上门服务</view>
-      </view>
-      <view class="godetil">
-        <span bindtap="go_eight" data-id="1" style="font-family:PingFang-SC-Light; color:#fff;font-size: 28rpx;">查看 <image src="http://www.xiaohulaile.com/xh/p/doc/goright.png"></image></span>
-      </view>
-    </view>
-    <view class="xm1">
-      <view class="imagespan">
-        <image src="https://www.xiaohulaile.com/wxcx/87.png"></image>
-      </view>
-      <view class="xmname">
-        <span style="margin-left:10rpx;font-family:PingFang-SC-Bold;font-size: 34rpx;">基础护理</span>
-        <span style="font-family:PingFang-SC-Bold;color:#808080;margin-left:10rpx;">￥65/时</span>
-        <view style="margin-left:10rpx;font-family:PingFang-SC-Medium;color: #CCCCCC;font-size: 22rpx;">48小时上门服务</view>
-      </view>
-      <view class="godetil">
-        <span bindtap="go_eight" data-id="7" style="font-family:PingFang-SC-Light; color:#fff;font-size: 28rpx;">查看 <image src="http://www.xiaohulaile.com/xh/p/doc/goright.png"></image></span>
-      </view>
-    </view>
-  </view> -->
-  
 </view>

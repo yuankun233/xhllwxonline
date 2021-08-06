@@ -95,14 +95,14 @@ page {
 }
 .merdetails .list .detil .detiltype span {
   height: 30srpx;
-  font-size: 28rpx;
+  font-size: 33.6rpx;
   font-family: PingFang SC;
   font-weight: 500;
   color: #333333;
   margin-left: 36rpx;
 }
 .merdetails .list .detil .detilcontent {
-  font-size: 24rpx;
+  font-size: 28.8rpx;
   font-family: PingFang SC;
   font-weight: 500;
   margin-top: 22rpx;

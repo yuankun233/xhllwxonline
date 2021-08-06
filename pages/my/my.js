@@ -268,7 +268,7 @@ Page({
             status: 3
           },
           success(res) {
-            console.log(res.data.message,111)
+            console.log(res.data.message,111);
             if(res.data.message == "请重新登录"){
               console.log(res,111)
               wx.showToast({

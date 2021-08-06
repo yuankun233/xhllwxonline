@@ -20,39 +20,39 @@ Page({
     });
   },
   quxiao() {
-    let _this = this
-    wx.request({
-      url:'https://www.xiaohulaile.com/xh/p/wxcx/order/order_cancel',
-      header: {
-        'content-type': 'application/x-www-form-urlencoded',
-      },
-      method: 'post',
-      data: {
-        user_token: _this.__data__.user.user_token,
-        id:_this.__data__.list.id
-      },
-      success(res) {
-        console.log(res)
+    //点击取消订单按钮时弹出提示框
         wx.showModal({  
           title: '提示',  
           content: '取消订单之后需重新下单',  
-          success: function(res) {  
-              if (res.confirm) {  
-              wx.showToast({
-                title: '取消成功！',
-                icon:'success',
-                duration:2000
-              })
-              wx.navigateBack({
-                delta: 0,
-              })
+          success: (res)=>{  
+            //当点击确定的时候请求取消订单
+              if (res.confirm) { 
+                wx.request({
+                  url:'https://www.xiaohulaile.com/xh/p/wxcx/order/order_cancel',
+                  header: {
+                    'content-type': 'application/x-www-form-urlencoded',
+                  },
+                  method: 'post',
+                  data: {
+                    user_token: this.data.user.user_token,
+                    id:this.data.list.id
+                  },
+                  success(res) { 
+                    wx.showToast({
+                      title: '取消成功！',
+                      icon:'success',
+                      duration:2000
+                    })
+                    wx.navigateBack({
+                      delta: 0,
+                    })
+                    }
+                    })
               } else if (res.cancel) {  
-               
+                
               }  
           }  
       }) 
-      }
-    })
   },
   checkboxChange(e) {
     console.log('checkbox发生change事件，携带value值为：', e.detail.value);
@@ -153,7 +153,7 @@ Page({
               id: _this.__data__.list.id,
             },
             success(res) {
-              console.log(res.data.code);
+              console.log(res,'code');
               if (res.data.code == 0) {
                 wx.showToast({
                   title: '退款成功',

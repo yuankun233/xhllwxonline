@@ -53,28 +53,6 @@
     <view bindtap="jiaFN" data-id="-1" style="width:30rpx;height:30rpx;float:right;background-color:#E9EEFA;margin-top: 26rpx;text-align:center;line-height:25rpx;border-radius: 30rpx; color:#333333;margin-right:25rpx">-</view>
     </view>
   </view>
-  <!-- <view class="order_eight_project_top" wx:if="{{eightList.p_price !== 0}}">
-    选择耗材
-    <view style="float:left;font-size:34rpx;margin-left:10rpx;float:right;line-height: 85.5rpx;">元/个</view><view style="float:left;line-height:52rpx;color:#EF1515;float:right;margin-top:19rpx;font-family: DIN-Medium;">.00</view><view style="color:#EF1515;font-size:34rpx;float:right;font-family: DIN-Medium;line-height: 85.5rpx;">￥{{eightList.p_price}}</view>
-  </view>
-  <view wx:if="{{eightList.p_price !== 0 }}">
-  <view class="order_eight_project_Material" wx:if="{{eightList.p_price !== 0}}">
-    <view class="order_eight_project_Material_left {{xbxy == 1 ?'click':''}}" bindtap="xuyao">需要耗材包</view>
-    <view class="order_eight_project_Material_left {{xbxy == 2 ?'click':''}}" bindtap="bxuyao">无需耗材包</view>
-  </view>
-  <view class="order_eight_project_content" wx:if="{{xbxy == 1}}">
-    {{eightList.p_package}}
-  </view>
-<view style="height:50rpx;margin-bottom:20rpx;font-family: PingFangSC-Regular;" wx:if="{{xbxy == 1}}">
-  <view style="width:70rpx;height:70rpx;float:right;">
-  <view bindtap="jiaFNs" data-id="1" style="width:30rpx;height:30rpx;float:right;background-color:#E9EEFA;margin-top: 26rpx;text-align:center;line-height:25rpx;border-radius: 30rpx; color:#333333;margin-right:15rpx">+</view>
-  </view>  
-  <div class="order_eight_project_top_right;" style="line-height: 85.5rpx; float:right;font-size:34rpx; color:#333333">{{numes}}</div>
-  <view style="width:70rpx;height:70rpx;float:right;">
-  <view bindtap="jiaFNs" data-id="-1" style="width:30rpx;height:30rpx;float:right;background-color:#E9EEFA;margin-top: 26rpx;text-align:center;line-height:25rpx;border-radius: 30rpx; color:#333333;margin-right:25rpx">-</view>
-  </view>
-</view>
-</view> -->
 </view>
 <view class="order_eight_mark">
   <view class="order_eight_mark_text">备注信息</view>
@@ -95,18 +73,17 @@
   <view class="order_eight_2">
     <view class="order_eight_22">耗材需求</view>
     <view class="order_eight_25">{{eightList.p_package}}</view>
-    <view class="order_eight_22">下单流程</view>
+    <view class="order_eight_22">服务流程</view>
     <view class="order_eight_23">
       <view wx:for="{{xdlc}}" wx:key="this">{{item.text}}</view>
     </view>
-    <view class="order_eight_22">服务流程</view>
+    <view class="order_eight_22">操作流程</view>
     <view class="order_eight_23">
       <view wx:for="{{eightList.msg}}">{{item.msg}}</view>
     </view>
     <view class="order_eight_24">服务须知</view>
     <view class="order_eight_25">
     <view>{{eightList.notice}}</view>
-   <view>护士上门已备好基础的医疗耗材，如您需要特殊耗材，请自备。上门护理需至少一名家人居家陪同看护，为了您的权益保障，请在小程序上付款。</view> 
     </view>
 <image src="https://xiaohulaile.com/wxcx/tuikuan/tuikuan.png" style="width:662rpx;height:602rpx;margin-left:18rpx"></image>
 
@@ -136,7 +113,7 @@
 </view>
   <!-- 单选拟态框 -->
   <view class="cu-modal {{modalName=='RadioModal'?'show':''}}" bindtap="hideModal">
-    <view class="cu-dialog" catchtap>
+    <view class="cu-dialog" bindtap="hideModal">
       <radio-group class="block" bindchange="radioChange">
         <view class="cu-list menu text-left">
           <view class="cu-item"wx:for="{{user_list}}"  wx:if="{{user_list!==''}}"  wx:key>
@@ -152,7 +129,7 @@
   </view>
     <!-- 单选拟态框_时间段 -->
     <view class="cu-modal {{modalName=='RadioModal_1'?'show':''}}" bindtap="hideModal">
-    <view class="cu-dialog" catchtap>
+    <view class="cu-dialog" bindtap="hideModal">
       <radio-group class="block" bindchange="radioChange_1">
         <view class="cu-list menu text-left">
           <view class="cu-item" wx:for="{{times}}" wx:key>

@@ -17,6 +17,22 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
+    wx.getStorage({
+      key: 'user',
+      fail(res) {
+        wx.showToast({
+          title: '请先登录',
+          icon: 'none',
+          duration: 1000,
+        });
+        setTimeout(function () {
+          console.log('doSomething');
+          wx.reLaunch({
+            url: '/pages/login/login',
+          });
+        }, 1000);
+      },
+    });
     wx.showLoading({
       title: '加载中...',
     })

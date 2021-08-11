@@ -29,6 +29,13 @@ Page({
       url: `/pages/start/start?nurse=${nurse}`,
     });
   },
+  //跳转到订单详情
+  goOrder(e) {
+    console.log(e.currentTarget.dataset.id);
+    wx.navigateTo({
+      url: `/pages/order/order_eight/order_eight?index=${e.currentTarget.dataset.id}`,
+    });
+  },
   //跳转到关于我们
   tobanner1() {
     wx.navigateTo({
@@ -54,18 +61,119 @@ Page({
     });
   },
   //点击跳转的时候未登录状态跳转到登录页面
-  async goAppointment() {
-    try {
-      const res = await jump();
-      console.log(res);
+  goAppointment() {
       wx.navigateTo({
-        url: '/pages/appointment/appointment',
+        url: '/pages/appointment/appointment'
       });
-    }catch (e) {
-      console.log(e);
-    }
+    },
+  //获取护士列表
+  async getLsit() {
+    const res = await $myRequest({
+      url: '/nurse/list',
+      data: {
+        code: 0
+      }
+    })
+    this.setData({
+      nurseLists: res
+    })
   },
-  // go_eight(e) {
+  //获取专科护理列表
+  async specialty() {
+    const res = await $myRequest({
+      url: '/project/get_list',
+      data: {
+        cate: 2
+      }
+    })
+    this.setData({
+      specialtyLists: res.data
+    })
+  },
+   //获取临床护理列表
+   async clinic() {
+    const res = await $myRequest({
+      url: '/project/get_list',
+      data: {
+        cate: 1
+      }
+    })
+    this.setData({
+      list: res.data
+    })
+    console.log(this.data.list);
+  },
+  //获取当前位置
+  map() {
+    var QQMapWX = require('../../lib/qqmap-wx-jssdk.min.js');
+    var qqmapsdk;
+    // 实例化API核心类
+    qqmapsdk = new QQMapWX({
+      key: 'EXYBZ-NKXC3-BB53J-3FOMZ-LK7DQ-APF7G',
+    });
+    var that = this;
+    // 调用接口
+    qqmapsdk.reverseGeocoder({
+      poi_options: 'policy=2',
+      success: function (res) {
+        // console.log(res);
+        that.setData({
+          address: res.result.address,
+        });
+      },
+      fail: function (res) {},
+      complete: function (res) {},
+    });
+  },
+  /**
+   * 生命周期函数--监听页面加载
+   */
+  onLoad: function (options) {
+    //调用获取护士列表
+    this.getLsit();
+    //调用获取专科护理列表
+    this.specialty();
+    //调用获取地图
+    this.map();
+    //调用获取临床护理列表
+    this.clinic();
+  },
+  /**
+   * 生命周期函数--监听页面初次渲染完成
+   */
+  onReady: function () {},
+
+  /**
+   * 生命周期函数--监听页面显示
+   */
+  onShow: function () {},
+
+  /**
+   * 生命周期函数--监听页面隐藏
+   */
+  onHide: function () {},
+
+  /**
+   * 生命周期函数--监听页面卸载
+   */
+  onUnload: function () {},
+
+  /**
+   * 页面相关事件处理函数--监听用户下拉动作
+   */
+  onPullDownRefresh: function () {},
+
+  /**
+   * 页面上拉触底事件的处理函数
+   */
+  onReachBottom: function () {},
+
+  /**
+   * 用户点击右上角分享
+   */
+  onShareAppMessage: function () {},
+});
+ // go_eight(e) {
   //   console.log('你好');
   //   wx.getStorage({
   //     key: 'user',
@@ -103,135 +211,23 @@ Page({
   //     });
   //   }
   // },
-  goMap() {
-    wx.navigateTo({
-      url: '/pages/map/map',
-      events: {
-        // 为指定事件添加一个监听器，获取被打开页面传送到当前页面的数据
-        acceptDataFromOpenedPage: function (data) {
-          console.log(data);
-        },
-        someEvent: function (data) {
-          console.log(data);
-        },
-      },
-      success: function (res) {
-        // 通过eventChannel向被打开页面传送数据
-        res.eventChannel.emit('acceptDataFromOpenerPage', {
-          data: 'test'
-        });
-      },
-    });
-  },
-  async getLsit() {
-    const res = await $myRequest({
-      url: '/nurse/list',
-      data: {
-        code: 0
-      }
-    })
-    this.setData({
-      nurseLists: res
-    })
-  },
-  async specialty() {
-    const res = await $myRequest({
-      url: '/project/get_list',
-      data: {
-        cate: 2
-      }
-    })
-    this.setData({
-      specialtyLists: res.data
-    })
-  },
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-    this.getLsit();
-    this.specialty();
-    wx.showLoading({
-      title: '加载中...',
-    })
-    var QQMapWX = require('../../lib/qqmap-wx-jssdk.min.js');
-    var qqmapsdk;
-
-    // 实例化API核心类
-    qqmapsdk = new QQMapWX({
-      key: 'EXYBZ-NKXC3-BB53J-3FOMZ-LK7DQ-APF7G',
-    });
-
-    var that = this;
-    // 调用接口
-    qqmapsdk.reverseGeocoder({
-      poi_options: 'policy=2',
-      success: function (res) {
-        // console.log(res);
-        that.setData({
-          address: res.result.address,
-        });
-      },
-      fail: function (res) {},
-      complete: function (res) {},
-    });
-
-    var _this = this;
-    wx.request({
-      url: 'https://www.xiaohulaile.com/xh/p/gw/project/get_list',
-      header: {
-        'content-type': 'application/json', // 默认值
-      },
-      data: {
-        cate: 1
-      },
-      success(res) {
-        wx.hideLoading()
-        _this.setData({
-          list: res.data.data.data,
-        });
-      },
-    });
-
-  },
-  goOrder(e) {
-    console.log(e.currentTarget.dataset.id);
-    wx.navigateTo({
-      url: `/pages/order/order_eight/order_eight?index=${e.currentTarget.dataset.id}`,
-    });
-  },
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {},
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {},
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {},
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {},
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {},
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {},
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {},
-});
+  // goMap() {
+  //   wx.navigateTo({
+  //     url: '/pages/map/map',
+  //     events: {
+  //       // 为指定事件添加一个监听器，获取被打开页面传送到当前页面的数据
+  //       acceptDataFromOpenedPage: function (data) {
+  //         console.log(data);
+  //       },
+  //       someEvent: function (data) {
+  //         console.log(data);
+  //       },
+  //     },
+  //     success: function (res) {
+  //       // 通过eventChannel向被打开页面传送数据
+  //       res.eventChannel.emit('acceptDataFromOpenerPage', {
+  //         data: 'test'
+  //       });
+  //     },
+  //   });
+  // },

@@ -33,7 +33,7 @@
     </view>
     <view class="hr"></view>
     <view class="list_chose">已选：{{list.body}}</view>
-    <view class="list_workuser" wx:if="{{list.attend_id!==null}}">护理人员：王小蒙
+    <view class="list_workuser" wx:if="{{list.attendphone}}">护理人员:{{list.attendphone}}
       <!-- <span style="margin-left:30rpx">178****2600</span> -->
     </view>
     <!-- 时间段 -->

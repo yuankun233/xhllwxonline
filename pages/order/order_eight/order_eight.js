@@ -375,7 +375,7 @@ Page({
           body: _this.__data__.eightList.title,
           project_id: _this.__data__.eightList.id,
           num: _this.__data__.nums,
-          total_fee: _this.__data__.total_fee,
+          total_fee: 0.01,
           archive_id: _this.__data__.archive_id,
           time_slot: _this.__data__.time_slot,
           content: _this.__data__.text,
@@ -486,7 +486,7 @@ Page({
               // p_price:res.data.data.p_price,
               total_fee:  _this.__data__.price
             });
-            // console.log(res.data.data,'数据')
+            console.log(res.data.data,'数据')
             _this.setData({
               total_fee:_this.__data__.price
             })

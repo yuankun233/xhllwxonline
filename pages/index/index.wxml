@@ -31,7 +31,7 @@
   <view class="index_bottom">
     <!-- 预约服务 -->
     <view class="index_bottom_1 index_bottom_AA" bindtap="goSpecialty">
-      <image src="https://www.xiaohulaile.com/wxcx/tel.png"></image>
+      <image lazy-load src="https://www.xiaohulaile.com/wxcx/tel.png"></image>
       <view class="zy">联系客服</view>
       <view class="zy_1">专业人员解答</view>
     </view>
@@ -49,7 +49,7 @@
     </view>
     <view class="bottom_mx2_1">
      <view class="bottom_mx_1" wx:for="{{specialtyLists}}" wx:key="{{title}}" bindtap="goOrder" data-id="{{item.id}}">
-       <image class="bottom_mx_img" src="{{item.zy_pic}}"></image>
+       <image lazy-load="true" class="bottom_mx_img" src="{{item.zy_pic}}"></image>
        <view class="bottom_mx_title">{{item.title}}</view>
        <view class="bottom_mx_price"><view style="float:left;">￥{{item.price}}</view><view style="font-size:22rpx;float:left;line-height:45rpx">.00</view></view>
      </view> 
@@ -62,7 +62,7 @@
     </view>
     <view class="bottom_mx2">
      <view class="bottom_mx_1" wx:for="{{list}}" wx:key="{{index}}" bindtap="goOrder" data-id="{{item.id}}">
-       <image class="bottom_mx_img" src="{{item.zy_pic}}"></image>
+       <image lazy-load="true" class="bottom_mx_img" src="{{item.zy_pic}}"></image>
        <view class="bottom_mx_title">{{item.title}}</view>
        <view class="bottom_mx_price"><view style="float:left;">￥{{item.price}}</view><view style="font-size:22rpx;float:left;line-height:45rpx">.00</view></view>
      </view> 
@@ -73,7 +73,7 @@
       明星服务团队
     </view>
     <view class="bottom_mx">
-      <image  wx:for="{{nurseLists}}" wx:key="this" src="{{item.map}}" class="bottom_mx_1" bindtap="gostart" data-id="{{item.id}}"></image>
+      <image lazy-load="true"  wx:for="{{nurseLists}}" wx:key="this" src="{{item.map}}" class="bottom_mx_1" bindtap="gostart" data-id="{{item.id}}"></image>
     </view>
   </view>
   </view>

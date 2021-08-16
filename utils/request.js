@@ -1,5 +1,9 @@
+let jia = 0;
 export const $myRequest = (params) => {
-
+    jia++
+    wx.showLoading({
+      title: '加载中...',
+    })
   // 定义公共的url
   const baaseUrl = "https://www.xiaohulaile.com/xh/p/gw"
   return new Promise((resolve, reject) => {
@@ -11,6 +15,12 @@ export const $myRequest = (params) => {
       },
       fail: (err) => {
         reject(err)
+      },
+      complete: () =>{
+        jia--
+        if(jia === 0){
+          wx.hideLoading();
+        }
       }
     })
   })

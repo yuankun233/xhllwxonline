@@ -1,4 +1,6 @@
 {
   "usingComponents": {},
-  "navigationBarTitleText":"要照护，找小护"
+  "navigationBarTitleText":"预约服务",
+  "navigationBarBackgroundColor": "#4178F0",
+  "navigationBarTextStyle": "white"
 }

@@ -33,7 +33,7 @@ Page({
         });
         wx.login({
           success(res) {
-            console.log(res.code);
+            console.log(res.code,'kanyixia');
             _this.setData({ code: res.code });
             // return;
             if (!_this.isgetUserInfo) {

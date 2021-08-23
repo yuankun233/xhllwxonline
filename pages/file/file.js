@@ -92,6 +92,22 @@ Page({
       });
       return;
     }
+    if (_this.__data__.region == '' || _this.__data__.region == '请输入') {
+      wx.showToast({
+        title: '请输入区域',
+        icon: 'error',
+        duration: 2000,
+      });
+      return;
+    }
+    if (_this.__data__.address == '' || _this.__data__.address == '请输入') {
+      wx.showToast({
+        title: '请输入地址',
+        icon: 'error',
+        duration: 2000,
+      });
+      return;
+    }
     wx.request({
       url: 'https://www.xiaohulaile.com/xh/p/wxcx/my/archiveadd',
       data: {

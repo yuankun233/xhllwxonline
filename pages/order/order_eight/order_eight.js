@@ -146,7 +146,7 @@ Page({
             'content-type': 'application/json', // 默认值
           },
           success(res) {
-            console.log(res.data.data);
+            console.log(res.data.data,"接口数据");
             _this.setData({ user_list: res.data.data });
           },
         });
@@ -375,7 +375,8 @@ Page({
           body: _this.__data__.eightList.title,
           project_id: _this.__data__.eightList.id,
           num: _this.__data__.nums,
-          total_fee: 0.01,
+          // total_fee: _this.__data__.price,
+          total_fee:0.01,
           archive_id: _this.__data__.archive_id,
           time_slot: _this.__data__.time_slot,
           content: _this.__data__.text,

@@ -24,7 +24,6 @@ Page({
         'content-type': 'application/json', // 默认值
       },
       success(res) {
-        console.log(res.data.code);
         if (res.data.code == 1) {
           wx.navigateTo({
             url: '/pages/file/file',
@@ -94,7 +93,6 @@ Page({
             status: 1
           },
           success(res) {
-            console.log(res)
             _this.setData({
               statusnum1: res.data.data,
             });

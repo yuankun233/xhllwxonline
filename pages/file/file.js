@@ -8,7 +8,7 @@ Page({
     name: '',
     sex: '',
     date: '',
-    region: '请输入',
+    region: '请选择区域',
     number: '',
     text: '',
     address: '',

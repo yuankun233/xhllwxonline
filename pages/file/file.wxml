@@ -38,7 +38,7 @@
   <view class="file_I">
     <view class="file_I_dz">地址</view>
     <picker mode="region" bindchange="RegionChange" value="{{region}}" custom-item="{{customItem}}">
-      <view class="picker">
+      <view class="picker" >
         {{region}}
       </view>
     </picker>

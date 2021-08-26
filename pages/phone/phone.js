@@ -119,7 +119,6 @@ Page({
     }
   },
   loginFn() {
-
     let that = this
     that.setData({
       isLogin:false
@@ -142,6 +141,7 @@ Page({
                 code:res.code,
               },
               success:(res)=>{
+                console.log(res,'shuju');
                 wx.request({
                   url: 'https://www.xiaohulaile.com/xh/p/xcx/user/phone_login',
                   data:{
@@ -151,7 +151,7 @@ Page({
                     head_logo:that.__data__.userInfo.avatarUrl,
                     phone:that.__data__.phone,
                     code:that.__data__.Index,
-                    invitation:that.__data__.invitation
+                    // invitation:that.__data__.invitation,
                   },
                   success:(res)=>{
                     console.log(res);

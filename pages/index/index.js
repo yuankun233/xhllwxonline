@@ -2,9 +2,6 @@
 import {
   $myRequest
 } from '../../utils/request'
-import {
-  jump
-} from '../../utils/jump'
 Page({
   /**
    * 页面的初始数据

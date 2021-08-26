@@ -27,6 +27,7 @@ Page({
     wx.getUserProfile({
       desc: '用于完善会员资料', // 声明获取用户个人信息后的用途，后续会展示在弹窗中，请谨慎填写
       success: (res) => {
+        console.log(res.userInfo,'userInfo');
         this.setData({
           userInfo: res.userInfo,
           // hasUserInfo: true,
@@ -55,7 +56,7 @@ Page({
                     gender: infoRes.userInfo.gender,
                   });
                   wx.request({
-                    url: 'https://www.xiaohulaile.com/xh/p/wxcx/user/login',
+                    url: 'http://b6s5mq.natappfree.cc/auth/getSessionByCode',
                     header: {
                       'content-type': 'application/json', // 默认值
                     },
@@ -64,6 +65,7 @@ Page({
                     },
                     success(res) {
                       console.log(res.data.message, '1111122323');
+                      console.log(res,'key');
                       // console.log(res.data.data.sessionKey);
                       // console.log(res.data.data.openid);
                       if (res.data.message == 2) {
@@ -129,6 +131,7 @@ Page({
       url: 'https://www.xiaohulaile.com/xh/p/wxcx/user/wx_phone',
       header: {
         'content-type': 'application/json', // 默认值
+
       },
       data: {
         sessionKey: _this.__data__.sessionKey,

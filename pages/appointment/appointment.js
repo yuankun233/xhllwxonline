@@ -16,23 +16,7 @@ Page({
     /**
      * 生命周期函数--监听页面加载
      */
-    onLoad: function (options) {
-    wx.getStorage({
-      key: 'user',
-      fail(res) {
-        wx.showToast({
-          title: '请先登录',
-          icon: 'none',
-          duration: 1000,
-        });
-        setTimeout(function () {
-          console.log('doSomething');
-          wx.reLaunch({
-            url: '/pages/login/login',
-          });
-        }, 1000);
-      },
-    });
+   onLoad: function (options) {
     wx.showLoading({
       title: '加载中...',
     })
@@ -53,14 +37,39 @@ Page({
               user_token: res.data.user_token,
             },
             success(res) {
+              if(res.data.msg === '请重新登录'){
+                wx.showToast({
+                  title: '请先登录',
+                  icon: 'none',
+                  duration: 1000,
+                });
+                setTimeout(function () {
+                  console.log('doSomething');
+                  wx.reLaunch({
+                    url: '/pages/login/login',
+                  });
+                }, 1000);
+              }
               console.log(res, '看看是啥');
               _this.setData({
                 list: res.data.data,
               });
-  wx.hideLoading()
+                wx.hideLoading()
             },
           });
         },
+  fail(res){
+    wx.showToast({
+    title: '请先登录',
+    icon: 'none',
+    duration: 1000
+    });
+    setTimeout(function () {
+    wx.reLaunch({
+    url: '/pages/login/login'
+    });
+    }, 1000);
+}
       });
     },
   

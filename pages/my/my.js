@@ -109,7 +109,7 @@ Page({
             status: 2
           },
           success(res) {
-            console.log(res)
+            // console.log(res)
             _this.setData({
               statusnum: res.data.data,
             });
@@ -176,7 +176,7 @@ Page({
             my_id: res.data.my_id,
           },
           success(res) {
-            console.log(res)
+            // console.log(res)
             if(res.data.message == '请重新登录'){
               wx.showToast({
                 title: '请先登录',
@@ -236,7 +236,7 @@ Page({
             status: 2
           },
           success(res) {
-            console.log(res)
+            // console.log(res)
             if(res.data.message == '请重新登录'){
               wx.showToast({
                 title: '请先登录',

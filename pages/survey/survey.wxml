@@ -1,0 +1,246 @@
+<!--pages/survey/survey.wxml-->
+<view class="box">
+  <image src="https://z3.ax1x.com/2021/08/28/h3sBhq.jpg"></image>
+  <view class="index_1">
+    <image src="../../images/jibenxinxi (1).png"></image>
+    <view class="index_22">
+      <view class="index_1_text_1">
+            <view><text>姓</text><text>名:</text></view>
+            <view><input type="text" placeholder="请输入" maxlength="4"  placeholder-class="CC" value="{{from1.name}}" bindinput="nameFn1"/></view>
+        </view>
+
+        <view class="index_1_text_3">
+            <view>身份证号码:</view>
+            <view><input type="text" placeholder="请输入" maxlength="18"  placeholder-class="CC" value="{{from1.ID}}" bindinput="IDFn1"/></view>
+        </view>
+
+        <view class=".index_1_text_2_2">
+            <view class="relation_1">性别:</view>
+            <radio-group bindchange="radioChange1" id="1"  class="radios">
+              <label class="relation">
+                <radio color="#6B7072" value="男"/><text>男</text>
+              </label>
+              <label class="relation">
+                <radio color='#6B7072' value="女"/> <text>女</text>
+              </label>
+            </radio-group>
+        </view>
+
+        <view class="index_1_text_1">
+            <view><text>年</text><text>龄:</text></view>
+            <view><input type="text" placeholder="请输入" maxlength="3" placeholder-class="CC" value="{{age}}" bindinput="ageFn1"/></view>
+        </view>
+
+        <view class="index_1_text_1">
+            <view><text>民</text><text>族:</text></view>
+            <view><input type="text" placeholder="请输入" maxlength="5" placeholder-class="CC" value="{{nation}}" bindinput="nationFn1"/></view>
+        </view>
+
+        <view class="index_1_text_3">
+            <view>参保地:</view>
+            <view><input type="text" placeholder="请输入" placeholder-class="CC" value="{{canbaodi}}" bindinput="canbaodiFn1"/></view>
+        </view>
+
+        <view class="index_1_text_3">
+            <view>失能时间:</view>
+            <picker mode="date" value="{{shinengTime}}" start="2015-09-01" end="2017-09-01" bindchange="shinengTimeFn1" >
+              <view class="picker">
+                {{from1.shinengTime}}
+              </view>
+            </picker>
+        </view>
+
+        <view class=".index_1_text_2_2">
+            <view class="relation_1">是否经过康复治疗:</view>
+            <radio-group bindchange="radioChange1" id="2" class="radios">
+              <label class="relation">
+                <radio color="#6B7072" value="是" /><text>是</text>
+              </label>
+              <label class="relation">
+                <radio color='#6B7072' value="否" /> <text>否</text>
+              </label>
+            </radio-group>
+        </view>
+
+        <view class="index_1_text_3" wx:if="{{isTreat === '是'}}">
+            <view>治疗月数:</view>
+            <view><input type="text" placeholder="请输入"  placeholder-class="CC" value="{{mouth}}" bindinput="mouthFn1"/></view>
+        </view>
+
+        <view class="index_1_text_3">
+            <view>联系电话:</view>
+            <view><input type="text" placeholder="请输入"  maxlength="11" placeholder-class="CC" value="{{from1.phone}}" bindinput="phoneFn1"/></view>
+        </view>
+
+        <view class=".index_1_text_2_2">
+            <view class="relation_1">是否首次申请:</view>
+            <radio-group bindchange="radioChange1" id="3" class="radios">
+              <label class="relation">
+                <radio color="#6B7072" value="是" /><text>是</text>
+              </label>
+              <label class="relation">
+                <radio color='#6B7072' value="否" /> <text>否</text>
+              </label>
+            </radio-group>
+        </view>
+
+        <view class="index_1_text_2">
+            <view class="relation_1">保障方式:</view>
+            <radio-group bindchange="radioChange1" id="4" class="radios">
+              <label class="relation">
+                <radio color="#6B7072" value="职工基本医疗保险" /><text>职工基本医疗保险</text>
+              </label>
+              <label class="relation">
+                <radio color='#6B7072' value="城乡居民基本医疗保险" /> <text>城乡居民基本医疗保险</text>
+              </label>
+              <label class="relation">
+                <radio color='#6B7072' value="特困供养" /> <text>特困供养</text>
+              </label>
+              <label class="relation">
+                <radio color='#6B7072' value="否最低生活保障" /> <text>最低生活保障</text>
+              </label>
+              <label class="relation">
+                <radio color='#6B7072' value="其他" /> <text>其他</text>
+              </label>
+            </radio-group>
+        </view>
+
+        <view class="index_1_text_2">
+            <view class="relation_1">文化程度:</view>
+            <radio-group bindchange="radioChange1" id="5" class="radios">
+              <label class="relation">
+                <radio color="#6B7072" value="文盲" /><text>文盲</text>
+              </label>
+              <label class="relation">
+                <radio color='#6B7072' value="小学" /> <text>小学</text>
+              </label>
+              <label class="relation">
+                <radio color='#6B7072' value="中学(含中专)" /> <text>中学(含中专)</text>
+              </label>
+              <label class="relation">
+                <radio color='#6B7072' value="大学(含大专)及以上" /> <text>大学(含大专)及以上</text>
+              </label>
+            </radio-group>
+        </view>
+
+        <view class="index_1_text_2_1">
+            <view class="relation_1">居住情况:</view>
+            <radio-group bindchange="radioChange1" id="6" class="radios">
+              <label class="relation">
+                <radio color="#6B7072" value="独居" /><text>独居</text>
+              </label>
+              <label class="relation">
+                <radio color='#6B7072' value="伴侣居住" /> <text>与配偶/伴侣居住</text>
+              </label>
+              <label class="relation">
+                <radio color='#6B7072' value="与子女居住" /> <text>与子女居住</text>
+              </label>
+              <label class="relation">
+                <radio color='#6B7072' value="与父母居住" /> <text>与父母居住</text>
+              </label>
+              <label class="relation">
+                <radio color='#6B7072' value="与兄弟姐妹居住居住" /> <text>与兄弟姐妹居住居住</text>
+              </label>
+              <label class="relation">
+                <radio color='#6B7072' value="与其他亲属居住" /> <text>与其他亲属居住</text>
+              </label>
+              <label class="relation">
+                <radio color='#6B7072' value="与非亲属关系的人居住" /> <text>与非亲属关系的人居住</text>
+              </label>
+              <label class="relation">
+                <radio color='#6B7072' value="养老机构" /> <text>养老机构</text>
+              </label>
+              <label class="relation">
+                <radio color='#6B7072' value="医院" /> <text>医院</text>
+              </label>
+            </radio-group>
+        </view>
+
+        <view class="index_1_text_3">
+            <view>居住地:</view>
+            <view><input type="text" placeholder="请输入" placeholder-class="CC" value="{{livePlase}}" bindinput="livePlaseFn1"/></view>
+        </view>
+
+        <view class="index_1_text_2">
+            <view class="relation_1">照护者:</view>
+            <radio-group bindchange="radioChange1" id="7" class="radios">
+              <label class="relation">
+                <radio color="#6B7072" value="独居" /><text>配偶</text>
+              </label>
+              <label class="relation">
+                <radio color='#6B7072' value="伴侣居住" /> <text>子女</text>
+              </label>
+              <label class="relation">
+                <radio color='#6B7072' value="与子女居住" /> <text>亲友</text>
+              </label>
+              <label class="relation">
+                <radio color='#6B7072' value="与父母居住" /> <text>保姆</text>
+              </label>
+              <label class="relation">
+                <radio color='#6B7072' value="与兄弟姐妹居住居住" /> <text>护工</text>
+              </label>
+              <label class="relation">
+                <radio color='#6B7072' value="与其他亲属居住" /> <text>医疗人员</text>
+              </label>
+              <label class="relation">
+                <radio color='#6B7072' value="与非亲属关系的人居住" /> <text>没有任何人</text>
+              </label>
+              <label class="relation">
+                <radio color='#6B7072' value="养老机构" /> <text>其他</text>
+              </label>
+            </radio-group>
+        </view>
+    </view>
+  </view>
+
+
+
+  <view class="index_2">
+    <image src="../../images/jibenxinxi2.png"></image>
+    <view class="index_22">
+        <view class="index_1_text_1">
+            <view><text>姓</text><text>名:</text></view>
+            <view><input type="text" placeholder="请输入" maxlength="4" placeholder-class="CC" value="{{name}}" bindinput="nameFn2"/></view>
+        </view>
+
+        <view class="index_1_text_2">
+            <view class="relation_1">与评估对象关系：</view>
+            <radio-group bindchange="radioChange" class="radios">
+              <label class="relation">
+                <radio color="#6B7072" value="配偶" /><text>配偶</text>
+              </label>
+              <label class="relation">
+                <radio color='#6B7072' value="子女" /> <text>子女</text>
+              </label>
+              <label class="relation">
+                <radio color="#6B7072" value="其他亲属"/><text>其他亲属</text>
+              </label>
+              <label class="relation">
+                <radio color='#6B7072' value="雇佣照护者" /> <text>雇佣照护者</text>
+              </label>
+              <label class="relation">
+                <radio color="#6B7072" value="本人"/><text>本人</text>
+              </label>
+              <label class="relation">
+                <radio color='#6B7072' value="其他" /> <text>其他</text>
+              </label>
+            </radio-group>
+        </view>
+
+        <view class="index_1_text_3">
+            <view>联系电话:</view>
+            <view><input type="text" placeholder="请输入" maxlength="11" placeholder-class="CC"  value="{{phone}}" bindinput="phoneFn2"/></view>
+        </view>
+        <view class="index_1_text_3">
+            <view>身份证号码:</view>
+            <view><input type="text" placeholder="请输入" maxlength="18" placeholder-class="CC" value="{{ID}}" bindinput="IDFn2"/></view>
+        </view>
+        <view class="index_1_text_3">
+            <view>联系地址:</view>
+            <view><input type="text" placeholder="请输入" placeholder-class="CC"  value="{{site}}" bindinput="siteFn2"/></view>
+        </view>
+    </view>
+    <view class="index_3"><image src="../../images/next.png" bindtap="next"></image></view>
+  </view>
+</view>
+

@@ -21,7 +21,9 @@
     "pages/scancode/scancode",
     "pages/start/start",
     "pages/ledge/ledge",
-    "pages/login/login"
+    "pages/login/login",
+    "pages/survey/survey",
+    "pages/cfxform/cfxform"
   ],
   "permission": {
     "scope.userLocation": {

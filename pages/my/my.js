@@ -10,6 +10,11 @@ Page({
     statusnum:'',
     statusnum2:''
   },
+  gosurvey() {
+    wx.navigateTo({
+      url: '../survey/survey',
+    })
+  },
   goFile() {
     var _this = this;
     wx.request({

@@ -1,0 +1,214 @@
+<view class="container1">
+  <image
+    src="../../images/banner2.jpg"
+    mode="widthFix"
+    class="banner2"
+  ></image>
+  <view class="main1">
+    <image
+      src="../../images/title3.png"
+      mode="widthFix"
+      class="title1"
+    ></image>
+
+    <view class="survey box1">
+      <view class="topic">
+        <view class="title">进食</view>
+        <view
+          class="option"
+          wx:for="{{topic1}}"
+          bind:tap="radioChange"
+          data-index="{{index}}"
+          data-type1="{{item.type}}"
+        >
+          <image
+            src="../../images/activeicon.png"
+            mode=""
+            wx:if="{{item.isActive}}"
+            class="radioicon"
+          ></image>
+          <image
+            src="../../images/icon.png"
+            mode=""
+            class="radioicon"
+            wx:else
+          ></image>
+          <text class="text">{{ item.text }}</text>
+        </view>
+      </view>
+    </view>
+    <view class="survey box1">
+      <view class="topic">
+        <view class="title">穿衣</view>
+        <view
+          class="option"
+          wx:for="{{topic2}}"
+          bind:tap="radioChange"
+          data-index="{{index}}"
+          data-type1="{{item.type}}"
+        >
+          <image
+            src="../../images/activeicon.png"
+            mode=""
+            wx:if="{{item.isActive}}"
+            class="radioicon"
+          ></image>
+          <image
+            src="../../images/icon.png"
+            mode=""
+            class="radioicon"
+            wx:else
+          ></image>
+          <text class="text">{{ item.text }}</text>
+        </view>
+      </view>
+    </view>
+    <view class="survey box1">
+      <view class="topic">
+        <view class="title">大小便控制</view>
+        <view
+          class="option"
+          wx:for="{{topic3}}"
+          bind:tap="radioChange"
+          data-index="{{index}}"
+          data-type1="{{item.type}}"
+        >
+          <image
+            src="../../images/activeicon.png"
+            mode=""
+            wx:if="{{item.isActive}}"
+            class="radioicon"
+          ></image>
+          <image
+            src="../../images/icon.png"
+            mode=""
+            class="radioicon"
+            wx:else
+          ></image>
+          <text class="text">{{ item.text }}</text>
+        </view>
+      </view>
+    </view>
+    <view class="survey box1">
+      <view class="topic">
+        <view class="title">用厕</view>
+        <view
+          class="option"
+          wx:for="{{topic4}}"
+          bind:tap="radioChange"
+          data-index="{{index}}"
+          data-type1="{{item.type}}"
+        >
+          <image
+            src="../../images/activeicon.png"
+            mode=""
+            wx:if="{{item.isActive}}"
+            class="radioicon"
+          ></image>
+          <image
+            src="../../images/icon.png"
+            mode=""
+            class="radioicon"
+            wx:else
+          ></image>
+          <text class="text">{{ item.text }}</text>
+        </view>
+      </view>
+    </view>
+
+    <view class="survey box1">
+      <view class="topic">
+        <view class="title">洗澡</view>
+        <view
+          class="option"
+          wx:for="{{topic5}}"
+          bind:tap="radioChange"
+          data-index="{{index}}"
+          data-type1="{{item.type}}"
+        >
+          <image
+            src="../../images/activeicon.png"
+            mode=""
+            wx:if="{{item.isActive}}"
+            class="radioicon"
+          ></image>
+          <image
+            src="../../images/icon.png"
+            mode=""
+            class="radioicon"
+            wx:else
+          ></image>
+          <text class="text">{{ item.text }}</text>
+        </view>
+      </view>
+    </view>
+    <view class="survey box1">
+      <view class="topic">
+        <view class="title">床椅转移</view>
+        <view
+          class="option"
+          wx:for="{{topic6}}"
+          bind:tap="radioChange"
+          data-index="{{index}}"
+          data-type1="{{item.type}}"
+        >
+          <image
+            src="../../images/activeicon.png"
+            mode=""
+            wx:if="{{item.isActive}}"
+            class="radioicon"
+          ></image>
+          <image
+            src="../../images/icon.png"
+            mode=""
+            class="radioicon"
+            wx:else
+          ></image>
+          <text class="text">{{ item.text }}</text>
+        </view>
+      </view>
+    </view>
+
+    <!-- 自评失能等级单选 -->
+    <view class="myRadio">
+      <view class="title">自评失能等级</view>
+      <radio-group bindchange="myRadio" class="radios">
+        <label class="relation">
+          <radio value="A" />
+          <text>A</text>
+        </label>
+        <label class="relation">
+          <radio value="B" />
+          <text>B</text>
+        </label>
+        <label class="relation">
+          <radio value="C" />
+          <text>C</text>
+        </label>
+        <label class="relation">
+          <radio value="D" />
+          <text>D</text>
+        </label>
+        <label class="relation">
+          <radio value="E" />
+          <text>E</text>
+        </label>
+        <label class="relation">
+          <radio value="F" />
+          <text>F</text>
+        </label>
+        <label class="relation">
+          <radio value="G" />
+          <text>G</text>
+        </label>
+      </radio-group>
+    </view>
+    <image
+      src="../../images/submit.png"
+      mode="widthFix"
+      class="submit"
+      bind:tap="submit"
+    ></image>
+  </view>
+</view>
+

@@ -56,7 +56,7 @@ Page({
                     gender: infoRes.userInfo.gender,
                   });
                   wx.request({
-                    url: 'http://b6s5mq.natappfree.cc/auth/getSessionByCode',
+                    url: 'https://www.xiaohulaile.com/xh/p/wxcx/user/login',
                     header: {
                       'content-type': 'application/json', // 默认值
                     },

@@ -17,6 +17,7 @@ Page({
     //用户信息
     userInfo:'',
     openid:'',
+    sessionKey:''
   },
   tabSelect(e) {
     this.setData({

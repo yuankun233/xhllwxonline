@@ -6,12 +6,12 @@
     <view class="index_22">
       <view class="index_1_text_1">
             <view><text>姓</text><text>名:</text></view>
-            <view><input type="text" placeholder="请输入" maxlength="4"  placeholder-class="CC" value="{{from1.name}}" bindinput="nameFn1"/></view>
+            <view><input type="text" placeholder="请输入" maxlength="4"  placeholder-class="CC" value="{{form1.name}}" bindinput="nameFn1" /></view>
         </view>
 
         <view class="index_1_text_3">
             <view>身份证号码:</view>
-            <view><input type="text" placeholder="请输入" maxlength="18"  placeholder-class="CC" value="{{from1.ID}}" bindinput="IDFn1"/></view>
+            <view><input type="text" placeholder="请输入" maxlength="18"  placeholder-class="CC" value="{{form1.ID}}" bindinput="IDFn1" bindblur="ifInp2" /></view>
         </view>
 
         <view class=".index_1_text_2_2">
@@ -28,26 +28,22 @@
 
         <view class="index_1_text_1">
             <view><text>年</text><text>龄:</text></view>
-            <view><input type="text" placeholder="请输入" maxlength="3" placeholder-class="CC" value="{{age}}" bindinput="ageFn1"/></view>
+            <view><input type="text" placeholder="请输入" maxlength="3" placeholder-class="CC" value="{{form1.age}}" bindinput="ageFn1"/></view>
         </view>
 
         <view class="index_1_text_1">
             <view><text>民</text><text>族:</text></view>
-            <view><input type="text" placeholder="请输入" maxlength="5" placeholder-class="CC" value="{{nation}}" bindinput="nationFn1"/></view>
+            <view><input type="text" placeholder="请输入" maxlength="5" placeholder-class="CC" value="{{form1.nation}}" bindinput="nationFn1" /></view>
         </view>
 
         <view class="index_1_text_3">
             <view>参保地:</view>
-            <view><input type="text" placeholder="请输入" placeholder-class="CC" value="{{canbaodi}}" bindinput="canbaodiFn1"/></view>
+            <view><input type="text" placeholder="请输入" placeholder-class="CC" value="{{form1.canbaodi}}" bindinput="canbaodiFn1" /></view>
         </view>
 
         <view class="index_1_text_3">
             <view>失能时间:</view>
-            <picker mode="date" value="{{shinengTime}}" start="2015-09-01" end="2017-09-01" bindchange="shinengTimeFn1" >
-              <view class="picker">
-                {{from1.shinengTime}}
-              </view>
-            </picker>
+            <view><input type="text" placeholder="请输入"  placeholder-class="CC" value="{{form1.shinengTime}}" bindinput="shinengTimeFn1"/></view>
         </view>
 
         <view class=".index_1_text_2_2">
@@ -62,14 +58,14 @@
             </radio-group>
         </view>
 
-        <view class="index_1_text_3" wx:if="{{isTreat === '是'}}">
+        <view class="index_1_text_3" wx:if="{{form1.isTreat === '是'}}">
             <view>治疗月数:</view>
-            <view><input type="text" placeholder="请输入"  placeholder-class="CC" value="{{mouth}}" bindinput="mouthFn1"/></view>
+            <view><input type="text" placeholder="请输入"  placeholder-class="CC" value="{{form1.mouth}}" bindinput="mouthFn1" /></view>
         </view>
 
         <view class="index_1_text_3">
             <view>联系电话:</view>
-            <view><input type="text" placeholder="请输入"  maxlength="11" placeholder-class="CC" value="{{from1.phone}}" bindinput="phoneFn1"/></view>
+            <view><input type="text" placeholder="请输入"  maxlength="11" placeholder-class="CC" value="{{form1.phone}}" bindinput="phoneFn1" bindblur="ifInp7"/></view>
         </view>
 
         <view class=".index_1_text_2_2">
@@ -158,7 +154,7 @@
 
         <view class="index_1_text_3">
             <view>居住地:</view>
-            <view><input type="text" placeholder="请输入" placeholder-class="CC" value="{{livePlase}}" bindinput="livePlaseFn1"/></view>
+            <view><input type="text" placeholder="请输入" placeholder-class="CC" value="{{form1.livePlase}}" bindinput="livePlaseFn1" /></view>
         </view>
 
         <view class="index_1_text_2">
@@ -200,7 +196,7 @@
     <view class="index_22">
         <view class="index_1_text_1">
             <view><text>姓</text><text>名:</text></view>
-            <view><input type="text" placeholder="请输入" maxlength="4" placeholder-class="CC" value="{{name}}" bindinput="nameFn2"/></view>
+            <view><input type="text" placeholder="请输入" maxlength="4" placeholder-class="CC" value="{{form2.name1}}" bindinput="nameFn2" /></view>
         </view>
 
         <view class="index_1_text_2">
@@ -229,15 +225,15 @@
 
         <view class="index_1_text_3">
             <view>联系电话:</view>
-            <view><input type="text" placeholder="请输入" maxlength="11" placeholder-class="CC"  value="{{phone}}" bindinput="phoneFn2"/></view>
+            <view><input type="text" placeholder="请输入" maxlength="11" placeholder-class="CC"  value="{{form2.phone1}}" bindinput="phoneFn2" bindblur="ifInp10"/></view>
         </view>
         <view class="index_1_text_3">
             <view>身份证号码:</view>
-            <view><input type="text" placeholder="请输入" maxlength="18" placeholder-class="CC" value="{{ID}}" bindinput="IDFn2"/></view>
+            <view><input type="text" placeholder="请输入" maxlength="18" placeholder-class="CC" value="{{form2.ID1}}" bindinput="IDFn2" bindblur="ifInp11"/></view>
         </view>
         <view class="index_1_text_3">
             <view>联系地址:</view>
-            <view><input type="text" placeholder="请输入" placeholder-class="CC"  value="{{site}}" bindinput="siteFn2"/></view>
+            <view><input type="text" placeholder="请输入" placeholder-class="CC"  value="{{form2.site}}" bindinput="siteFn2" /></view>
         </view>
     </view>
     <view class="index_3"><image src="../../images/next.png" bindtap="next"></image></view>

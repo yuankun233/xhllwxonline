@@ -4,21 +4,29 @@ Page({
    * 页面的初始数据
    */
   data: {
+    id:'',
     form: {
-      topic1: "独立，无需帮助",
-      topic2: "独立，无需帮助，能独立拿取衣服，穿上并扣好",
-      topic3: "独立，自己能够完全控制",
-      topic4:
-        "独立，无需帮助，能独立用厕、便后拭净及整理衣裤，可用手杖、助步器或轮椅，能处理便盆，尿壶",
-      topic5: "独立，无需帮助，自己能进出浴室，淋浴、浴盆，独立洗澡",
-      topic6: "独立，无需帮助，能自己下场，坐上及离开椅，凳，可用手杖、助步器",
-      grade: ""
+      feedsco:2, //进食  
+      dresssco:2,
+      bathtakesco:2,
+      controlBodilysco:2,
+      wcsco:2,
+      transfersco:2,
     },
+    form1:{
+      feed:'', //进食  
+      dress:'',// 穿衣
+      bathtake:'', //洗澡
+      controlBodilyFunctions:'', //大小便控制
+      wc:'',//用厕
+      transfer:'',//床椅转移
+    },
+    grade:'',
     topic1: [
       {
         type: 1,
         text: "独立，无需帮助",
-        isActive: true
+        isActive: false
       },
       {
         type: 1,
@@ -35,11 +43,11 @@ Page({
       {
         type: 2,
         text: "独立，无需帮助，能独立拿取衣服，穿上并扣好",
-        isActive: true
+        isActive: false
       },
       {
         type: 2,
-        text: "部分独立，能独立拿取衣服及穿上，需帮助系鞋带",
+        text: "部分独立，能独立拿去衣服及穿上，需帮助系鞋带",
         isActive: false
       },
       {
@@ -52,7 +60,7 @@ Page({
       {
         type: 3,
         text: "独立，自己能够完全控制",
-        isActive: true
+        isActive: false
       },
       {
         type: 3,
@@ -68,12 +76,12 @@ Page({
     topic4: [
       {
         type: 4,
-        text: "独立，无需帮助，能独立用厕、便后拭净及整理衣裤，可用手杖、助步器或轮椅，能处理便盆，尿壶",
-        isActive: true
+        text: "独立，无需帮助，能独立用厕、便后拭净及整理衣裤，可用手杖、助步器或轮椅，能处理便盆、尿壶",
+        isActive: false
       },
       {
         type: 4,
-        text: "不能独立完成，需要帮助入厕、做便后处理，清洁、整理衣裤及处理便盆、尿壶",
+        text: "不能独立完成，需要帮助如厕、做便后处理，清洁、整理衣裤及处理便盆、尿壶",
         isActive: false
       },
       {
@@ -85,8 +93,8 @@ Page({
     topic5: [
       {
         type: 5,
-        text: "独立，无需帮助，自己能进出浴室，淋浴、浴盆，独立洗澡",
-        isActive: true
+        text: "独立，无须帮助，自己能进出浴室，淋浴、盆浴，独立洗澡",
+        isActive: false
       },
       {
         type: 5,
@@ -95,15 +103,15 @@ Page({
       },
       {
         type: 5,
-        text: "不能独立完成，不能洗澡、或大部分需要帮助洗",
+        text: "不能独立完成，不能洗澡、或大部分需帮助洗",
         isActive: false
       }
     ],
     topic6: [
       {
         type: 6,
-        text: "独立，无需帮助，能自己下场，坐上及离开椅，凳，可用手杖、助步器",
-        isActive: true
+        text: "独立，无须帮助，自己能下场，坐上及离开椅、凳，可用手杖、助步器",
+        isActive: false
       },
       {
         type: 6,
@@ -115,7 +123,8 @@ Page({
         text: "不能独立完成，卧床不起",
         isActive: false
       }
-    ]
+    ],
+    modelName:''
   },
   // 方法
   // 自定义单选
@@ -123,10 +132,20 @@ Page({
     console.log(e)
     let type = e.currentTarget.dataset.type1
     let index = e.currentTarget.dataset.index
+    let value = e.currentTarget.dataset.value
     console.log(type)
+    //得分
+    let score = ''
+    if(index === 0){
+      score = 2
+    }else if(index === 1){
+      score = 1
+    }else if(index === 2){
+      score = 0
+    }
+    
     if (type == 1) {
-      console.log(type, index)
-
+      console.log(type, index,value)
       //1 遍历所有选项，勾选状态变为false
       this.data.topic1.forEach((item, index) => {
         let key = `topic1[${index}].isActive`
@@ -142,12 +161,15 @@ Page({
       })
 
       // 3.储存到data
-      let key2 = `form.topic1`
+      let key2 = `form.feedsco`
       this.setData({
-        [key2]: this.data.topic1[index].text
+        [key2]: score
+      })
+      let key3 = `form1.feed`
+      this.setData({
+        [key3]: value
       })
     }
-
     if (type == 2) {
       console.log(type, index)
 
@@ -166,9 +188,14 @@ Page({
       })
 
       // 3.储存到data
-      let key2 = `form.topic2`
+      let key2 = `form.dresssco`
       this.setData({
-        [key2]: this.data.topic2[index].text
+        [key2]: score
+      })
+      //
+      let key3 = `form1.dress`
+      this.setData({
+        [key3]: value
       })
     }
     if (type == 3) {
@@ -189,9 +216,14 @@ Page({
       })
 
       // 3.储存到data
-      let key2 = `form.topic3`
+      let key2 = `form.controlBodilysco`
       this.setData({
-        [key2]: this.data.topic3[index].text
+        [key2]: score
+      })
+      //
+      let key3 = `form1.controlBodilyFunctions`
+      this.setData({
+        [key3]: value
       })
     }
     if (type == 4) {
@@ -212,9 +244,14 @@ Page({
       })
 
       // 3.储存到data
-      let key2 = `form.topic4`
+      let key2 = `form.wcsco`
       this.setData({
-        [key2]: this.data.topic4[index].text
+        [key2]: score
+      })
+      //
+      let key3 = `form1.wc`
+      this.setData({
+        [key3]: value
       })
     }
     if (type == 5) {
@@ -235,9 +272,14 @@ Page({
       })
 
       // 3.储存到data
-      let key2 = `form.topic5`
+      let key2 = `form.bathtakesco`
       this.setData({
-        [key2]: this.data.topic5[index].text
+        [key2]: score
+      })
+      //
+      let key3 = `form1.bathtake`
+      this.setData({
+        [key3]: value
       })
     }
     if (type == 6) {
@@ -258,33 +300,75 @@ Page({
       })
 
       // 3.储存到data
-      let key2 = `form.topic6`
+      let key2 = `form.transfersco`
       this.setData({
-        [key2]: this.data.topic6[index].text
+        [key2]: score
+      })
+      //
+      let key3 = `form1.transfer`
+      this.setData({
+        [key3]: value
       })
     }
   },
-  // 自评单选
-  myRadio(e) {
-    let value = e.detail.value
-    let key = `form.grade`
-    this.setData({
-      [key]: value
-    })
-    console.log(value)
-  },
   // 提交表单
-  submit() {
-    console.log(this.data.form)
-        wx.showToast({
-              title: '提交成功',
-              icon: 'none',
-              duration: 2000,
-            });
-            setTimeout(() => {
-              wx.reLaunch({
-                url: '../my/my',
-              })
-            }, 1000);
-      }
+  submit(e) {
+    let _this = this
+    let form = _this.data.form
+    let form1 = _this.data.form1
+    let flag = Object.values(_this.data.form1).every(function(item) {
+      return item != ''
+   })
+   console.log(flag)
+   if (flag == false) {
+    wx.showToast({
+     title: '有未填选项',
+     icon: 'none'
+    })
+    return
+   }
+    console.log(form1);
+    console.log(form);
+    wx.request({
+      url: 'https://www.qycloud.com.cn/bee/open-72810619931328627/xhll/Level/numberTwo', 
+      method:'post',
+      data: {
+            id:_this.data.id,
+            ...form,
+            ...form1
+        },
+      header: {
+        'content-type': 'application/json', // 默认值
+      },
+      success(res) {
+        _this.setData({
+          grade:res.data.data.grade
+        })
+        if(_this.data.grade!=''){
+          _this.setData({
+            modalName: e.currentTarget.dataset.target
+          }) 
+        }
+      },
+    });
+      },
+      //关闭模态框跳转到我的
+      closeHint() {
+        this.setData({
+          modalName: null
+        })
+        setTimeout(() => {
+          wx.reLaunch({
+            url: '../my/my',
+          })
+        }, 1000);
+      },
+
+      //
+  onLoad: function (options) {
+        console.log(options);
+        this.setData({
+          id:options.id
+        })
+      },
 })

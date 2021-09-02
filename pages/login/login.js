@@ -131,8 +131,8 @@ Page({
       url: 'https://www.xiaohulaile.com/xh/p/wxcx/user/wx_phone',
       header: {
         'content-type': 'application/json', // 默认值
-
       },
+      method:'post',
       data: {
         sessionKey: _this.__data__.sessionKey,
         iv: e.detail.iv,

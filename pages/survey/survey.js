@@ -23,7 +23,7 @@ Page({
       safeWay:'',//保障方式
       education:'',//文化程度
       liveStatus:'',//居住情况
-      livePlase:'',//居住地
+      livePlace:'',//居住地
       caregivers:''//照护者
     },
     form2:{
@@ -39,25 +39,6 @@ Page({
     console.log(this.data.form2);
     let form1 = this.data.form1
     let form2 = this.data.form2
-    wx.request({
-      url: 'https://www.qycloud.com.cn/bee/open-72810619931328601/ApplicationDate/getLongTermCareRiskAssessment', 
-      method:'post',
-      data: {
-        ...form1,
-        ...form2
-      },
-      header: {
-        'content-type': 'application/json', // 默认值
-      },
-      success:(res)=> {
-        console.log(res.data.data.recordId,'id');
-        if(res.data.data.recordId!=""){
-            wx.navigateTo({
-              url: `../cfxform/cfxform?id=${res.data.data.recordId}`,
-            })
-        }
-      },
-    });
     if (this.data.form1.name=== '') {
       wx.showToast({
         title: '姓名为空',
@@ -98,7 +79,7 @@ Page({
       });
       return
     }
-    if (this.data.form1.livePlase=== '' || this.data.form1.livePlase=== '请输入') {
+    if (this.data.form1.livePlase=== '') {
       wx.showToast({
         title: '居住地为空',
         icon: 'error',
@@ -174,6 +155,25 @@ Page({
       });
       return
     }
+    wx.request({
+      url: 'https://www.qycloud.com.cn/bee/open-72810619931328601/ApplicationDate/getLongTermCareRiskAssessment', 
+      method:'post',
+      data: {
+        ...form1,
+        ...form2
+      },
+      header: {
+        'content-type': 'application/json', // 默认值
+      },
+      success:(res)=> {
+        console.log(res.data.data.recordId,'id');
+        if(res.data.data.recordId!=""){
+            wx.navigateTo({
+              url: `../cfxform/cfxform?id=${res.data.data.recordId}`,
+            })
+        }
+      },
+    });
   },
   //失去焦点判断格式
   ifInp2() {
@@ -267,10 +267,12 @@ Page({
       })
     }
     if(e.target.id == 6){
+      console.log(e.target.id);
       let liveStatus = 'form1.liveStatus'
       this.setData({
         [liveStatus]:e.detail.value
       })
+      console.log(this.data.form1.liveStatus,'123');
     }
     if(e.target.id == 7){
       let caregivers = 'form1.caregivers'
@@ -278,6 +280,7 @@ Page({
         [caregivers]:e.detail.value
       })
     }
+    console.log(this.data.form1.caregivers,'123');
   },
   //年龄
   ageFn1(e){
@@ -322,10 +325,10 @@ Page({
     })
   },
 //居住地
-  livePlaseFn1(e){
-      let livePlase = 'form1.livePlase'
+  livePlaceFn1(e){
+      let livePlace = 'form1.livePlace'
       this.setData({
-        [livePlase]:e.detail.value
+        [livePlace]:e.detail.value
       })
     },
 

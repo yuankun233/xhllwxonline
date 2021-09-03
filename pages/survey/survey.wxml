@@ -59,7 +59,7 @@
         </view>
 
         <view class="index_1_text_3" wx:if="{{form1.isTreat === '是'}}">
-            <view>治疗月数:</view>
+            <view>治疗月数(月):</view>
             <view><input type="text" placeholder="请输入"  placeholder-class="CC" value="{{form1.mouth}}" bindinput="mouthFn1" /></view>
         </view>
 
@@ -154,35 +154,35 @@
 
         <view class="index_1_text_3">
             <view>居住地:</view>
-            <view><input type="text" placeholder="请输入" placeholder-class="CC" value="{{form1.livePlase}}" bindinput="livePlaseFn1" /></view>
+            <view><input type="text" placeholder="请输入" placeholder-class="CC" value="{{form1.livePlase}}" bindinput="livePlaceFn1" /></view>
         </view>
 
         <view class="index_1_text_2">
             <view class="relation_1">照护者:</view>
             <radio-group bindchange="radioChange1" id="7" class="radios">
               <label class="relation">
-                <radio color="#6B7072" value="独居" /><text>配偶</text>
+                <radio color="#6B7072" value="配偶" /><text>配偶</text>
               </label>
               <label class="relation">
-                <radio color='#6B7072' value="伴侣居住" /> <text>子女</text>
+                <radio color='#6B7072' value="子女" /> <text>子女</text>
               </label>
               <label class="relation">
-                <radio color='#6B7072' value="与子女居住" /> <text>亲友</text>
+                <radio color='#6B7072' value="亲友" /> <text>亲友</text>
               </label>
               <label class="relation">
-                <radio color='#6B7072' value="与父母居住" /> <text>保姆</text>
+                <radio color='#6B7072' value="保姆" /> <text>保姆</text>
               </label>
               <label class="relation">
-                <radio color='#6B7072' value="与兄弟姐妹居住居住" /> <text>护工</text>
+                <radio color='#6B7072' value="护工" /> <text>护工</text>
               </label>
               <label class="relation">
-                <radio color='#6B7072' value="与其他亲属居住" /> <text>医疗人员</text>
+                <radio color='#6B7072' value="医疗人员" /> <text>医疗人员</text>
               </label>
               <label class="relation">
-                <radio color='#6B7072' value="与非亲属关系的人居住" /> <text>没有任何人</text>
+                <radio color='#6B7072' value="没有任何人" /> <text>没有任何人</text>
               </label>
               <label class="relation">
-                <radio color='#6B7072' value="养老机构" /> <text>其他</text>
+                <radio color='#6B7072' value="其他" /> <text>其他</text>
               </label>
             </radio-group>
         </view>

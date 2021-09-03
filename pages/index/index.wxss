@@ -26,7 +26,7 @@ page{
   width: 256rpx;
   height: 26rpx;
   font-size: 24rpx;
-  line-height: 23rpx;
+  line-height: 26rpx;
   left: 56rpx;
   top: 20rpx;
   overflow: hidden;

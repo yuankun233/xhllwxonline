@@ -139,6 +139,18 @@
           "pathName": "pages/test/test",
           "query": "",
           "scene": null
+        },
+        {
+          "name": "pages/survey/survey",
+          "pathName": "pages/survey/survey",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/cfxform/cfxform",
+          "pathName": "pages/cfxform/cfxform",
+          "query": "",
+          "scene": null
         }
       ]
     }

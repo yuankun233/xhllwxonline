@@ -1,0 +1,87 @@
+.container {
+  position: relative;
+  .banner2 {
+    width: 750rpx;
+    height: 4000rpx;
+    z-index: -99;
+  }
+  // 表单区域
+  .main1 {
+    position: absolute;
+    top: 84rpx;
+    left: 33rpx;
+    height: 3700rpx;
+    width: 658rpx;
+    background-color: #ffffff;
+    border-radius: 10rpx;
+    .title1 {
+      position: absolute;
+      top: -50rpx;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    .survey {
+      overflow: hidden;
+      padding: 0 48rpx 0 30rpx;
+      width: 629rpx;
+      height: 422rpx;
+      background: #fdf8f6;
+      border-radius: 16rpx;
+      margin: 50rpx auto;
+      .title {
+        margin: 35rpx 0 39rpx;
+        text-align: center;
+        font-size: 32rpx;
+        font-family: PingFang SC;
+        font-weight: 500;
+        color: #e9635d;
+      }
+      // 题目选项
+      .option {
+        display: flex;
+        align-items: center;
+        margin-bottom: 54rpx;
+        height: 50rpx;
+        .radioicon {
+          width: 53rpx;
+          height: 47rpx;
+          margin-right: 33rpx;
+        }
+        .text {
+          width: 500rpx;
+          font-size: 24rpx;
+          font-family: PingFang SC;
+          font-weight: 400;
+          color: #463738;
+        }
+      }
+    }
+    .box1 {
+      margin: 122rpx auto;
+    }
+  }
+  .myRadio {
+    padding: 20rpx 48rpx 0 30rpx;
+    width: 629rpx;
+    height: 250rpx;
+    background: #fdf8f6;
+    border-radius: 16rpx;
+    margin: 50rpx auto;
+    .title {
+      margin: 35rpx 0 39rpx;
+      text-align: center;
+      font-size: 32rpx;
+      font-family: PingFang SC;
+      font-weight: 500;
+      color: #e9635d;
+    }
+  }
+  .submit {
+    position: absolute;
+    bottom: -50rpx;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 300rpx;
+    height: 80rpx;
+  }
+}

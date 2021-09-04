@@ -8,7 +8,7 @@ Page({
     name: '',
     sex: '',
     date: '',
-    region: '请输入',
+    region: '请选择区域',
     number: '',
     text: '',
     address: '',
@@ -87,6 +87,22 @@ Page({
     if (_this.__data__.number == '') {
       wx.showToast({
         title: '请输入手机',
+        icon: 'error',
+        duration: 2000,
+      });
+      return;
+    }
+    if (_this.__data__.region == '' || _this.__data__.region == '请输入') {
+      wx.showToast({
+        title: '请输入区域',
+        icon: 'error',
+        duration: 2000,
+      });
+      return;
+    }
+    if (_this.__data__.address == '' || _this.__data__.address == '请输入') {
+      wx.showToast({
+        title: '请输入地址',
         icon: 'error',
         duration: 2000,
       });

@@ -159,7 +159,7 @@ checkbox::before {
 }
 .picker {
   width: 400rpx;
-  color: #cccccc !important;
+  /* color: #cccccc !important; */
   font-size: 34rpx;
 }
 .CC {

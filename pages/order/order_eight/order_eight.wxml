@@ -3,7 +3,7 @@
 <view class="order_eight_top">
   <view class="order_eight_t_bottom">
     <view class="order_eight_t_left">
-      <image bindtap="back" class="order_eight_t_left_p" src="https://xiaohulaile.com/xh/p/back.png"></image>
+      <image bindtap="back" class="order_eight_t_left_p" src="http://xiaohulaile.com/xh/p/back.png"></image>
     </view>
     <view class="order_eight_t_mid">
       <view class="order_eight_t_mid_left {{top == 1 ?'click':''}}" bindtap="xiangshang">规格</view>
@@ -85,7 +85,7 @@
     <view class="order_eight_25">
     <view>{{eightList.notice}}</view>
     </view>
-<image src="https://xiaohulaile.com/wxcx/tuikuan/tuikuan.png" style="width:662rpx;height:602rpx;margin-left:18rpx"></image>
+<image src="http://xiaohulaile.com/wxcx/tuikuan/tuikuan.png" style="width:662rpx;height:602rpx;margin-left:18rpx"></image>
 
   </view>
 

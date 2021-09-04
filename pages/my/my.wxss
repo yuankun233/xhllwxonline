@@ -1,5 +1,6 @@
 .my {
   padding-top: 45rpx;
+  padding-bottom: 20rpx;
 }
 .my .my_top {
   position: relative;

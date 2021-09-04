@@ -1,0 +1,138 @@
+.container1 {
+  position: relative;
+}
+.container1 .banner2 {
+  width: 750rpx;
+  height: 1000rpx;
+  z-index: -99;
+}
+.container1 .main1 {
+  position: absolute;
+  top: 84rpx;
+  left: 45rpx;
+  height: 3500rpx;
+  width: 658rpx;
+  background-color: #ffffff;
+  border-radius: 10rpx;
+}
+.container1 .main1 .title1 {
+  position: absolute;
+  top: -50rpx;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.container1 .main1 .survey {
+  overflow: hidden;
+  padding: 0 48rpx 0 30rpx;
+  width: 629rpx;
+  height: 422rpx;
+  background: #fdf8f6;
+  border-radius: 16rpx;
+  margin: 50rpx auto;
+}
+.container1 .main1 .survey .title {
+  margin: 35rpx 0 39rpx;
+  text-align: center;
+  font-size: 32rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: #e9635d;
+}
+.container1 .main1 .survey .option {
+  display: flex;
+  align-items: center;
+  margin-bottom: 54rpx;
+  height: 50rpx;
+}
+.container1 .main1 .survey .option .radioicon {
+  width: 53rpx;
+  height: 47rpx;
+  margin-right: 33rpx;
+}
+.container1 .main1 .survey .option .text {
+  width: 500rpx;
+  font-size: 24rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: #463738;
+}
+.container1 .main1 .box1 {
+  margin: 122rpx auto;
+}
+.container1 .myRadio {
+  padding: 20rpx 48rpx 0 30rpx;
+  width: 629rpx;
+  height: 250rpx;
+  background: #fdf8f6;
+  border-radius: 16rpx;
+  margin: 50rpx auto;
+}
+.container1 .myRadio .title {
+  margin: 35rpx 0 39rpx;
+  text-align: center;
+  font-size: 32rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: #e9635d;
+}
+.container1 .submit {
+  position: absolute;
+  bottom: 70rpx;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 300rpx;
+  height: 80rpx;
+}
+.model_box{
+  width: 100%;
+  height: 100%;
+  background: #161515cc;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.dialog{
+  position: fixed;
+  top: 300rpx;
+  left: 170rpx;
+  width: 400rpx;
+  height: 450rpx;
+  background-color: #ffffff;
+  border-radius: 40rpx;
+}
+.dialog image{
+  width: 203rpx;
+  height: 198rpx;
+  margin-top: -25rpx;
+  z-index: 99999;
+  margin-left:100rpx ;
+}
+.hint_1{
+  font-size: 32rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: #333333;
+  text-align: center;
+}
+.hint_2{
+  font-size: 28rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: #999999;
+  margin-top: 17rpx;
+  margin-left:70rpx ;
+}
+.hint_3{
+  width: 220rpx;
+  height: 80rpx;
+  background-color: #3096FF;
+  border-radius: 50rpx;
+  line-height: 80rpx;
+  text-align: center;
+  font-size: 32rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: #FFFFFF;
+  margin-top: 20rpx;
+  margin-left:  90rpx;
+}

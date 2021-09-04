@@ -2,9 +2,6 @@
 import {
   $myRequest
 } from '../../utils/request'
-import {
-  jump
-} from '../../utils/jump'
 Page({
   /**
    * 页面的初始数据
@@ -16,10 +13,11 @@ Page({
     interval: 5000,
     duration: 500,
     address: '加载中..',
-    list: '',
+    list: '',//临床护理
     lists: '',
     nurseLists: '',
-    specialtyLists: ''
+    specialtyLists: '',//专科护理
+    homeList:''//居家康复
   },
   //跳转到护士详情
   gostart(e) {
@@ -60,7 +58,7 @@ Page({
       phoneNumber: '4009155291',
     });
   },
-  //点击跳转的时候未登录状态跳转到登录页面
+  //点击跳转到项目列表
   goAppointment() {
       wx.navigateTo({
         url: '/pages/appointment/appointment'
@@ -83,7 +81,7 @@ Page({
     const res = await $myRequest({
       url: '/project/get_list',
       data: {
-        cate: 2
+        cate: 2 
       }
     })
     this.setData({
@@ -102,6 +100,19 @@ Page({
       list: res.data
     })
     console.log(this.data.list);
+  },
+  //获取居家康复列表
+  async home() {
+    const res = await $myRequest({
+      url: '/project/get_list',
+      data: {
+        cate: 3
+      }
+    })
+    this.setData({
+      homeList: res.data
+    })
+    console.log(this.data.homeList);
   },
   //获取当前位置
   map() {
@@ -137,6 +148,8 @@ Page({
     this.map();
     //调用获取临床护理列表
     this.clinic();
+    //居家康复
+    this.home();
   },
   /**
    * 生命周期函数--监听页面初次渲染完成

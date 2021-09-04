@@ -27,13 +27,14 @@ Page({
     wx.getUserProfile({
       desc: '用于完善会员资料', // 声明获取用户个人信息后的用途，后续会展示在弹窗中，请谨慎填写
       success: (res) => {
+        console.log(res.userInfo,'userInfo');
         this.setData({
           userInfo: res.userInfo,
           // hasUserInfo: true,
         });
         wx.login({
           success(res) {
-            console.log(res.code);
+            console.log(res.code,'kanyixia');
             _this.setData({ code: res.code });
             // return;
             if (!_this.isgetUserInfo) {
@@ -64,6 +65,7 @@ Page({
                     },
                     success(res) {
                       console.log(res.data.message, '1111122323');
+                      console.log(res,'key');
                       // console.log(res.data.data.sessionKey);
                       // console.log(res.data.data.openid);
                       if (res.data.message == 2) {
@@ -130,6 +132,7 @@ Page({
       header: {
         'content-type': 'application/json', // 默认值
       },
+      method:'post',
       data: {
         sessionKey: _this.__data__.sessionKey,
         iv: e.detail.iv,

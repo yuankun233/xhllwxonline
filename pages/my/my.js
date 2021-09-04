@@ -10,6 +10,11 @@ Page({
     statusnum:'',
     statusnum2:''
   },
+  gosurvey() {
+    wx.navigateTo({
+      url: '../survey/survey',
+    })
+  },
   goFile() {
     var _this = this;
     wx.request({
@@ -24,7 +29,6 @@ Page({
         'content-type': 'application/json', // 默认值
       },
       success(res) {
-        console.log(res.data.code);
         if (res.data.code == 1) {
           wx.navigateTo({
             url: '/pages/file/file',
@@ -94,7 +98,6 @@ Page({
             status: 1
           },
           success(res) {
-            console.log(res)
             _this.setData({
               statusnum1: res.data.data,
             });
@@ -111,7 +114,7 @@ Page({
             status: 2
           },
           success(res) {
-            console.log(res)
+            // console.log(res)
             _this.setData({
               statusnum: res.data.data,
             });
@@ -178,7 +181,7 @@ Page({
             my_id: res.data.my_id,
           },
           success(res) {
-            console.log(res)
+            // console.log(res)
             if(res.data.message == '请重新登录'){
               wx.showToast({
                 title: '请先登录',
@@ -238,7 +241,7 @@ Page({
             status: 2
           },
           success(res) {
-            console.log(res)
+            // console.log(res)
             if(res.data.message == '请重新登录'){
               wx.showToast({
                 title: '请先登录',

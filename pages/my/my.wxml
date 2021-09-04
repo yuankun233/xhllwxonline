@@ -78,5 +78,9 @@
       <image src="https://www.xiaohulaile.com/wxcx/gou2 (3).png"></image>
       <view style="font-family:PingFangSC-Regular;"> 常见问答</view>
     </view>
+    <view bindtap="gosurvey" class="my_bottom_1" style="border-top:1rpx solid #ccc">
+      <image src="../../images/survey.png"></image>
+      <view style="font-family:PingFangSC-Regular;"> 长护险自我评估表</view>
+    </view>
   </view>
 </view>

@@ -197,6 +197,7 @@ checkbox::before {
 	position: absolute;
 	color: var(--white) !important;
 	top: 50%;
+	left: 25%;
 	margin-top: -8px;
 	right: 1px;
 	font-size: 32rpx;
@@ -2493,7 +2494,7 @@ button.icon.lg {
 	max-width: 100%;
 	background-color: #f8f8f8;
 	border-radius: 10rpx;
-	overflow: hidden;
+	/* overflow: hidden; */
 }
 
 .cu-modal.bottom-modal::before {

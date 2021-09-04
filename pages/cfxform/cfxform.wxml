@@ -1,0 +1,196 @@
+<view class="container1">
+  <image
+    src="https://z3.ax1x.com/2021/08/31/hUA0AJ.jpg"
+    mode="widthFix"
+    class="banner2"
+  ></image>
+  <view class="main1">
+    <image
+      src="../../images/title3.png"
+      mode="widthFix"
+      class="title1"
+    ></image>
+
+    <view class="survey box1">
+      <view class="topic">
+        <view class="title">进食</view>
+        <view
+          class="option"
+          wx:for="{{topic1}}"
+          bind:tap="radioChange"
+          data-index="{{index}}"
+          data-type1="{{item.type}}"
+          data-value="{{item.text}}"
+        >
+          <image
+            src="../../images/activeicon.png"
+            mode=""
+            wx:if="{{item.isActive}}"
+            class="radioicon"
+          ></image>
+          <image
+            src="../../images/icon.png"
+            mode=""
+            class="radioicon"
+            wx:else
+          ></image>
+          <text class="text">{{ item.text }}</text>
+        </view>
+      </view>
+    </view>
+    <view class="survey box1">
+      <view class="topic">
+        <view class="title">穿衣</view>
+        <view
+          class="option"
+          wx:for="{{topic2}}"
+          bind:tap="radioChange"
+          data-index="{{index}}"
+          data-type1="{{item.type}}"
+          data-value="{{item.text}}"
+        >
+          <image
+            src="../../images/activeicon.png"
+            mode=""
+            wx:if="{{item.isActive}}"
+            class="radioicon"
+          ></image>
+          <image
+            src="../../images/icon.png"
+            mode=""
+            class="radioicon"
+            wx:else
+          ></image>
+          <text class="text">{{ item.text }}</text>
+        </view>
+      </view>
+    </view>
+    <view class="survey box1">
+      <view class="topic">
+        <view class="title">大小便控制</view>
+        <view
+          class="option"
+          wx:for="{{topic3}}"
+          bind:tap="radioChange"
+          data-index="{{index}}"
+          data-type1="{{item.type}}"
+          data-value="{{item.text}}"
+        >
+          <image
+            src="../../images/activeicon.png"
+            mode=""
+            wx:if="{{item.isActive}}"
+            class="radioicon"
+          ></image>
+          <image
+            src="../../images/icon.png"
+            mode=""
+            class="radioicon"
+            wx:else
+          ></image>
+          <text class="text">{{ item.text }}</text>
+        </view>
+      </view>
+    </view>
+    <view class="survey box1">
+      <view class="topic">
+        <view class="title">用厕</view>
+        <view
+          class="option"
+          wx:for="{{topic4}}"
+          bind:tap="radioChange"
+          data-index="{{index}}"
+          data-type1="{{item.type}}"
+          data-value="{{item.text}}"
+        >
+          <image
+            src="../../images/activeicon.png"
+            mode=""
+            wx:if="{{item.isActive}}"
+            class="radioicon"
+          ></image>
+          <image
+            src="../../images/icon.png"
+            mode=""
+            class="radioicon"
+            wx:else
+          ></image>
+          <text class="text">{{ item.text }}</text>
+        </view>
+      </view>
+    </view>
+
+    <view class="survey box1">
+      <view class="topic">
+        <view class="title">洗澡</view>
+        <view
+          class="option"
+          wx:for="{{topic5}}"
+          bind:tap="radioChange"
+          data-index="{{index}}"
+          data-type1="{{item.type}}"
+          data-value="{{item.text}}"
+        >
+          <image
+            src="../../images/activeicon.png"
+            mode=""
+            wx:if="{{item.isActive}}"
+            class="radioicon"
+          ></image>
+          <image
+            src="../../images/icon.png"
+            mode=""
+            class="radioicon"
+            wx:else
+          ></image>
+          <text class="text">{{ item.text }}</text>
+        </view>
+      </view>
+    </view>
+    <view class="survey box1">
+      <view class="topic">
+        <view class="title">床椅转移</view>
+        <view
+          class="option"
+          wx:for="{{topic6}}"
+          bind:tap="radioChange"
+          data-index="{{index}}"
+          data-type1="{{item.type}}"
+          data-value="{{item.text}}"
+        >
+          <image
+            src="../../images/activeicon.png"
+            mode=""
+            wx:if="{{item.isActive}}"
+            class="radioicon"
+          ></image>
+          <image
+            src="../../images/icon.png"
+            mode=""
+            class="radioicon"
+            wx:else
+          ></image>
+          <text class="text">{{ item.text }}</text>
+        </view>
+      </view>
+    </view>
+    <image
+      src="../../images/submit.png"
+      mode="widthFix"
+      class="submit"
+      bind:tap="submit"
+      data-target="Image"
+    ></image>
+  </view>
+  <view class="model_box " wx:if="{{modalName=='Image'}}">
+      <view class="dialog">
+          <image src="../../images/tijiao.png"></image>
+          <view class="hint_1">资料提交成功</view>
+          <view class="hint_2">您的评估结果为：{{grade}}</view>
+          <view class="hint_2" wx:if="{{grade==='E' || grade==='F'  || grade==='G'}}">请等候工作人员联系您</view>
+          <view class="hint_2" wx:if="{{grade==='A' || grade==='B'  || grade==='C' || grade==='D'}}" >未通过长护险评估</view>
+          <view class="hint_3" bindtap="closeHint">我知道了</view>
+      </view>
+  </view>
+</view>
+

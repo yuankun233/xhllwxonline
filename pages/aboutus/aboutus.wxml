@@ -25,7 +25,7 @@
     <view class="list_address">
       <view class="address_left">
         <view
-          style="width: 277rpx;height: 36rpx;font-size: 30rpx;font-family: PingFangSC-Regular;font-weight: 500;color: #333333;overflow:hidden; //超出的文本隐藏text-overflow:ellipsis; //用省略号显示white-space:nowrap; //不换行">
+          style="width: 277rpx;height: 36rpx;font-size: 30rpx;font-family: PingFangSC-Regular;font-weight: 500;color: #333333;overflow:hidden;">
           东软软件园</view>
         <view
           style="width: 277rpx;height: 28rpx;font-size: 22rpx;font-family: PingFangSC-Regular;font-weight: 500;color: #666; margin-top:10rpx">

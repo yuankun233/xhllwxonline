@@ -1,4 +1,5 @@
 // pages/merdetails/merdetails.js
+import { $myRequestW } from '../../utils/requestWadmin'
 Page({
 
   /**
@@ -8,9 +9,10 @@ Page({
     user:'',
     list:''
   },
-  back:function(){
+  back(){
     wx.navigateBack({})
   },
+  //调用导航
   daohang:function(){
     let _this = this
     wx.getLocation({
@@ -31,47 +33,29 @@ Page({
       }
      })
   },
+  //拨打电话
   goSpecialty() {
-    // wx.navigateTo({
-    //   url: '/pages/specialty/specialty',
-    // });
     wx.makePhoneCall({
       phoneNumber: '4009155291',
     });
+  },
+  //获取护理站详情
+  async getNursingStationDetail(options) {
+    const res = await $myRequestW({
+      url: 'Nursing/get_data',
+      data: {
+        nursing_id:options.id
+      }
+    })
+    this.setData({
+      list: res
+    })
   },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log(options)
-    let _this = this
-    wx.getStorage({
-      key: 'user',
-      success(res) {
-        console.log(res.data);
-        _this.setData({
-          user: res.data,
-        });
-        wx.request({
-          url: 'https://www.xiaohulaile.com/xh/p/wxcx/nursing/get_data',
-          header: {
-            'content-type': 'application/json', // 默认值
-          },
-          data: {
-            user_token: res.data.user_token,
-            nursing_id: options.id,
-          },
-          success(res) {{
-            console.log(res)
-              _this.setData({
-                list: res.data.data
-              })
-              console.log(_this.__data__.list)
-            }
-          },
-        });
-      },
-    });
+    this.getNursingStationDetail(options)
   },
 
   /**

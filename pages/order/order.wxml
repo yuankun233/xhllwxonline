@@ -1,7 +1,7 @@
 <!--pages/order/order.wxml-->
 <scroll-view scroll-x class="bg-white nav">
   <view class="flex text-center">
-    <view class="cu-item flex-sub {{index==TabCur?'AA':''}}" wx:for="{{tab}}" wx:key bindtap="tabSelect" data-id="{{index}}">
+    <view class="cu-item flex-sub {{index==TabCur?'AA':''}}" wx:for="{{tab}}" wx:key="*this" bindtap="tabSelect" data-id="{{index}}">
       {{item}}
       <view class="{{index==TabCur?'BB':''}}">
       </view>
@@ -10,7 +10,7 @@
 </scroll-view>
 <!-- 有订单 -->
 <view class="order">
-    <view class="order_list" wx:for="{{list}}"  bindtap="navto"  id="{{item.id}}">
+    <view class="order_list" wx:for="{{list}}"  bindtap="navto"  wx:key="id" id="{{item.id}}">
       <image class="order_list_1" src="{{item.pic_url==null?'../../images/index/zanwu.png':item.pic_url}}"></image>
       <view class="order_list_2">{{item.body}}</view>
       <view class="order_list_3">{{item.status_text}}</view>

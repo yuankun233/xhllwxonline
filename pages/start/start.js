@@ -22,7 +22,7 @@ Page({
   this.setData({
     nurseList:resList
   })
-  console.log(this.data.nurseList);
+  console.log(resList);
   if(resList.level == '护师'){
       this.setData({
         img:'https://www.xiaohulaile.com/xh/p/doc/hushi2.png'
@@ -45,7 +45,8 @@ Page({
       title: '加载中...',
     })
     wx.hideLoading()
-    this.getnurseList(options.nurse);
+    console.log(options);
+    this.getnurseList(options.id);
   },
 
   /**

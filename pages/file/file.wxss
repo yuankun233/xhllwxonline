@@ -97,11 +97,12 @@
   text-align: center;
   margin: 0 auto;
   border-radius: 44rpx;
-  margin-top: 458rpx;
+  margin-top: 410rpx;
   font-size: 44rpx;
   font-family: PingFang SC;
   font-weight: 500;
   color: #ffffff;
+  margin-bottom: 20rpx;
 }
 .mm {
   margin-right: 87rpx !important;

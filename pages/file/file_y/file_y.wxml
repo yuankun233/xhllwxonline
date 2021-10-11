@@ -1,6 +1,6 @@
 <!--pages/file/file_y/file_y.wxml-->
 <view class="file_y">
-  <view wx:for="{{list}}" class="file_y_1">
+  <view wx:for="{{list}}" class="file_y_1" wx:key="id">
     <view class="name">{{item.name}}
       <span wx:if="{{item.sex==1}}" class="sex">男</span>
     <span wx:else class="sex">女</span>

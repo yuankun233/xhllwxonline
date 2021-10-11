@@ -14,15 +14,15 @@ Page({
   onLoad: function (options) {
       var _this=this
         wx.request({
-          url: 'https://www.xiaohulaile.cn/xh/p/xcx/Tagreement/index',
+          url: 'https://www.xiaohulaile.com/xh/p/xcx/Tagreement/index',
           method:"POST",
           dataType: 'json',
           header: {
             'content-type': 'application/x-www-form-urlencoded',
           },
           success(res){
-      console.log(res.data.data)
-            if(res.data.code==0){
+            console.log(res.data.data)
+            if(res.data.code==0,'123'){
                _this.setData({
                   agreement:res.data.data
                 })

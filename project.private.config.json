@@ -151,6 +151,18 @@
           "pathName": "pages/cfxform/cfxform",
           "query": "",
           "scene": null
+        },
+        {
+          "name": "pages/indexfb/indexfb",
+          "pathName": "pages/indexfb/indexfb",
+          "query": "",
+          "scene": 1011
+        },
+        {
+          "name": "pages/nurseList/nurseList",
+          "pathName": "pages/nurseList/nurseList",
+          "query": "",
+          "scene": null
         }
       ]
     }

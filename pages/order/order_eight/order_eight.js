@@ -394,6 +394,7 @@ Page({
           _this.setData({
             isPay: false,
           });
+          console.log(res.data,'微信接口数据');
           if (res.data.code == 0) {
             wx.requestPayment({
               timeStamp: res.data.data.timeStamp,

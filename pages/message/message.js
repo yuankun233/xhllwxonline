@@ -11,53 +11,6 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    wx.showLoading({
-      title: '加载中...',
-    })
-    var _this = this;
-    // wx.getStorage({})
-    // console.log(11);
-    wx.getStorage({
-      key: 'user',
-      success(res) {
-        console.log(res, 'meiyou的');
-        console.log(res.data, 'ahahahha1');
-        if(res.data.message == '请重新登陆'){
-          wx.showToast({
-            title: '请先登录',
-            icon: 'none',
-            duration: 1000,
-          });
-          setTimeout(function () {
-            console.log('doSomething');
-            wx.reLaunch({
-              url: '/pages/login/login',
-            });
-          }, 1000);
-        }
-
-        _this.setData({
-          user: res.data,
-        });
-        wx.hideLoading({
-          success: (res) => {},
-        })
-      },
-      fail(res) {
-        console.log(res)
-        wx.showToast({
-        title: '请先登录',
-        icon: 'none',
-        duration: 1000
-        });
-        setTimeout(function () {
-        console.log('doSomething');
-        wx.reLaunch({
-        url: '/pages/login/login'
-        });
-        }, 1000);
-        }
-    });
   },
 
   /**
@@ -69,53 +22,6 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    wx.showLoading({
-      title: '加载中...',
-    })
-    var _this = this;
-    // wx.getStorage({})
-    // console.log(11);
-    wx.getStorage({
-      key: 'user',
-      success(res) {
-        console.log(res, 'meiyou的');
-        console.log(res.data, 'ahahahha1');
-        if(res.data.message == '请重新登陆'){
-          wx.showToast({
-            title: '请先登录',
-            icon: 'none',
-            duration: 1000,
-          });
-          setTimeout(function () {
-            console.log('doSomething');
-            wx.reLaunch({
-              url: '/pages/login/login',
-            });
-          }, 1000);
-        }
-
-        _this.setData({
-          user: res.data,
-        });
-        wx.hideLoading({
-          success: (res) => {},
-        })
-      },
-      fail(res) {
-        console.log(res)
-        wx.showToast({
-        title: '请先登录',
-        icon: 'none',
-        duration: 1000
-        });
-        setTimeout(function () {
-        console.log('doSomething');
-        wx.reLaunch({
-        url: '/pages/login/login'
-        });
-        }, 1000);
-        }
-    });
   },
 
   /**

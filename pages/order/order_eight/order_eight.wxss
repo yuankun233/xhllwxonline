@@ -59,7 +59,8 @@ page {
 }
 .order_eight .order_eight_project .order_eight_project_titleall {
   float: left;
-  width: 200rpx;
+  width: 240rpx;
+  height: 50rpx;
 }
 .order_eight .order_eight_project .order_eight_project_p {
   width: 227rpx;
@@ -69,6 +70,7 @@ page {
 }
 .order_eight .order_eight_project .order_eight_project_title {
   height: 40rpx;
+  width: 300rpx;
   margin-left: 20rpx;
   font-size: 36rpx;
   font-family: PingFangSC-Regular;
@@ -313,6 +315,7 @@ page {
 .order_eight .order_eight_2 .order_eight_25 {
   margin-top: 22rpx;
   padding-top: 10rpx;
+  padding-bottom: 10rpx;
   padding-left: 17rpx;
   width: 702rpx;
   background: #f7f7f7;
@@ -364,6 +367,7 @@ page {
   padding-top: 31rpx;
   padding-left: 22rpx;
   position: relative;
+ 
 }
 .modal .modal_2 .modal_21 {
   height: 27rpx;

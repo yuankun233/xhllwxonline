@@ -1,12 +1,11 @@
 <!--pages/my/my.wxml-->
 <view class="my">
   <view class="my_top">
+  <!-- <view class="my_DLL">注册/登录</view> -->
     <view class="my_head">
-      <image src="{{user.head_logo}}"></image>
+      <image src="{{getLogin?user.head_logo : '../../images/3a1387e5c4e3a7a8c7f77c4b87df027.png'}}"></image>
     </view>
-    <view class="my_DLL"></view>
-    <view class="username">{{user.nickname}}</view>
-    <!-- <view class="my_num">账号:12345 ></view> -->
+    <view class="username" bindtap="{{getLogin?'':'getLogin1'}}">{{getLogin?user.nickname : '登录/注册'}}</view>
     <!-- 次数 -->
     <view class="my_top_1">
       <view class="my_top_11 Tleft">
@@ -78,9 +77,9 @@
       <image src="https://www.xiaohulaile.com/wxcx/gou2 (3).png"></image>
       <view style="font-family:PingFangSC-Regular;"> 常见问答</view>
     </view>
-    <view bindtap="gosurvey" class="my_bottom_1" style="border-top:1rpx solid #ccc">
+    <!-- <view bindtap="gosurvey" class="my_bottom_1" style="border-top:1rpx solid #ccc">
       <image src="../../images/survey.png"></image>
       <view style="font-family:PingFangSC-Regular;"> 长护险自我评估表</view>
-    </view>
+    </view> -->
   </view>
 </view>

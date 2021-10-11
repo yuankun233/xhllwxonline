@@ -1,0 +1,25 @@
+<view class="nurseBox">
+<view class="index">
+ <!-- banner图片 -->
+ <view class="bannerImg"><image src="../../images/syImage/nurseBanner.png"></image></view>
+  <!-- 标题 -->
+  <view class="nurseTitle">优选医生推荐</view>
+  <!-- 护士列表 -->
+  <view class="nurseList" wx:for="{{nurseList}}" wx:key="bianhao" bindtap="goNurseMes" data-id="{{item.bianhao}}">
+  <!-- 头像名字介绍 -->
+    <view class="nurseTop">
+      <view class="nurseTop_1"><image src="{{item.touxianghttp}}"></image></view>
+      <view class="nurseTop_2">
+        <view><text>{{item.xingming}}</text><text>{{item.zhandian}}</text></view>
+        <view><text>{{item.zhicheng}}</text>
+        <!-- <text>骨科术后康复</text> -->
+        </view>
+      </view>
+    </view>
+    <!-- 服务介绍 -->
+    <view class="serveIn"><text>职业年限</text><text>{{item.gongzuonianxian}}年</text><text>好评率</text><text>98%</text><text>服务次数</text><text>{{item.serveNum}}</text></view>
+    <!-- 介绍 -->
+    <view  class="textIn">{{item.introduce}}</view>
+  </view>
+</view>
+</view>

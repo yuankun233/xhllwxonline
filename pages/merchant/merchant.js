@@ -1,11 +1,11 @@
 // pages/merchant/merchant.js
+import { $myRequestW } from '../../utils/requestWadmin'
 Page({
   /**
    * 页面的初始数据
    */
   data: {
     list: '',
-    user: '',
   },
   getList(user) {},
   /**
@@ -17,76 +17,27 @@ Page({
       url: '/pages/merdetails/merdetails?id=' + option.currentTarget.id,
     });
   },
-  onLoad: function (options) {
-    wx.showLoading({
-      title: '加载中...',
+  //获取护理站列表
+  async getNursingStation(res1) {
+    const res = await $myRequestW({
+      url: 'Nursing/index',
+      data: {
+        longitude: res1.longitude,
+        latitude: res1.latitude
+      }
     })
+    console.log(res,'hlz');
+    this.setData({
+      list: res
+    })
+  },
+  onLoad: function (options) {
     var _this = this;
-    // wx.getStorage({})
-    // console.log(11);
-    wx.getStorage({
-      key: 'user',
-      success(res) {
-        console.log(res, 'meiyou的');
-        console.log(res.data, 'ahahahha1');
-        _this.setData({
-          user: res.data,
-        });
         wx.getLocation({
           success(res1) {
-            console.log(res1.latitude, '1111');
-            console.log(res.data, '看看');
-            console.log(res1.longitude, '1111');
-            wx.request({
-              url: 'https://www.xiaohulaile.com/xh/p/wxcx/nursing/index',
-              header: {
-                'content-type': 'application/json', // 默认值
-              },
-              data: {
-                user_token: res.data.user_token,
-                my_id: res.data.my_id,
-                longitude: res1.longitude,
-                latitude: res1.latitude,
-              },
-              success(res) {
-                if(res.data.message == "请重新登录"){
-                  console.log(res,111111)
-                    wx.showToast({
-                      title: '请先登录',
-                      icon: 'none',
-                      duration: 1000,
-                    });
-                    setTimeout(function () {
-                      console.log('doSomething');
-                      wx.reLaunch({
-                        url: '/pages/login/login',
-                      });
-                    }, 1000);
-                  }
-                _this.setData({
-                  list: res.data.data,
-                });
-                wx.hideLoading()
-              },
-            });
+            _this.getNursingStation(res1)
           },
         });
-      },
-      fail(res) {
-        console.log(res)
-        wx.showToast({
-        title: '请先登录',
-        icon: 'none',
-        duration: 1000
-        });
-        setTimeout(function () {
-        console.log('doSomething');
-        wx.reLaunch({
-        url: '/pages/login/login'
-        });
-        }, 1000);
-        }
-    });
   },
   /**
    * 生命周期函数--监听页面初次渲染完成
@@ -97,49 +48,6 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    wx.showLoading({
-      title: '加载中...',
-    })
-    var _this = this;
-    // wx.getStorage({})
-    // console.log(11);
-
-    wx.getStorage({
-      key: 'user',
-      
-      success(res) {
-        console.log(res, 'meiyou的');
-        console.log(res.data, 'ahahahha1');
-        _this.setData({
-          user: res.data,
-        });
-        wx.getLocation({
-          success(res1) {
-            console.log(res1.latitude, '1111');
-            console.log(res.data, '看看');
-            console.log(res1.longitude, '1111');
-            wx.request({
-              url: 'https://www.xiaohulaile.com/xh/p/wxcx/nursing/index',
-              header: {
-                'content-type': 'application/json', // 默认值
-              },
-              data: {
-                user_token: res.data.user_token,
-                my_id: res.data.my_id,
-                longitude: res1.longitude,
-                latitude: res1.latitude,
-              },
-              success(res) {
-                _this.setData({
-                  list: res.data.data,
-                });
-                wx.hideLoading()
-              },
-            });
-          },
-        });
-      },
-    });
   },
 
   /**

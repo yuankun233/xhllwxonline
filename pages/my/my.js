@@ -4,26 +4,47 @@ Page({
    * 页面的初始数据
    */
   data: {
-    users: '',
     user: '',
     statusnum1:'',
     statusnum:'',
-    statusnum2:''
+    statusnum2:'',
+    //登录未登录判断
+    getLogin:false
   },
-  gosurvey() {
+  //跳转登录状态
+  getLogin1(){
     wx.navigateTo({
-      url: '../survey/survey',
+      url: '../login/login',
     })
   },
+  //封装登陆状态判断
+  ifLogin() {
+    if(!this.data.getLogin){
+      wx.showToast({
+        title: '请先登录',
+        icon: 'none',
+        duration: 1000,
+      });
+      setTimeout(function () {
+        console.log('doSomething');
+        wx.reLaunch({
+          url: '/pages/login/login',
+        });
+      }, 1000);
+      return
+    }
+  },
+  //跳转地址管理
   goFile() {
     var _this = this;
+    this.ifLogin();
     wx.request({
       url: 'https://www.xiaohulaile.com/xh/p/wxcx/my/archive', //仅为示例，并非真实的接口地址
       // url: 'https://159.75.47.247/xh/p/wxcx/my/archive',
       method: 'post',
       data: {
-        user_token: _this.__data__.users.user_token,
-        my_id: _this.__data__.users.my_id,
+        user_token: _this.__data__.user.user_token,
+        my_id: _this.__data__.user.id,
       },
       header: {
         'content-type': 'application/json', // 默认值
@@ -44,11 +65,14 @@ Page({
       },
     });
   },
+  //跳转订单
   goOurder(e) {
-    console.log(e.currentTarget.dataset.id);
-    wx.navigateTo({
-      url: `/pages/order/order?index=${e.currentTarget.dataset.id}`,
-    });
+    this.ifLogin();
+    if (this.data.getLogin) {
+      wx.navigateTo({
+        url: `/pages/order/order?index=${e.currentTarget.dataset.id}`,
+      });
+    } 
   },
   goSpecialty() {
     wx.navigateTo({
@@ -70,7 +94,7 @@ Page({
       success(res) {
         console.log(res.data);
         _this.setData({
-          users: res.data,
+          getLogin:true
         });
         wx.request({
           url: 'https://www.xiaohulaile.com/xh/p/wxcx/my/my',
@@ -138,18 +162,6 @@ Page({
         });
       },
       fail(res) {
-        console.log(res)
-        wx.showToast({
-        title: '请先登录',
-        icon: 'none',
-        duration: 1000
-        });
-        setTimeout(function () {
-        console.log('doSomething');
-        wx.reLaunch({
-        url: '/pages/login/login'
-        });
-        }, 1000);
         }
     });
   },
@@ -163,150 +175,6 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    var _this = this;
-    wx.getStorage({
-      key: 'user',
-      success(res) {
-        console.log(res.data);
-        _this.setData({
-          users: res.data,
-        });
-        wx.request({
-          url: 'https://www.xiaohulaile.com/xh/p/wxcx/my/my',
-          header: {
-            'content-type': 'application/json', // 默认值
-          },
-          data: {
-            user_token: res.data.user_token,
-            my_id: res.data.my_id,
-          },
-          success(res) {
-            // console.log(res)
-            if(res.data.message == '请重新登录'){
-              wx.showToast({
-                title: '请先登录',
-                icon: 'none',
-                duration: 1000,
-              });
-              setTimeout(function () {
-                console.log('doSomething');
-                wx.reLaunch({
-                  url: '/pages/login/login',
-                });
-              }, 1000);
-            }
-            _this.setData({
-              user: res.data.data,
-            });
-          },
-        });
-        wx.request({
-          url: 'https://www.xiaohulaile.com/xh/p/wxcx/order/order_num',
-          header: {
-            'content-type': 'application/json', // 默认值
-          },
-          data: {
-            user_token: res.data.user_token,
-            my_id: res.data.my_id,
-            status: 1
-          },
-          success(res) {
-            console.log(res)
-            if(res.data.message == '请重新登录'){
-              wx.showToast({
-                title: '请先登录',
-                icon: 'none',
-                duration: 1000,
-              });
-              setTimeout(function () {
-                console.log('doSomething');
-                wx.reLaunch({
-                  url: '/pages/login/login',
-                });
-              }, 1000);
-            }
-            _this.setData({
-              statusnum1: res.data.data,
-            });
-          },
-        });
-        wx.request({
-          url: 'https://www.xiaohulaile.com/xh/p/wxcx/order/order_num',
-          header: {
-            'content-type': 'application/json', // 默认值
-          },
-          data: {
-            user_token: res.data.user_token,
-            my_id: res.data.my_id,
-            status: 2
-          },
-          success(res) {
-            // console.log(res)
-            if(res.data.message == '请重新登录'){
-              wx.showToast({
-                title: '请先登录',
-                icon: 'none',
-                duration: 1000,
-              });
-              setTimeout(function () {
-                console.log('doSomething');
-                wx.reLaunch({
-                  url: '/pages/login/login',
-                });
-              }, 1000);
-            }
-            _this.setData({
-              statusnum: res.data.data,
-            });
-          },
-        });
-        wx.request({
-          url: 'https://www.xiaohulaile.com/xh/p/wxcx/order/order_num',
-          header: {
-            'content-type': 'application/json', // 默认值
-          },
-          data: {
-            user_token: res.data.user_token,
-            my_id: res.data.my_id,
-            status: 3
-          },
-          success(res) {
-            console.log(res.data.message,111);
-            if(res.data.message == "请重新登录"){
-              console.log(res,111)
-              wx.showToast({
-                title: '请先登录',
-                icon: 'none',
-                duration: 1500,
-              });
-              setTimeout(function () {
-                console.log('doSomething');
-                wx.reLaunch({
-                  url: '/pages/login/login',
-                });
-              }, 1000);
-            }
-            _this.setData({
-              statusnum2: res.data.data,
-            });
-          },
-        });
-      },
-      fail(res) {
-        console.log(res)
-        wx.showToast({
-        title: '请先登录',
-        icon: 'none',
-        duration: 1000
-        });
-        setTimeout(function () {
-        console.log('doSomething');
-        wx.reLaunch({
-        url: '/pages/login/login'
-        });
-        }, 1000);
-        }
-    });
   },
 
   /**

@@ -4,7 +4,7 @@
     "ignore": []
   },
   "setting": {
-    "urlCheck": true,
+    "urlCheck": false,
     "es6": true,
     "enhance": false,
     "postcss": true,
@@ -22,9 +22,9 @@
     "uploadWithSourceMap": true,
     "compileHotReLoad": false,
     "lazyloadPlaceholderEnable": false,
-    "useMultiFrameRuntime": false,
-    "useApiHook": false,
-    "useApiHostProcess": false,
+    "useMultiFrameRuntime": true,
+    "useApiHook": true,
+    "useApiHostProcess": true,
     "babelSetting": {
       "ignore": [],
       "disablePlugins": [],
@@ -41,7 +41,7 @@
   "compileType": "miniprogram",
   "libVersion": "2.19.1",
   "appid": "wx387cd06223b572b0",
-  "projectname": "xhll2(on-line)",
+  "projectname": "xhll2(on-line)-%20%E6%B5%8B%E8%AF%95",
   "debugOptions": {
     "hidedInDevtools": []
   },

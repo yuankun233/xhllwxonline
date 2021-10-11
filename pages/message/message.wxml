@@ -21,7 +21,7 @@
   </view>
   <view class='message_banner'>
     <navigator url="/pages/message_details/message_details?id=1">
-    <image src="../../images/index/recbanner.png"></image>
+    <image src="https://www.xiaohulaile.com/img/xhll3/xhllxcximg/message/recbanner.png"></image>
     <view>关于高血压，你知道多少?</view>
     </navigator>
   </view>
@@ -43,7 +43,7 @@
     </view>
     </view>
     <view class="list_right">
-    <image src="../../images/index/py.jpg"></image>
+    <image src="https://www.xiaohulaile.com/img/xhll3/xhllxcximg/message/py.jpg"></image>
     </view>
   </view>
 </navigator>
@@ -65,7 +65,7 @@
     </view>
     </view>
     <view class="list_right">
-    <image src="../../images/index/cd.jpg"></image>
+    <image src="https://www.xiaohulaile.com/img/xhll3/xhllxcximg/message/cd.jpg"></image>
     </view>
   </view>
 </navigator>
@@ -87,7 +87,7 @@
     </view>
     </view>
     <view class="list_right">
-    <image src="../../images/index/ss.jpg"></image>
+    <image src="https://www.xiaohulaile.com/img/xhll3/xhllxcximg/message/ss.jpg"></image>
     </view>
   </view>
 </navigator>

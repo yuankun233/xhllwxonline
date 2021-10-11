@@ -197,7 +197,7 @@ checkbox::before {
 	position: absolute;
 	color: var(--white) !important;
 	top: 50%;
-	left: 25%;
+	left: 15%;
 	margin-top: -8px;
 	right: 1px;
 	font-size: 32rpx;

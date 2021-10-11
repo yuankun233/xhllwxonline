@@ -66,8 +66,6 @@ Page({
                     success(res) {
                       console.log(res.data.message, '1111122323');
                       console.log(res,'key');
-                      // console.log(res.data.data.sessionKey);
-                      // console.log(res.data.data.openid);
                       if (res.data.message == 2) {
                         console.log('我已有手机号,直接登录');
                         wx.setStorage({
@@ -85,6 +83,7 @@ Page({
                         sessionKey: res.data.data.sessionKey,
                         openid: res.data.data.openid,
                       });
+                      console.log(_this.data.sessionKey,'密钥');
                     },
                   });
                   // _this.getInfoOver();
@@ -92,18 +91,6 @@ Page({
                 },
                 fail: function (res) {
                   console.log('errMsg : ' + res.errMsg);
-                  // _this.$showMyToast(res.errMsg ? res.errMsg : '用户信息获取失败');
-                  // wx.showModal({
-                  //   title: '提示',
-                  //   content: '用户信息获取失败',
-                  //   success(res) {
-                  //     if (res.confirm) {
-                  //       console.log('用户点击确定');
-                  //     } else if (res.cancel) {
-                  //       console.log('用户点击取消');
-                  //     }
-                  //   },
-                  // });
                   _this.setData({
                     isgetUserInfo: false,
                   });
@@ -121,9 +108,6 @@ Page({
       mask:true,
     })
     var _this = this;
-    console.log(e.detail.errMsg, 'cuow1');
-    console.log(e.detail.iv, 'iv');
-    console.log(e.detail.encryptedData, '111');
         if (e.detail.iv == undefined || e.detail.encryptedData == undefined) {
             return;
           }
@@ -180,7 +164,6 @@ Page({
    */
   onLoad: function (options) {
     console.log(options);
-    
     this.setData({
       invitation: gup('id',decodeURIComponent(options.q))
     })

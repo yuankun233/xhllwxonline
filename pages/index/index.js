@@ -1,120 +1,50 @@
-// pages/index/index.js
-import {
-  $myRequest
-} from '../../utils/request'
+// pages/indexfb.js
 Page({
+
   /**
    * 页面的初始数据
    */
   data: {
-    indicatorDots: true,
-    vertical: false,
-    autoplay: true,
-    interval: 5000,
-    duration: 500,
-    address: '加载中..',
-    list: '',//临床护理
-    lists: '',
-    nurseLists: '',
-    specialtyLists: '',//专科护理
-    homeList:''//居家康复
-  },
-  //跳转到护士详情
-  gostart(e) {
-    console.log(e);
-    const nurse = e.currentTarget.dataset.id;
-    wx.navigateTo({
-      url: `/pages/start/start?nurse=${nurse}`,
-    });
-  },
-  //跳转到订单详情
-  goOrder(e) {
-    console.log(e.currentTarget.dataset.id);
-    wx.navigateTo({
-      url: `/pages/order/order_eight/order_eight?index=${e.currentTarget.dataset.id}`,
-    });
-  },
-  //跳转到关于我们
-  tobanner1() {
-    wx.navigateTo({
-      url: '/pages/aboutus/aboutus',
-    });
-  },
-  //跳转到健康模块
-  tobanner2() {
-    wx.switchTab({
-      url: '/pages/message/message',
-    });
-  },
-  //项目列表
-  tobanner3() {
-    wx.navigateTo({
-      url: '/pages/appointment/appointment',
-    });
-  },
-  // 专业解答
-  goSpecialty() {
-    wx.makePhoneCall({
-      phoneNumber: '4009155291',
-    });
-  },
-  //点击跳转到项目列表
-  goAppointment() {
-      wx.navigateTo({
-        url: '/pages/appointment/appointment'
-      });
-    },
-  //获取护士列表
-  async getLsit() {
-    const res = await $myRequest({
-      url: '/nurse/list',
-      data: {
-        code: 0
+    funlist:[
+      {
+        img:'../../images/syImage/wenzhen.png',
+        title:'极速问诊',
+        mes:'专人在线答疑'
+      },
+      {
+        img:'../../images/syImage/ystb.png',
+        title:'在线医生',
+        mes:'一键语音问诊'
+      },
+      {
+        img:'../../images/syImage/yyfw.png',
+        title:'预约服务',
+        mes:'按需求找服务'
+      },
+    ],
+    wdlist:[
+      {
+        img1:'../../images/syImage/wen.png',
+        mes1:'小护你好：你们上门会带些什么工具？',
+        
+
+      },
+      {
+        img1:'../../images/syImage/da.png',
+        mes1:'你好,我们护士上门会带一些健康测量的工具的,如血压器等。也会根据服务的内容准备好相应的物品。'
+      },
+      {
+        img1:'../../images/syImage/wen.png',
+        mes1:'小护你好,我表哥刚做完腹膜透析,那个肚子里的管子一直要放在里面的？全家人都很担心',
+      },
+      {
+        img1:'../../images/syImage/da.png',
+        mes1:'你好,一般来说腹膜透析是终生的治疗方案之一,但各项条件允许的话可以进行肾移植。那么可以停止腹膜透析治疗了。'
       }
-    })
-    this.setData({
-      nurseLists: res
-    })
+    ],
+    address:''//地址
   },
-  //获取专科护理列表
-  async specialty() {
-    const res = await $myRequest({
-      url: '/project/get_list',
-      data: {
-        cate: 2 
-      }
-    })
-    this.setData({
-      specialtyLists: res.data
-    })
-  },
-   //获取临床护理列表
-   async clinic() {
-    const res = await $myRequest({
-      url: '/project/get_list',
-      data: {
-        cate: 1
-      }
-    })
-    this.setData({
-      list: res.data
-    })
-    console.log(this.data.list);
-  },
-  //获取居家康复列表
-  async home() {
-    const res = await $myRequest({
-      url: '/project/get_list',
-      data: {
-        cate: 3
-      }
-    })
-    this.setData({
-      homeList: res.data
-    })
-    console.log(this.data.homeList);
-  },
-  //获取当前位置
+  //获取地理位置
   map() {
     var QQMapWX = require('../../lib/qqmap-wx-jssdk.min.js');
     var qqmapsdk;
@@ -127,120 +57,73 @@ Page({
     qqmapsdk.reverseGeocoder({
       poi_options: 'policy=2',
       success: function (res) {
-        // console.log(res);
         that.setData({
-          address: res.result.address,
+          address: res.result.address_component.city.substring(0,2)
         });
       },
       fail: function (res) {},
       complete: function (res) {},
     });
   },
+  //功能
+  goSpecialty(e) {
+   console.log();
+   if(e.currentTarget.dataset.id == 1) {
+    wx.makePhoneCall({
+      phoneNumber: '4009155291',
+    });
+   }
+   if(e.currentTarget.dataset.id == 2) {
+    wx.navigateTo({
+      url: '/pages/appointment/appointment'
+    });
+   }
+  },
+   //跳转到订单详情
+  goOrder(e) {
+    console.log(e.currentTarget.dataset.id);
+    wx.navigateTo({
+      url: `/pages/order/order_eight/order_eight?index=${e.currentTarget.dataset.id}`,
+    });
+  },
+  //跳转机构护士
+  goMes(e) {
+    if(e.currentTarget.dataset.id == 0) {
+      wx.switchTab({
+        url: '../merchant/merchant',
+      })
+    }else if(e.currentTarget.dataset.id == 1) {
+      wx.navigateTo({
+        url: '../nurseList/nurseList',
+      })
+    }
+  },
+
+    // 处理url
+    parseQuery(url) {
+      var queryObj={};
+      var reg=/[?&]([^=&#]+)=([^&#]*)/g;
+      var querys=url.match(reg);
+      if(querys){
+          for(var i in querys){
+              var query=querys[i].split('=');
+              var key=query[0].substr(1),
+                  value=query[1];
+              queryObj[key]?queryObj[key]=[].concat(queryObj[key],value):queryObj[key]=value;
+          }
+      }
+      return queryObj;
+  },
+  //
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    //调用获取护士列表
-    this.getLsit();
-    //调用获取专科护理列表
-    this.specialty();
+    const q = decodeURIComponent(options.q) // 获取到二维码原始链接内容
+    let params = this.parseQuery(q)//处理获取的参数
+    console.log("二维码携带参数:",params)
+    wx.setStorageSync('tid', params.tid)
     //调用获取地图
     this.map();
-    //调用获取临床护理列表
-    this.clinic();
-    //居家康复
-    this.home();
-  },
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {},
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {},
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {},
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {},
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {},
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {},
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {},
-});
- // go_eight(e) {
-  //   console.log('你好');
-  //   wx.getStorage({
-  //     key: 'user',
-  //     fail(res) {
-  //       wx.showToast({
-  //         title: '请先登录',
-  //         icon: 'none',
-  //         duration: 1000,
-  //       });
-  //       setTimeout(function () {
-  //         console.log('doSomething');
-  //         wx.reLaunch({
-  //           url: '/pages/login/login',
-  //         });
-  //       }, 1000);
-  //     },
-  //   });
-  //   console.log(e.currentTarget.dataset.id);
-  //   if (
-  //     e.currentTarget.dataset.id == '13' ||
-  //     e.currentTarget.dataset.id == '30' ||
-  //     e.currentTarget.dataset.id == '32' ||
-  //     e.currentTarget.dataset.id == '33' ||
-  //     e.currentTarget.dataset.id == '16' ||
-  //     e.currentTarget.dataset.id == '35'
-  //   ) {
-  //     wx.navigateTo({
-  //       url: `/pages/order/order_eight/order_eight?index=${e.currentTarget.dataset.id}`,
-  //     });
-  //   } else {
-  //     wx.showToast({
-  //       title: '敬请期待....',
-  //       icon: 'none',
-  //       duration: 2000,
-  //     });
-  //   }
-  // },
-  // goMap() {
-  //   wx.navigateTo({
-  //     url: '/pages/map/map',
-  //     events: {
-  //       // 为指定事件添加一个监听器，获取被打开页面传送到当前页面的数据
-  //       acceptDataFromOpenedPage: function (data) {
-  //         console.log(data);
-  //       },
-  //       someEvent: function (data) {
-  //         console.log(data);
-  //       },
-  //     },
-  //     success: function (res) {
-  //       // 通过eventChannel向被打开页面传送数据
-  //       res.eventChannel.emit('acceptDataFromOpenerPage', {
-  //         data: 'test'
-  //       });
-  //     },
-  //   });
-  // },
+  }
+})

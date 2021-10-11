@@ -1,6 +1,6 @@
 <!--pages/merchant/merchant.wxml-->
 <view class="merchant" >
-  <block  wx:for="{{list}}" wx:key="{{index}}">
+  <block  wx:for="{{list}}" wx:key="id">
   <view class="merchant_1" bindtap="navto" id="{{item.id}}">
     <view class="merchant_11">{{item.name}}</view>
     <view class="merchant_12">距离：{{item.qm}}km</view>

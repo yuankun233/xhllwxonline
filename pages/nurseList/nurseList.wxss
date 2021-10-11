@@ -1,0 +1,97 @@
+.nurseBox {
+    width: 100%;
+    height: 100%;
+    background: #F5F5F5;
+    padding-bottom: 20rpx;
+}
+.index{
+  margin-left: 30rpx;
+}
+.bannerImg  image{
+  width:690rpx ;
+  height: 204rpx;
+  margin-top: 36rpx;
+}
+.nurseTitle{
+  margin-top: 32rpx;
+  font-size: 40rpx;
+  font-weight: 500;
+  color: #000000;
+}
+.nurseList {
+  width: 690rpx;
+  height: 380rpx;
+  background: #FFFFFF;
+  margin-top: 32rpx;
+}
+.nurseTop{
+  padding-top: 36rpx;
+  margin-left: 28rpx; 
+  display: flex;
+}
+.nurseTop_1{
+  width: 104rpx;
+  height: 104rpx;
+  border-radius: 50%;
+}
+.nurseTop_1 image{
+  width: 100%;
+  height: 100%;
+}
+.nurseTop_2 {
+  margin-top: 6rpx;
+}
+.nurseTop_2 view {
+  margin-left: 14rpx;
+}
+.nurseTop_2>view:nth-child(1) text:nth-child(1){
+  font-size: 32rpx;
+  color: #000000;
+}
+.nurseTop_2>view:nth-child(1) text:nth-child(2){
+  font-size: 24rpx;
+  color: #FFFFFF;
+  background: #41D9CD;
+  padding: 4rpx 8rpx 4rpx 8rpx;
+  border-radius: 4px;
+  margin-left: 14rpx;
+}
+.nurseTop_2>view:nth-child(2){
+  margin-top: 8rpx;
+}
+.nurseTop_2>view:nth-child(2) text{
+  font-size: 24rpx;
+  color: #000000;
+}
+.nurseTop_2>view:nth-child(2) text:nth-child(2) {
+  margin-left: 16rpx;
+}
+.serveIn {
+  margin-top: 22rpx;
+  margin-left: 28rpx;
+}
+.serveIn text:nth-child(2n-1) {
+  font-size: 24rpx;
+  color: #666666;
+  margin-left: 16rpx;
+}
+.serveIn text:nth-child(2n) {
+  font-size: 26rpx;
+  color: #41D9CD;
+  margin-left: 8rpx;
+}
+.textIn {
+  width: 634rpx;
+  height: 134rpx;
+  margin-top: 20rpx;
+  margin-left: 28rpx;
+  color: #000000;
+  font-size: 24rpx;
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+  white-space: normal !important;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+}

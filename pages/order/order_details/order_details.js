@@ -216,13 +216,11 @@ Page({
             order_id: option.id,
           },
           success(res) {
-            {
-              console.log(res,'订单数据');
+            console.log(res,'123');
               _this.setData({
                 list: res.data.data,
               });
-              wx.hideLoading()
-            }
+               wx.hideLoading();
           },
         });
       },

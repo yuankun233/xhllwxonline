@@ -71,15 +71,17 @@
   </view>
 </view>
   <view class="order_eight_2">
-    <view class="order_eight_22">耗材需求</view>
-    <view class="order_eight_25">{{eightList.p_package}}</view>
+    <view wx:if="{{eightList.p_package}}">
+      <view class="order_eight_22">耗材需求</view>
+      <view class="order_eight_25">{{eightList.p_package}}</view>
+    </view>
     <view class="order_eight_22">服务流程</view>
     <view class="order_eight_23">
-      <view wx:for="{{xdlc}}" wx:key="this">{{item.text}}</view>
+      <view wx:for="{{xdlc}}" wx:key="text">{{item.text}}</view>
     </view>
     <view class="order_eight_22">操作流程</view>
     <view class="order_eight_23">
-      <view wx:for="{{eightList.msg}}">{{item.msg}}</view>
+      <view wx:for="{{eightList.msg}}" wx:key="id">{{item.msg}}</view>
     </view>
     <view class="order_eight_24">服务须知</view>
     <view class="order_eight_25">
@@ -116,7 +118,7 @@
     <view class="cu-dialog" bindtap="hideModal">
       <radio-group class="block" bindchange="radioChange">
         <view class="cu-list menu text-left">
-          <view class="cu-item"wx:for="{{user_list}}"  wx:if="{{user_list!==''}}"  wx:key>
+          <view class="cu-item"wx:for="{{user_list}}"  wx:if="{{user_list!==''}}"  wx:key="*this">
             <label class="flex justify-between align-center flex-sub">
               <view class="flex-sub">{{item.name}}</view>
               <radio value="{{item.id}}" class="round" style="right: 5px;"></radio>
@@ -132,7 +134,7 @@
     <view class="cu-dialog" bindtap="hideModal">
       <radio-group class="block" bindchange="radioChange_1">
         <view class="cu-list menu text-left">
-          <view class="cu-item" wx:for="{{times}}" wx:key>
+          <view class="cu-item" wx:for="{{times}}" wx:key="id">
             <label class="flex justify-between align-center flex-sub">
               <view class="flex-sub">{{item.time}}</view>
               <radio value="{{item.id}}" class="round"></radio>

@@ -2,6 +2,16 @@
   padding-top: 45rpx;
   padding-bottom: 20rpx;
 }
+.my .unLogin{
+  width: 750rpx;
+  height: 72rpx;
+  background: #ffffff;
+  text-align: center;
+  line-height: 72rpx;
+  font-size: 28rpx;
+  font-weight: 500;
+  margin-top:20rpx;
+}
 .my .my_top {
   position: relative;
   width: 721rpx;
@@ -12,7 +22,7 @@
 }
 .my .my_top .my_head {
   position: absolute;
-  width: 118rpx;
+  width: 120rpx;
   height: 120rpx;
   border-radius: 59rpx;
   left: 54rpx;

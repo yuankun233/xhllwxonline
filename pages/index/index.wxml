@@ -1,95 +1,85 @@
-<!--pages/index/index.wxml-->
-<view class="index">
-  <view class="index_1">小护来了 专业居家照护平台</view>
-  <view class="index_top">
-    <image class="index_top_1" src="https://www.xiaohulaile.com/wxcx/ditu.png"></image>
-    <view class="index_top_2">{{address}}</view>
-    <image class="index_top_4" src="https://www.xiaohulaile.com/wxcx/sosuo.png"></image>
-    <input class="index_top_5" placeholder="可搜索服务项目..." placeholder-class="AA" cursor-spacing="10" type="text" />
+<view class="indexBox">
+  <view class="top">
+    <!-- 背景图片 -->
+    <view class="backImg"></view>
+    <!-- 定位图标 -->
+    <view class="location">
+      <view>
+        <image src="../../images/syImage/dztb.png"></image>
+      </view>
+      <view>{{address}}</view>
+    </view>
+    <!-- 搜索框 -->
+    <view class="seek">
+      <view>
+        <image src="../../images/syImage/sousuo1.png"></image>
+      </view>
+      <view><input type="text" placeholder="股骨颈术后" /></view>
+    </view>
   </view>
+  <!-- 标题 -->
+  <view class="titleXh">小护来了,出院我也可以放心了！</view>
+  <!-- 轮播图 -->
   <view class="I_swiper">
-    <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}"circular="true"
-    indicator-active-color="#000000" indicator-color="rgba(0, 0, 0, .3)"
-    >
+    <swiper indicator-dots="true" autoplay="true" interval="5000" duration="500" circular="true"
+      indicator-active-color="#000000" indicator-color="rgba(0, 0, 0, .3)">
       <block>
         <swiper-item>
-          <image src="http://www.xiaohulaile.com/wxcx/banner/4.png"  bindtap="tobanner1"></image>
+          <image src="../../images/syImage/banner.png" bindtap="tobanner1"></image>
         </swiper-item>
       </block>
       <block>
         <swiper-item>
-          <image src="http://www.xiaohulaile.com/wxcx/banner/5.png" bindtap="tobanner2"></image>
+          <image src="../../images/syImage/banner.png" bindtap="tobanner2"></image>
         </swiper-item>
       </block>
       <block>
         <swiper-item>
-          <image src="http://www.xiaohulaile.com/wxcx/banner/2.png" bindtap="tobanner3"></image>
+          <image src="../../images/syImage/banner.png" bindtap="tobanner3"></image>
         </swiper-item>
       </block>
     </swiper>
   </view>
-  <view class="index_bottom">
-    <!-- 预约服务 -->
-    <view class="index_bottom_1 index_bottom_AA" bindtap="goSpecialty">
-      <image lazy-load src="https://www.xiaohulaile.com/wxcx/tel.png"></image>
-      <view class="zy">联系客服</view>
-      <view class="zy_1">专业人员解答</view>
+  <!-- 功能 -->
+  <view class="func">
+    <view wx:for="{{funlist}}" wx:key="item" bindtap="goSpecialty" data-id="{{index}}">
+      <view>
+        <image src="{{item.img}}"></image>
+      </view>
+      <view>{{item.title}}</view>
+      <view>{{item.mes}}</view>
     </view>
-    <view class="index_bottom_2 index_bottom_AA" bindtap="goAppointment">
-      <image src="https://www.xiaohulaile.com/wxcx/doct.png"></image>
-      <view class="zy">预约服务</view>
-      <view class="zy_1">按需求找服务</view>
+  </view>
+  <!-- 专科护理 -->
+  <view class="nurseTitle">专科护理</view>
+  <view class="zkNurse">
+      <view bindtap="goOrder" data-id="3"><image src="../../images/syImage/fmtx.png"></image>
+      <view class="syJg">258/次</view>
+      </view>
+    <view>
+      <view bindtap="goOrder"  data-id="1"><image src="../../images/syImage/picc.png"></image></view>
+      <view bindtap="goOrder"  data-id="2"><image  src="../../images/syImage/zkhl.png"></image></view>
+    </view>
+  </view>
+  <!-- 服务团队 -->
+  <view class="nurseTitle">服务团队</view>
+  <view class="nurseTeam">
+      <view bindtap="goMes" data-id="0"><image src="../../images/syImage/hzjg.png"></image></view>
+      <view bindtap="goMes" data-id="1"><image  src="../../images/syImage/mxhs.png"></image></view>
     </view>
 
-    <view class="top"></view>
-    <!-- 专科护理 -->
-    <view class="hlOne" wx:if="{{specialtyLists != ''}}">
-      <view class="bottom_Jujia1">
-      专科护理
-    </view>
-    <view class="bottom_mx2_1">
-     <view class="bottom_mx_1" wx:for="{{specialtyLists}}" wx:key="{{title}}" bindtap="goOrder" data-id="{{item.id}}">
-       <image lazy-load="true" class="bottom_mx_img" src="{{item.zy_pic}}"></image>
-       <view class="bottom_mx_title">{{item.title}}</view>
-       <view class="bottom_mx_price"><view style="float:left;">￥{{item.price}}</view><view style="font-size:22rpx;float:left;line-height:45rpx">.00</view></view>
-     </view> 
+    <view class="nurseTitle">大家都在问</view>
+    <view >
+    <view class="wdMes"  wx:for="{{wdlist}}" wx:key="item">
+        <view><image src="{{item.img1}}"></image></view>
+        <view>{{item.mes1}}</view>
     </view>
     </view>
-    <!-- 居家护理项目 -->
-    <view class="hlTwo">
-    <view class="bottom_Jujia">
-      临床护理
+    <!-- 服务保障 -->
+    <view class="pledge">
+        <view>服务保障</view>
+        <view>审核严格</view>
+        <view>专业问诊</view>
+        <view>流程规范</view>
     </view>
-    <view class="bottom_mx2">
-     <view class="bottom_mx_1" wx:for="{{list}}" wx:key="{{index}}" bindtap="goOrder" data-id="{{item.id}}">
-       <image lazy-load="true" class="bottom_mx_img" src="{{item.zy_pic}}"></image>
-       <view class="bottom_mx_title">{{item.title}}</view>
-       <view class="bottom_mx_price"><view style="float:left;">￥{{item.price}}</view><view style="font-size:22rpx;float:left;line-height:45rpx">.00</view></view>
-     </view> 
-    </view>
-  </view>
-    <!-- 居家护理项目 -->
-    <view class="hlTwo">
-    <view class="bottom_Jujia"  wx:if="{{homeList != ''}}">
-      居家康复
-    </view>
-    <view class="bottom_mx2">
-     <view class="bottom_mx_1" wx:for="{{homeList}}" wx:key="{{index}}" bindtap="goOrder" data-id="{{item.id}}">
-       <image lazy-load="true" class="bottom_mx_img" src="{{item.zy_pic}}"></image>
-       <view class="bottom_mx_title">{{item.title}}</view>
-       <view class="bottom_mx_price"><view style="float:left;">￥{{item.price}}</view><view style="font-size:22rpx;float:left;line-height:45rpx">.00</view></view>
-     </view> 
-    </view>
-  </view>
-  <!-- 明星护士 -->
-  <view class="hlThree">
-    <view class="bottom_Jujia_1">
-      明星服务团队
-    </view>
-    <view class="bottom_mx">
-      <image lazy-load="true"  wx:for="{{nurseLists}}" wx:key="this" src="{{item.map}}" class="bottom_mx_1" bindtap="gostart" data-id="{{item.id}}"></image>
-    </view>
-  </view>
-  </view>
-  <view style="width:750rpx;height:70rpx;line-height: 70rpx; text-align:center;font-size:28rpx;color:#ccc">目前服务范围：上海</view>
 </view>

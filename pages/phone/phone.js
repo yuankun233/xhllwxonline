@@ -1,4 +1,3 @@
-// pages/phone/phone.js
 Page({
   /**
    * 页面的初始数据
@@ -45,8 +44,6 @@ Page({
   },
   getCode() {
     var _this = this;
-    // console.log('获取验证码');
-    // console.log(_this.__data__.isGetCode);
     if (!_this.__data__.isGetCode) {
       console.log('获取验证码');
       if (_this.__data__.phone.length < 11) {

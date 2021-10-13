@@ -21,8 +21,8 @@
   <view class="titleXh">小护来了,出院我也可以放心了！</view>
   <!-- 轮播图 -->
   <view class="I_swiper">
-    <swiper indicator-dots="true" autoplay="true" interval="5000" duration="500" circular="true"
-      indicator-active-color="#000000" indicator-color="rgba(0, 0, 0, .3)">
+    <swiper autoplay="true" interval="5000" duration="500" circular="true" indicator-active-color="#000000"
+      indicator-color="rgba(0, 0, 0, .3)">
       <block>
         <swiper-item>
           <image src="../../images/syImage/banner.png" bindtap="tobanner1"></image>
@@ -51,35 +51,52 @@
     </view>
   </view>
   <!-- 专科护理 -->
-  <view class="nurseTitle">专科护理</view>
+  <view class="nurseTitle"><text>专科护理</text><text bindtap="goSpecialty" data-id="2">更多服务 ></text></view>
   <view class="zkNurse">
-      <view bindtap="goOrder" data-id="3"><image src="../../images/syImage/fmtx.png"></image>
-      <view class="syJg">258/次</view>
-      </view>
+    <view bindtap="goOrder" data-id="3">
+      <image src="../../images/syImage/fmtx.png"></image>
+      <view class="zkNurse_1">腹膜透析</view>
+      <view class="zkNurse_2">查看详情 ></view>
+      <view class="zkNurse_3">258/次</view>
+    </view>
     <view>
-      <view bindtap="goOrder"  data-id="1"><image src="../../images/syImage/picc.png"></image></view>
-      <view bindtap="goOrder"  data-id="2"><image  src="../../images/syImage/zkhl.png"></image></view>
+      <view bindtap="goOrder" data-id="1" class="zkNurseRight">
+        <image src="../../images/syImage/picc.png"></image>
+        <view class="zkNurse_1">PICC</view>
+      </view>
+      <view bindtap="goOrder" data-id="2" class="zkNurseRight">
+        <image src="../../images/syImage/zkhl.png"></image>
+        <view class="zkNurseRight_2">造口护理</view>
+      </view>
     </view>
   </view>
   <!-- 服务团队 -->
   <view class="nurseTitle">服务团队</view>
   <view class="nurseTeam">
-      <view bindtap="goMes" data-id="0"><image src="../../images/syImage/hzjg.png"></image></view>
-      <view bindtap="goMes" data-id="1"><image  src="../../images/syImage/mxhs.png"></image></view>
+    <view bindtap="goMes" data-id="0"  style="position: relative;">
+      <image src="../../images/syImage/hzjg.png"></image>
+      <view class="zkNurse_1">合作机构</view>
     </view>
+    <view bindtap="goMes" data-id="1"  style="position: relative;">
+      <image src="../../images/syImage/mxhs.png"></image>
+      <view class="zkNurse_1">明星护士</view>
+    </view>
+  </view>
 
-    <view class="nurseTitle">大家都在问</view>
-    <view >
-    <view class="wdMes"  wx:for="{{wdlist}}" wx:key="item">
-        <view><image src="{{item.img1}}"></image></view>
-        <view>{{item.mes1}}</view>
+  <view class="nurseTitle">大家都在问</view>
+  <view>
+    <view class="wdMes" wx:for="{{wdlist}}" wx:key="item">
+      <view>
+        <image src="{{item.img1}}"></image>
+      </view>
+      <view>{{item.mes1}}</view>
     </view>
-    </view>
-    <!-- 服务保障 -->
-    <view class="pledge">
-        <view>服务保障</view>
-        <view>审核严格</view>
-        <view>专业问诊</view>
-        <view>流程规范</view>
-    </view>
+  </view>
+  <!-- 服务保障 -->
+  <view class="pledge">
+    <view>服务保障</view>
+    <view>审核严格</view>
+    <view>专业问诊</view>
+    <view>流程规范</view>
+  </view>
 </view>

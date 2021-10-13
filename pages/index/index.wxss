@@ -1,3 +1,192 @@
+.titleXh{
+  margin-top: 36rpx;
+  margin-left: 30rpx;
+  font-size: 36rpx;
+  font-weight: 500;
+  color: #41D9CD;
+}
+.I_swiper{
+  width: 690rpx;
+  margin-left:30rpx;
+  margin-top: 28rpx;
+}
+.I_swiper swiper{
+  height: 240rpx;
+}
+.I_swiper image {
+  width: 100%;
+  height: 100%;
+}
+.func{
+  display: flex;
+  width: 580rpx;
+  margin-left: 84rpx;
+  margin-top: 60rpx;
+  text-align: center;
+  justify-content: space-between;
+}
+.func view image{
+  width: 124rpx;
+  height: 100rpx;
+}
+.func view:nth-child(2){
+  font-size: 24rpx;
+  font-weight: 500;
+  color: #000000;
+}
+.func view:nth-child(3){
+  font-size: 20rpx;
+  color: #999999;
+  /* font-weight:lighter; */
+}
+.nurseTitle {
+  font-size:36rpx ;
+  color: #333333;
+  font-weight:500 ;
+  width: 690rpx;
+  margin-top: 36rpx;
+  margin-left: 30rpx;
+  display: flex;
+  justify-content: space-between;
+}
+.nurseTitle text:nth-child(2){
+  font-size:24rpx ;
+  color: #999999;
+  font-weight: lighter;
+  margin-top: 10rpx;
+}
+.zkNurse {
+  margin-left: 30rpx;
+  margin-top: 16rpx;
+  display: flex;
+  width: 690rpx;
+  justify-content: space-between;
+}
+.zkNurse >view:nth-child(1){
+  width: 330rpx;
+  height: 330rpx;
+  background: #F4F9FF;
+  position: relative;
+  
+} 
+.zkNurse >view:nth-child(1) image{
+  width:100%;
+  height:100%;
+  background: #F4F9FF;
+} 
+.zkNurse >view:nth-child(2){
+  width: 330rpx;
+  height: 330rpx;
+  position: relative;
+}
+.zkNurse >view:nth-child(2)>view{
+  width:330rpx;
+  height: 150rpx;
+}
+.zkNurse >view:nth-child(2) image{
+  width: 100%;
+  height: 100%;
+}
+.zkNurse >view:nth-child(2)>view:nth-child(2){
+  margin-top: 30rpx;
+}
+.nurseTeam {
+  margin-left: 30rpx;
+  margin-top: 32rpx;
+  display: flex;
+  width: 690rpx;
+  justify-content: space-between;
+}
+.nurseTeam>view {
+  width: 330rpx;
+  height: 150rpx;
+  background: #F4F9FF;
+  border-radius: 8rpx;
+}
+.nurseTeam view image{
+  width: 100%;
+  height: 100%;
+}
+.wdMes{
+  margin-top: 36rpx;
+  display: flex;
+  margin-left: 30rpx;
+  font-size: 24rpx;
+  font-weight: 500;
+  color: #000000;
+  width: 690rpx;
+}
+.wdMes image{
+  width: 37rpx;
+  height: 37rpx;
+}
+.wdMes view:nth-child(2){
+  margin-left: 22rpx;
+  width: 620rpx;
+}
+.wdMes:nth-child(2){
+  padding-bottom: 20rpx;
+  border-bottom:4rpx solid #0000001A ;
+}
+.pledge {
+  width: 690rpx;
+  height: 70rpx;
+  background: #F4F4F4;
+  border-radius: 8rpx;
+  padding: 0rpx 26rpx 0rpx 26rpx;
+  margin-left: 30rpx;
+  margin-top: 52rpx;
+  display: flex;
+  justify-content: space-between;
+}
+.pledge view {
+  flex: 1;
+  text-align: center;
+  line-height: 70rpx;
+  color: #666666;
+  font-size: 28rpx;
+}
+.pledge view:nth-child(1){
+  font-weight: 500;
+  color: #000000;
+}
+.zkNurse_1{
+  position: absolute;
+  top: 24rpx;
+  left: 24rpx;
+  font-size: 34rpx;
+  font-weight: 500;
+  color: #686767;
+}
+.zkNurse_2{
+  width: 130rpx;
+  height: 36rpx;
+  border-radius: 10rpx;
+  background: #46A2FF;
+  position: absolute;
+  text-align: center;
+  line-height: 36rpx;
+  top: 82rpx;
+  left: 24rpx;
+  font-size: 16rpx;
+  color: #FFFFFF;
+}
+.zkNurse_3{
+  position: absolute;
+  top: 120rpx;
+  left: 24rpx;
+  font-size: 28rpx;
+  font-weight: 500;
+  color: red;
+}
+.zkNurseRight_2{
+	position: absolute;
+	top: 200rpx;
+	left: 24rpx;
+	font-size: 34rpx;
+	font-weight: 500;
+	color: #686767;
+}
 .indexBox {
   width: 100%;
   height: 100%;
@@ -52,152 +241,4 @@
   position: absolute;
   top: 12rpx;
   left: 20rpx;
-}
-.titleXh{
-  margin-top: 36rpx;
-  margin-left: 30rpx;
-  font-size: 36rpx;
-  font-weight: 500;
-  color: #41D9CD;
-}
-.I_swiper{
-  width: 690rpx;
-  margin-left:30rpx;
-  margin-top: 28rpx;
-}
-.I_swiper swiper{
-  height: 240rpx;
-}
-.I_swiper image {
-  width: 100%;
-  height: 100%;
-}
-.func{
-  display: flex;
-  width: 580rpx;
-  margin-left: 84rpx;
-  margin-top: 60rpx;
-  text-align: center;
-  justify-content: space-between;
-}
-.func view image{
-  width: 124rpx;
-  height: 100rpx;
-}
-.func view:nth-child(2){
-  font-size: 24rpx;
-  font-weight: 500;
-  color: #000000;
-}
-.func view:nth-child(3){
-  font-size: 20rpx;
-  color: #999999;
-}
-.nurseTitle{
-  font-size:36rpx ;
-  color: #333333;
-  font-weight:500 ;
-  margin-top: 36rpx;
-  margin-left: 30rpx;
-}
-.zkNurse {
-  margin-left: 30rpx;
-  margin-top: 32rpx;
-  display: flex;
-  width: 690rpx;
-  justify-content: space-between;
-}
-.zkNurse >view:nth-child(1){
-  width: 330rpx;
-  height: 330rpx;
-  background: #F4F9FF;
-  position: relative;
-  
-} 
-.zkNurse >view:nth-child(1) image{
-  width:100%;
-  height:100%;
-  background: #F4F9FF;
-} 
-.zkNurse >view:nth-child(2){
-  width: 330rpx;
-  height: 330rpx;
-}
-.zkNurse >view:nth-child(2) view{
-  width:330rpx;
-  height: 150rpx;
-}
-.zkNurse >view:nth-child(2) image{
-  width: 100%;
-  height: 100%;
-}
-.zkNurse >view:nth-child(2) view:nth-child(2){
-  margin-top: 30rpx;
-}
-.nurseTeam {
-  margin-left: 30rpx;
-  margin-top: 32rpx;
-  display: flex;
-  width: 690rpx;
-  justify-content: space-between;
-}
-.nurseTeam view {
-  width: 330rpx;
-  height: 150rpx;
-  background: #F4F9FF;
-}
-.nurseTeam view image{
-  width: 100%;
-  height: 100%;
-}
-.wdMes{
-  margin-top: 36rpx;
-  display: flex;
-  margin-left: 30rpx;
-  font-size: 24rpx;
-  font-weight: 500;
-  color: #000000;
-  width: 690rpx;
-}
-.wdMes image{
-  width: 37rpx;
-  height: 37rpx;
-}
-.wdMes view:nth-child(2){
-  margin-left: 22rpx;
-  width: 620rpx;
-}
-.wdMes:nth-child(2){
-  padding-bottom: 20rpx;
-  border-bottom:4rpx solid #0000001A ;
-}
-.pledge {
-  width: 690rpx;
-  height: 70rpx;
-  background: #F4F4F4;
-  border-radius: 8rpx;
-  padding: 0rpx 26rpx 0rpx 26rpx;
-  margin-left: 30rpx;
-  margin-top: 52rpx;
-  display: flex;
-  justify-content: space-between;
-}
-.pledge view {
-  flex: 1;
-  text-align: center;
-  line-height: 70rpx;
-  color: #666666;
-  font-size: 28rpx;
-}
-.pledge view:nth-child(1){
-  font-weight: 500;
-  color: #000000;
-}
-.syJg{
-  position: absolute;
-  top: 120rpx;
-  left: 30rpx;
-  font-size: 28rpx;
-  font-weight: 500;
-  color: red;
 }

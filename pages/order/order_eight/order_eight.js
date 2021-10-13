@@ -26,6 +26,13 @@ Page({
       {text:"5.宣教指导"},
       {text:"6.记录、评价"}
     ],
+    xdlcPh:[
+      {text:"1.线上下单"},
+      {text:"2.联系客户"},
+      {text:"3.医院陪诊"},
+      {text:"4.陪诊⼩结"},
+      {text:"5.客户反馈"},
+    ],
     textnum:0,
     archive_id:'',
     time: '请选择被服务时间段',
@@ -52,7 +59,8 @@ Page({
     text:'',
     isPay:false,
     mingxi:1,
-    check:true
+    check:true,
+    tid:''//二维码推荐参数
   },
   yuyuebottom(e){
     this.setData({
@@ -385,7 +393,8 @@ Page({
           start_time: _this.__data__.data,
           my_id: _this.__data__.users.my_id,
           consumables_num:_this.__data__.numes,
-          consumables:_this.__data__.eightList.pid
+          consumables:_this.__data__.eightList.pid,
+          tid:_this.data.tid
         },
         success(res) {
           console.log(res, '看一下11');
@@ -450,6 +459,16 @@ Page({
     index:options.index
     })
     var _this = this;
+    //获取推荐人参数
+    wx.getStorage({
+      key:'tid',
+      success(res) {
+        _this.setData({
+          tid:res.data
+        })
+        console.log(_this.data.tid,111);
+      }
+    })
     wx.getStorage({
       key: 'user',
       success(res) {

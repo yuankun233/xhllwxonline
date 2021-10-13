@@ -119,11 +119,8 @@ Page({
    */
   onLoad: function (options) {
     const q = decodeURIComponent(options.q) // 获取到二维码原始链接内容
-<<<<<<< HEAD
-    let params = this.parseQuery(q)//处理获取的参数
-=======
+
     let params = this.parseQuery(q) //处理获取的参数
->>>>>>> 241929625429b6515a59cb1d1de5cb42793690f7
     console.log("二维码携带参数:", params.tid)
     // 如果tid存在则更新本地储存
     if (params.tid) {

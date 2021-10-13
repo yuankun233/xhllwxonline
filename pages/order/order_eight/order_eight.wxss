@@ -49,7 +49,7 @@ page {
   border-bottom: 4rpx solid #4178F0;
 }
 .order_eight .order_eight_project {
-  width: 750rpx;
+  width: 760rpx;
   height: 200rpx;
   background-color: #ffffff;
   margin-top: 17rpx;

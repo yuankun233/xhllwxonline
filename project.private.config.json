@@ -163,6 +163,12 @@
           "pathName": "pages/nurseList/nurseList",
           "query": "",
           "scene": null
+        },
+        {
+          "name": "pages/order/order_eight/order_eight",
+          "pathName": "pages/order/order_eight/order_eight",
+          "query": "index=1",
+          "scene": null
         }
       ]
     }

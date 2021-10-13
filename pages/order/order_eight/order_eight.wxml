@@ -77,7 +77,7 @@
     </view>
     <view class="order_eight_22">服务流程</view>
     <view class="order_eight_23">
-      <view wx:for="{{xdlc}}" wx:key="text">{{item.text}}</view>
+      <view wx:for="{{eightList.pic_url != 'https://www.xiaohulaile.com/wxcx/new_proimg/PHJY.png' ? xdlc : xdlcPh}}" wx:key="text">{{item.text}}</view>
     </view>
     <view class="order_eight_22">操作流程</view>
     <view class="order_eight_23">
@@ -87,7 +87,7 @@
     <view class="order_eight_25">
     <view>{{eightList.notice}}</view>
     </view>
-<image src="http://xiaohulaile.com/wxcx/tuikuan/tuikuan.png" style="width:662rpx;height:602rpx;margin-left:18rpx"></image>
+<image src="http://www.xiaohulaile.com/wxcx/tuikuan/tuikuan.png" style="width:662rpx;height:548rpx;margin-left:18rpx"></image>
 
   </view>
 

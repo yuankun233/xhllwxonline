@@ -70,6 +70,11 @@ Page({
         phoneNumber: "4009155291"
       })
     }
+    if (e.currentTarget.dataset.id == 0) {
+      wx.makePhoneCall({
+        phoneNumber: "4009155291"
+      })
+    }
     if (e.currentTarget.dataset.id == 2) {
       wx.navigateTo({
         url: "/pages/appointment/appointment"
@@ -119,7 +124,6 @@ Page({
    */
   onLoad: function (options) {
     const q = decodeURIComponent(options.q) // 获取到二维码原始链接内容
-
     let params = this.parseQuery(q) //处理获取的参数
     console.log("二维码携带参数:", params.tid)
     // 如果tid存在则更新本地储存
@@ -128,5 +132,41 @@ Page({
     }
     //调用获取地图
     this.map()
-  }
+  },
+    /**
+   * 生命周期函数--监听页面初次渲染完成
+   */
+  onReady: function () {},
+
+  /**
+   * 生命周期函数--监听页面显示
+   */
+  onShow: function () {
+  },
+
+  /**
+   * 生命周期函数--监听页面隐藏
+   */
+  onHide: function () {},
+
+  /**
+   * 生命周期函数--监听页面卸载
+   */
+  onUnload: function () {},
+
+  /**
+   * 页面相关事件处理函数--监听用户下拉动作
+   */
+  onPullDownRefresh: function () {},
+
+  /**
+   * 页面上拉触底事件的处理函数
+   */
+  onReachBottom: function () {},
+
+  /**
+   * 用户点击右上角分享
+   */
+  onShareAppMessage: function () {},
+  onShareTimeline: function () {},
 })

@@ -24,7 +24,7 @@ Page({
       wx.getStorage({
         key: 'user',
         success(res) {
-          console.log(res.data);
+          console.log(res.data,123);
           _this.setData({
             user: res.data,
           });

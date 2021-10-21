@@ -18,7 +18,7 @@ Page({
       data: {
       }
     })
-    console.log(res,'护士列表接口');
+    console.log(res,'护士列表接口')
     this.setData({
       nurseList: res
     })

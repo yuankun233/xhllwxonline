@@ -110,7 +110,7 @@
     <view style="font-family:PingFangSC-Regular;color:#999999;font-size:28.8rpx;float:left;margin-top:20rpx">合计：</view>
     <view style="color:#EF1515;font-size:34rpx;float:left;margin-top:12rpx">￥{{total_fee}}</view><view style="float:left;line-height:54rpx;color:#EF1515;margin-top:11rpx">.00</view>
     <view style="overflow:hidden;font-family:PingFangSC-Regular;color:#999999;font-size:28.8rpx;float:left;margin-top:19rpx;margin-left:150rpx" bindtap="mingxis">明细<image style="width:19rpx;height:12rpx; margin-left:10rpx;" src="{{mingxi == 1 ?'https://www.xiaohulaile.com/xh/p/up.png':'https://www.xiaohulaile.com/xh/p/down.png'}}"></image></view>
-    <view bindtap="showModal"  data-target="Modal" class="bottom_n37">提交订单</view>
+    <view bindtap="submitOrder"  data-target="Modal" class="bottom_n37">提交订单</view>
   </view>
 </view>
   <!-- 单选拟态框 -->

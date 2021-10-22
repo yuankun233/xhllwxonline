@@ -219,7 +219,46 @@ Page({
       _this.total();
     }
   },
-  
+  // 提交订单
+  submitOrder() {
+    let _this = this
+    // 1 表单非空校验
+    if (
+      _this.data.archive_id == ""
+    ) {
+      wx.showToast({
+        title: "请选择服务地址信息",
+        icon: "none",
+        duration: 2000
+      })
+      return
+    }
+    if (
+      _this.data.data == "请选择服务日期"
+    ) {
+      wx.showToast({
+        title: "请选择服务日期"
+        ,
+        icon: "none",
+        duration: 2000
+      })
+      return
+    }
+    if (
+      _this.data.time_slot == ""
+    ) {
+      wx.showToast({
+        title: "请选择被服务时间段",
+        icon: "none",
+        duration: 2000
+      })
+      return
+    }
+    // 2 弹出下单提示
+    this.setData({
+      modalName: "Modal"
+    })
+  },
 
   xiangshang(){
     let that = this
@@ -316,18 +355,7 @@ Page({
     payFn() {
       var _this = this;
       if(_this.data.checkbox.length == 1){
-        if (
-          _this.__data__.archive_id == '' ||
-          _this.__data__.data == '请选择服务日期' ||
-          _this.__data__.time_slot == ''
-        ) {
-          wx.showToast({
-            title: '请选择基本信息',
-            icon: 'none',
-            duration: 2000,
-          });
-          return;
-        }
+       
         if (_this.__data__.isPay) {
           return;
         }

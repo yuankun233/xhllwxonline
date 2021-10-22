@@ -1,5 +1,5 @@
 // pages/start/start.js
-import {$myRequest} from '../../utils/request'
+import {$myRequestThree} from '../../utils/qyyRequestThree'
 Page({
 
   /**
@@ -13,25 +13,25 @@ Page({
     wx.navigateBack({})
   },
  async getnurseList(res) {
-  const resList = await $myRequest({
-      url:'/nurse/index',
+  const resList = await $myRequestThree({
+      url:'attendant/api/starteam',
       data:{
-        id: res
+        bianhao: res
       }
   })
   this.setData({
-    nurseList:resList
+    nurseList:resList[0]
   })
   console.log(resList);
-  if(resList.level == '护师'){
+  if(resList[0].zhicheng == '护师'){
       this.setData({
         img:'https://www.xiaohulaile.com/xh/p/doc/hushi2.png'
       })
-  }else if (resList.level == '护士') {
+  }else if (resList[0].zhicheng == '护士') {
     this.setData({
       img:'https://www.xiaohulaile.com/xh/p/doc/hushi1.png'
     })
-  }else if (resList.level == '主管护师') {
+  }else if (resList[0].zhicheng == '主管护师') {
     this.setData({
       img:'https://www.xiaohulaile.com/xh/p/doc/zhuguanhushi.png'
     })

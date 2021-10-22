@@ -87,24 +87,24 @@ Page({
       total_fee: that.__data__.price
     })
   },
-  xuyao(){
-    var that = this
-    that.setData({
-      xbxy:1,
-      // p_price:that.__data__.eightList.p_price,
-      numes:1
-    })
-    that.total();
-  },
-  bxuyao(){
-    var that = this
-    that.setData({
-      xbxy:2,
-      // p_price:0,
-      numes:1
-    })
-    that.total();
-  },
+  // xuyao(){
+  //   var that = this
+  //   that.setData({
+  //     xbxy:1,
+  //     // p_price:that.__data__.eightList.p_price,
+  //     numes:1
+  //   })
+  //   that.total();
+  // },
+  // bxuyao(){
+  //   var that = this
+  //   that.setData({
+  //     xbxy:2,
+  //     // p_price:0,
+  //     numes:1
+  //   })
+  //   that.total();
+  // },
   // 拟态框
   showModal(e) {
     console.log(1233);
@@ -213,53 +213,53 @@ Page({
       _this.setData({
         numes:_this.__data__.nums
       })
-      //删除耗材包价格
-      // if(_this.__data__.xbxy == 1){
-      //   _this.setData({
-      //     p_price:_this.__data__.numes*_this.__data__.eightList.p_price
-      //   })
-      // }
       _this.setData({
         price:_this.__data__.nums*_this.__data__.eightList.price
       })
       _this.total();
     }
   },
-  jiaFNs(e) {
-    var _this = this;
-    if (e.currentTarget.dataset.id == -1) {
-      if (_this.__data__.numes == 1) {
-        return;
-      } else {
-        _this.setData({
-          numes: _this.__data__.numes + parseInt(e.currentTarget.dataset.id),
-        });
-        //删除耗材包价格
-        // _this.setData({
-        //   p_price:_this.__data__.numes*_this.__data__.eightList.p_price
-        // })
-        _this.total();
-      }
-      return;
-    } else {
-      if(_this.__data__.numes < _this.__data__.nums){
-        _this.setData({
-          numes: _this.__data__.numes + parseInt(e.currentTarget.dataset.id),
-        });
-        //删除耗材包价格
-        // _this.setData({
-        //   p_price:_this.__data__.numes*_this.__data__.eightList.p_price
-        // })
-        _this.total();
-      }else{
-        wx.showToast({
-          title: '材料包购买数量不得超过服务项目次数!',
-          icon: 'none',
-          duration: 1500
-        })
-      }
+  // 提交订单
+  submitOrder() {
+    let _this = this
+    // 1 表单非空校验
+    if (
+      _this.data.archive_id == ""
+    ) {
+      wx.showToast({
+        title: "请选择服务地址信息",
+        icon: "none",
+        duration: 2000
+      })
+      return
     }
+    if (
+      _this.data.data == "请选择服务日期"
+    ) {
+      wx.showToast({
+        title: "请选择服务日期"
+        ,
+        icon: "none",
+        duration: 2000
+      })
+      return
+    }
+    if (
+      _this.data.time_slot == ""
+    ) {
+      wx.showToast({
+        title: "请选择被服务时间段",
+        icon: "none",
+        duration: 2000
+      })
+      return
+    }
+    // 2 弹出下单提示
+    this.setData({
+      modalName: "Modal"
+    })
   },
+
   xiangshang(){
     let that = this
     const query = wx.createSelectorQuery()
@@ -354,89 +354,67 @@ Page({
     // 付钱了
     payFn() {
       var _this = this;
-      if (
-        _this.__data__.archive_id == '' ||
-        _this.__data__.data == '请选择服务日期' ||
-        _this.__data__.time_slot == ''
-      ) {
+      if(_this.data.checkbox.length == 1){
+       
+        if (_this.__data__.isPay) {
+          return;
+        }
+        _this.setData({
+          isPay: true,
+        });
+        wx.request({
+          url: 'https://www.xiaohulaile.com/xh/p/wxcx/pay/pay',
+          header: {
+            'content-type': 'application/x-www-form-urlencoded',
+          },
+          method: 'post',
+          data: {
+            body: _this.__data__.eightList.title,
+            project_id: _this.__data__.eightList.id,
+            num: _this.__data__.nums,
+            total_fee: _this.__data__.price,
+            // total_fee:0.01,
+            archive_id: _this.__data__.archive_id,
+            time_slot: _this.__data__.time_slot,
+            content: _this.__data__.text,
+            minute: 1,
+            openid: _this.__data__.users.openid,
+            start_time: _this.__data__.data,
+            my_id: _this.__data__.users.my_id,
+            consumables_num:_this.__data__.numes,
+            consumables:_this.__data__.eightList.pid,
+            tid:_this.data.tid
+          },
+          success(res) {
+              wx.requestPayment({
+                timeStamp: res.data.data.timeStamp,
+                nonceStr: res.data.data.nonceStr,
+                package: res.data.data.package,
+                signType: res.data.data.signType,
+                paySign: res.data.data.paySign,
+                success(res) {
+                  wx.redirectTo({
+                    url: '/pages/order/order?index=0',
+                  });
+                },
+                fail(res) {
+                  wx.redirectTo({
+                    url: '/pages/order/order?index='+0,
+                  });
+                },
+              });
+              _this.setData({
+                isPay: false,
+              });
+          },
+        });
+      }else {
         wx.showToast({
-          title: '请选择基本信息',
+          title: '请勾选按钮',
           icon: 'none',
           duration: 2000,
         });
-        return;
       }
-      if (_this.__data__.isPay) {
-        return;
-      }
-      _this.setData({
-        isPay: true,
-      });
-      console.log('付钱');
-      wx.request({
-        url: 'https://www.xiaohulaile.com/xh/p/wxcx/pay/pay',
-        header: {
-          'content-type': 'application/x-www-form-urlencoded',
-        },
-        method: 'post',
-        data: {
-          body: _this.__data__.eightList.title,
-          project_id: _this.__data__.eightList.id,
-          num: _this.__data__.nums,
-          total_fee: _this.__data__.price,
-          // total_fee:0.01,
-          archive_id: _this.__data__.archive_id,
-          time_slot: _this.__data__.time_slot,
-          content: _this.__data__.text,
-          minute: 1,
-          openid: _this.__data__.users.openid,
-          start_time: _this.__data__.data,
-          my_id: _this.__data__.users.my_id,
-          consumables_num:_this.__data__.numes,
-          consumables:_this.__data__.eightList.pid,
-          tid:_this.data.tid
-        },
-        success(res) {
-          console.log(res, '看一下11');
-          console.log(res.data, '22');
-          console.log(res.header.Date,'时间');
-          _this.setData({
-            isPay: false,
-          });
-          console.log(res.data,'微信接口数据');
-          if (res.data.code == 0) {
-            wx.requestPayment({
-              timeStamp: res.data.data.timeStamp,
-              nonceStr: res.data.data.nonceStr,
-              package: res.data.data.package,
-              signType: res.data.data.signType,
-              paySign: res.data.data.paySign,
-              success(res) {
-                console.log(res, '成功');
-                wx.redirectTo({
-                  url: '/pages/order/order?index=0',
-                });
-              },
-              fail(res) {
-                console.log(res);
-                console.log(_this.__data__.now,'时间');
-                wx.redirectTo({
-                  url: '/pages/order/order?index='+0,
-                });
-              },
-            });
-          } else if (res.data.code == 1) {
-            wx.showToast({
-              title: res.data.message,
-              icon: 'none',
-            });
-          } else if (res.data.code == 2) {
-            wx.navigateTo({
-              url: '/pages/home/login/login',
-            });
-          }
-        },
-      });
     },
   // 勾选
   checkboxChange(e) {

@@ -8,7 +8,7 @@
   </view>
   <!-- 详情 -->
   <view class="list">
-    <image class="list_pic" src="{{nurseList.img}}"></image>
+    <image class="list_pic" src="{{nurseList.touxianghttp}}"></image>
     <view class="list_top_left">
       <view class="list_name">
         <image src="http://www.xiaohulaile.com/xh/p/doc/startdoc.png"></image>
@@ -16,13 +16,13 @@
     </view>
     <view class="hr"></view>
     <view class="detil">
-      <view class="detilname" style="font-family:PingFang-SC-Medium;">{{nurseList.name}}</view>
+      <view class="detilname" style="font-family:PingFang-SC-Medium;">{{nurseList.xingming}}</view>
       <view class="detiltype">
         <image src="{{img}}"></image><span
-          style="font-family: PingFang-SC-Medium;">{{nurseList.nursing}}</span>
+          style="font-family: PingFang-SC-Medium;">{{nurseList.zhandian}}</span>
       </view>
       <view class="detilcontent" style="font-family:PingFang-SC-Medium;">
-        <span style="color:#4178F0; font-size:33.6rpx;">简介：</span>{{nurseList.content}}
+        <span style="color:#4178F0; font-size:33.6rpx;">简介：</span>{{nurseList.introduce}}
       </view>
       <view class="detilbottom">
         <image src="http://www.xiaohulaile.com/xh/p/doc/Bluestart.png"></image>
@@ -31,7 +31,7 @@
           style="margin-left:24rpx;margin-right:14rpx;font-size: 20rpx; line-height: 30rpx;color:#4178F0;font-family:DIN-BlackItalic;">/</span>
         <span
           style="line-height:30rpx;font-family:PingFang-SC-Regular;font-size: 20rpx;color:#999999;margin-right:14rpx;">已服务</span>
-        <span style="font-family:DIN-BlackItalic;color:#4178F0;">{{nurseList.num}}</span>
+        <span style="font-family:DIN-BlackItalic;color:#4178F0;">{{nurseList.serveNum}}</span>
         <span
           style="margin-left:24rpx;margin-right:14rpx;font-size: 20rpx; line-height: 30rpx;color:#4178F0;font-family:DIN-BlackItalic;">/</span>
         <span

@@ -6,7 +6,7 @@ Page({
   data: {
     TabCur: 0,
     scrollLeft: 0,
-    tab: ['全部', '待付款', '待服务', '待评价'],
+    tab: ['全部', '待付款', '待服务', '已完成'],
     user: '',
     list:[],
     page:1,

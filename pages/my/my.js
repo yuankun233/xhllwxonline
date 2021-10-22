@@ -9,13 +9,19 @@ Page({
     statusnum:'',
     statusnum2:'',
     //登录未登录判断
-    getLogin:false
+    getLogin:false,
+    //头像
+    photo:'',
+    //昵称
+    name:''
   },
   //跳转登录状态
   getLogin1(){
-    wx.navigateTo({
-      url: '../login/login',
-    })
+    if(this.data.getLogin === false){
+      wx.navigateTo({
+        url: '../login/login',
+      })
+    }
   },
   //封装登陆状态判断
   ifLogin() {
@@ -108,6 +114,8 @@ Page({
           success(res) {
             _this.setData({
               user: res.data.data,
+              photo:res.data.data.head_logo,
+              name:res.data.data.nickname
             });
           },
         });
@@ -161,7 +169,11 @@ Page({
           },
         });
       },
-      fail(res) {
+      fail:() => {
+            this.setData({
+              name:'登录/注册',
+              photo:'../../images/3a1387e5c4e3a7a8c7f77c4b87df027.png'
+            })
         }
     });
   },

@@ -48,7 +48,7 @@
   transform: translateY(-50%);
   right: 80rpx;
   font-size: 24rpx;
-  color: #4178f0;
+  color: #41D9CD;
 }
 .file_y .file_y_1 .bianji1 {
   width: 80rpx;
@@ -60,12 +60,12 @@
   transform: translateY(-50%);
   right: 5rpx;
   font-size: 24rpx;
-  color: #4178f0;
+  color: #41D9CD;
 }
 .file_y .aa {
   width: 690rpx;
   height: 88rpx;
-  background-color: #4178f0;
+  background-color: #41D9CD;
   line-height: 88rpx;
   text-align: center;
   margin: 0 auto;

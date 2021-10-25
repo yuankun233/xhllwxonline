@@ -33,7 +33,7 @@
     </view>
     <view class="hr"></view>
     <view class="list_chose">已选：{{list.body}}</view>
-    <view>已服务次数：{{list.order_num}}</view>
+    <view style="margin-top:20rpx;">已服务次数：{{list.order_num}}</view>
     <view class="list_workuser" wx:if="{{list.attendphone}}">护理人员:{{list.attendphone}}
       <!-- <span style="margin-left:30rpx">178****2600</span> -->
     </view>
@@ -101,7 +101,7 @@
     <view class="list_time" style="margin-top:25rpx;">总价
       <span class="time_right">
         <text
-          style="font-size: 28rpx;font-family: PingFang SC;font-weight: 400;color: #4178F0;">￥{{list.total_fee}}</text>
+          style="font-size: 28rpx;font-family: PingFang SC;font-weight: 400;color: #41D9CD;">￥{{list.total_fee}}</text>
       </span>
     </view>
   </view>

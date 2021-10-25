@@ -82,7 +82,7 @@
 }
 .textIn {
   width: 634rpx;
-  height: 134rpx;
+  /* height: 134rpx; */
   margin-top: 20rpx;
   margin-left: 28rpx;
   color: #000000;

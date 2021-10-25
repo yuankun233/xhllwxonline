@@ -119,7 +119,7 @@
   font-size: 34rpx;
   font-family: PingFang SC;
   font-weight: 500;
-  color: #4178f0;
+  color: #41D9CD;
 }
 .order_details .order_list .list_details .list_content .list_additional {
   width: 87rpx;
@@ -127,7 +127,7 @@
   font-size: 22rpx;
   font-family: PingFang SC;
   font-weight: 500;
-  color: #4178f0;
+  color: #41D9CD;
   margin-left: 24rpx;
 }
 .order_details .order_list .list_details .list_content .list_num {
@@ -158,7 +158,7 @@
   font-size: 28rpx;
   font-family: Source Han Sans CN;
   font-weight: 400;
-  color: #4178f0;
+  color: #41D9CD;
   margin-top: 26rpx;
 }
 .order_details .list_time {
@@ -205,7 +205,7 @@
 .order_details .order_bottom .button_right {
   width: 237rpx;
   height: 59rpx;
-  background: #4178f0;
+  background: #41D9CD;
   border-radius: 30rpx;
   text-align: center;
   line-height: 59rpx;
@@ -225,7 +225,7 @@
   width: 514rpx;
   height: 118rpx;
   line-height: 118rpx;
-  background: #4178f0;
+  background: #41D9CD;
   border-radius: 10rpx 10rpx 0rpx 0rpx;
   font-size: 34rpx;
   font-family: Source Han Sans CN;
@@ -264,7 +264,7 @@
   height: 37.7rpx;
   overflow: hidden;
   border-radius: 10rpx;
-  border: 2rpx solid #ff9c00;
+  border: 2rpx solid #41D9CD;
   position: absolute;
   bottom: 29rpx;
   left: 16rpx;
@@ -299,7 +299,7 @@
 .modal .modal_3 .modal_32 {
   width: 50%;
   height: 89rpx;
-  background: #4178f0;
+  background: #41D9CD;
   border-radius: 0px 0px 10rpx 10rpx;
   font-size: 28rpx;
   font-family: Source Han Sans CN;

@@ -149,7 +149,7 @@ page {
 .merdetails .xm .xm1 .godetil {
   width: 148rpx;
   height: 51rpx;
-  background: #4178F0;
+  background: #41D9CD;
   border-radius: 26px 25px 25px 25px;
   float: right;
   text-align: center;

@@ -1,11 +1,11 @@
 .AA {
-  color: #4178f0;
+  color: #41D9CD;
   position: relative;
 }
 .BB {
   width: 60rpx;
   height: 3rpx;
-  background-color: #4178f0;
+  background-color: #41D9CD;
   position: absolute;
   left: 50%;
   bottom: 0;
@@ -85,7 +85,7 @@
   font-family: PingFang SC;
   font-weight: 500;
   color: #ffffff;
-  background-color: #4178f0;
+  background-color: #41D9CD;
   text-align: center;
   border-radius: 0 8rpx 0 8rpx;
   position: absolute;

@@ -162,7 +162,7 @@
   width: 130rpx;
   height: 36rpx;
   border-radius: 10rpx;
-  background: #46A2FF;
+  background: #41D9CD;
   position: absolute;
   text-align: center;
   line-height: 36rpx;

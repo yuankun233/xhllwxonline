@@ -1,111 +1,124 @@
 // pages/appointment/appointment.js
+import {
+  $myRequest
+} from "../../utils/request"
 Page({
-    /**
-     * 页面的初始数据
-     */
-    data: {
-      user: '',
-      list: '',
-    },
-    goOrder(e) {
-      console.log(e.currentTarget.dataset.id);
-      wx.navigateTo({
-        url: `/pages/order/order_eight/order_eight?index=${e.currentTarget.dataset.id}`,
-      });
-    },
-    /**
-     * 生命周期函数--监听页面加载
-     */
-   onLoad: function (options) {
-    wx.showLoading({
-      title: '加载中...',
+  /**
+   * 页面的初始数据
+   */
+  data() {
+    return {
+      //tab标题
+      title: '预约服务',
+      //是否分享
+      ifFx: false,
+      //专科列表
+      zkserveList: '',
+      //临床列表
+      lcserveList: '',
+      //居家康复
+      jjserveList: '',
+      useNum1:[
+      {
+        num:160
+      },
+      {
+        num:161
+      }, {
+        num:160
+      }
+      ]
+    }
+  },
+  onLoad() {
+    this.getserveList()
+  },
+  //请求数据
+  async getserveList() {
+    const res = await $myRequest({
+      url: '/project/get_list',
+      methods: 'POST',
+      data: {
+        cate: 2
+      }
     })
-      var _this = this;
-      wx.getStorage({
-        key: 'user',
-        success(res) {
-          console.log(res.data,123);
-          _this.setData({
-            user: res.data,
-          });
-          wx.request({
-            url: 'https://www.xiaohulaile.com/xh/p/wxcx/project/get_list',
-            header: {
-              'content-type': 'application/json', // 默认值
-            },
-            data: {
-              user_token: res.data.user_token,
-            },
-            success(res) {
-              if(res.data.msg === '请重新登录'){
-                wx.showToast({
-                  title: '请先登录',
-                  icon: 'none',
-                  duration: 1000,
-                });
-                setTimeout(function () {
-                  console.log('doSomething');
-                  wx.reLaunch({
-                    url: '/pages/login/login',
-                  });
-                }, 1000);
-              }
-              console.log(res, '看看是啥');
-              _this.setData({
-                list: res.data.data,
-              });
-                wx.hideLoading()
-            },
-          });
-        },
-  fail(res){
-    wx.showToast({
-    title: '请先登录',
-    icon: 'none',
-    duration: 1000
+    
+    this.setData({
+      zkserveList: res.data
     });
-    setTimeout(function () {
-    wx.reLaunch({
-    url: '/pages/login/login'
+    console.log(this.data.zkserveList)
+            // this.data.zkserveList = res.data
+            // console.log(this.data.zkserveList,"4444444")
+    
+    const res1 = await $myRequest({
+    	url: '/project/get_list',
+    	methods: 'POST',
+    	data: {
+    		cate: 1
+    	}
+    })
+    console.log(res1,"res1的值")
+    this.setData({
+      lcserveList: res1.data
     });
-    }, 1000);
-}
-      });
-    },
-  
-    /**
-     * 生命周期函数--监听页面初次渲染完成
-     */
-    onReady: function () {},
-  
-    /**
-     * 生命周期函数--监听页面显示
-     */
-    onShow: function () {},
-  
-    /**
-     * 生命周期函数--监听页面隐藏
-     */
-    onHide: function () {},
-  
-    /**
-     * 生命周期函数--监听页面卸载
-     */
-    onUnload: function () {},
-  
-    /**
-     * 页面相关事件处理函数--监听用户下拉动作
-     */
-    onPullDownRefresh: function () {},
-  
-    /**
-     * 页面上拉触底事件的处理函数
-     */
-    onReachBottom: function () {},
-  
-    /**
-     * 用户点击右上角分享
-     */
-    onShareAppMessage: function () {},
-  });
-  
+
+    // this.lcserveList = res1.data.selectItems
+    const res2 = await $myRequest({
+    	url: '/project/get_list',
+    	methods: 'POST',
+    	data: {
+    		cate: 3
+    	}
+    })
+    console.log(res2,"res2的值")
+    this.setData({
+      jjserveList: res2.data
+    });
+    //返回上一个页面
+  },
+
+  //跳转项目详情
+  goOrder(e) {
+    console.log(e.currentTarget.dataset.id)
+    wx.navigateTo({
+       url: `/pages/order/order_eight/order_eight?index=${e.currentTarget.dataset.id}`
+    })
+  },
+
+
+  mounted() {},
+  /**
+   * 生命周期函数--监听页面初次渲染完成
+   */
+  onReady: function () {},
+
+  /**
+   * 生命周期函数--监听页面显示
+   */
+  onShow: function () {},
+
+  /**
+   * 生命周期函数--监听页面隐藏
+   */
+  onHide: function () {},
+
+  /**
+   * 生命周期函数--监听页面卸载
+   */
+  onUnload: function () {},
+
+  /**
+   * 页面相关事件处理函数--监听用户下拉动作
+   */
+  onPullDownRefresh: function () {},
+
+  /**
+   * 页面上拉触底事件的处理函数
+   */
+  onReachBottom: function () {},
+
+  /**
+   * 用户点击右上角分享
+   */
+  onShareAppMessage: function () {},
+});

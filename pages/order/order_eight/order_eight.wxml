@@ -178,7 +178,7 @@
           <checkbox-group bindchange="checkboxChange">
             <checkbox disabled="{{check}}" color="#ff9c00" value="1"></checkbox>
           </checkbox-group>
-          <view style="color: #4178F0;">下滑至底并勾选、即同意“预约须知”</view>
+          <view style="color: #41D9CD;">下滑至底并勾选、即同意“预约须知”</view>
         </view>
       </view>
       <view class="modal_3">

@@ -50,22 +50,22 @@
       <view>{{item.mes}}</view>
     </view>
   </view>
-  <!-- 专科护理 -->
-  <view class="nurseTitle"><text>专科护理</text><text bindtap="goSpecialty" data-id="2">更多服务 ></text></view>
-  <view class="zkNurse">
-    <view bindtap="goOrder" data-id="3">
-      <image src="../../images/syImage/fmtx.png"></image>
-      <view class="zkNurse_1">腹膜透析</view>
-      <view class="zkNurse_2">查看详情 ></view>
-      <view class="zkNurse_3">258/次</view>
-    </view>
-    <view>
-      <view bindtap="goOrder" data-id="1" class="zkNurseRight">
-        <image src="../../images/syImage/picc.png"></image>
-        <view class="zkNurse_1">PICC</view>
+    <!-- 专科护理 -->
+    <view class="nurseTitle"><text>专科护理</text><text bindtap="goSpecialty" data-id="2">更多服务 ></text></view>
+    <view class="zkNurse">
+      <view bindtap="goOrder" data-id="3">
+        <image src="../../images/syImage/fmtx.png"></image>
+        <view class="zkNurse_1">腹膜透析</view>
+        <view class="zkNurse_2">查看详情 ></view>
+        <view class="zkNurse_3">258/次</view>
       </view>
-      <view bindtap="goOrder" data-id="2" class="zkNurseRight">
-        <image src="../../images/syImage/zkhl.png"></image>
+      <view>
+        <view bindtap="goOrder" data-id="1" class="zkNurseRight">
+          <image src="../../images/syImage/picc.png"></image>
+          <view class="zkNurse_1">PICC</view>
+        </view>
+        <view bindtap="goOrder" data-id="2" class="zkNurseRight">
+          <image src="../../images/syImage/zkhl.png"></image>
         <view class="zkNurseRight_2">造口护理</view>
       </view>
     </view>

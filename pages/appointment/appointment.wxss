@@ -1,127 +1,101 @@
-.appointment .appointment_1:last-child {
-  margin-bottom: 40rpx;
+.body {
+  width: 750rpx;
+  background: #F4F4F4;
+  padding-bottom: 40rpx;
+  overflow: hidden;
 }
-.appointment .appointment_1 {
-  width: 680rpx;
-  height: 196rpx;
+.body .list {
+  width: 690rpx;
   margin: 0 auto;
-  background-color: #ffffff;
+  margin-top: 28rpx;
+  background: #FFFFFF;
+  border-radius: 24rpx;
   position: relative;
-  border-radius: 16rpx 16rpx 0rpx 0rpx;
-  margin-top: 20rpx;
+  padding-bottom: 24rpx ;
 }
-.appointment .appointment_1 image {
+.body .list .list_1 {
+  position: absolute;
+  left: 24rpx;
+  top: 28rpx;
+  font-family: PingFang SC;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 40rpx;
+  z-index: 1;
+}
+.body .list .list_2 {
+  position: absolute;
+  top: 68rpx;
+  left: 24rpx;
+  width: 62rpx;
+  height: 16rpx;
+  background: #41D9CD;
+  border-radius: 12rpx;
+  z-index: 0;
+}
+.body .list .mar {
+  height: 82rpx;
+}
+.body .list .list_3 {
+  width: 702rpx;
+  height: 172rpx;
+  margin-left: 24rpx;
+  margin-top: 32rpx;
+  display: flex;
+}
+.body .list .list_3 .list_3_1 image {
   width: 172rpx;
   height: 172rpx;
-  position: absolute;
-  left: 0;
-  top: 0;
-  border-radius: 10rpx;
+  border-radius: 24rpx;
 }
-.appointment .appointment_1 .appointment_11 {
-  height: 29rpx;
-  font-size: 30rpx;
-  font-family: Adobe Heiti Std;
+.body .list .list_3 .list_3_2 {
+  margin-left: 22rpx;
+  width: 280rpx;
+}
+.body .list .list_3 .list_3_2 view:nth-child(1) {
+  font-family: Roboto;
+  font-style: normal;
   font-weight: normal;
-  color: #333333;
-  font-weight: 400;
-  line-height: 30rpx;
-  position: absolute;
-  left: 193rpx;
-  top: 0rpx;
+  font-size: 32rpx;
+  color: #000000;
 }
-.appointment .appointment_1 .appointment_12 {
-  width: 210rpx;
-  height: 25rpx;
-  line-height: 25rpx;
-  font-size: 24rpx;
-  font-weight: 400;
-  color: #B3B3B3;
-  position: absolute;
-  left: 194rpx;
-  top: 80rpx;
-}
-.appointment .appointment_1 .appointment_3 image{
+.body .list .list_3 .list_3_2 view:nth-child(2) view:nth-child(1) image {
   width: 20rpx;
   height: 18rpx;
-  position: absolute;
-  left: 194rpx;
-  top: 59rpx;
+  margin-left: 8rpx;
 }
-.appointment .appointment_1 .appointment_4 {
-  position: absolute;
-  left: 224rpx;
-  top: 52rpx;
-  font-size: 22rpx;
-  font-weight: 400;
-  color: #CCCCCC;
+.body .list .list_3 .list_3_2 view:nth-child(2) view:nth-child(1) image:nth-child(1) {
+  margin-left: 0rpx;
 }
-.appointment .appointment_1 .appointment_5 {
-  position: absolute;
-  left: 308rpx;
-  top: 54rpx;
-  font-size: 22rpx;
-  font-weight: 400;
-  color: #CCCCCC;
+.body .list .list_3 .list_3_2 view:nth-child(2) view:nth-child(1) text {
+  margin-left: 16rpx;
+  font-size: 18rpx;
+  font-family: PingFang SC;
+  font-style: normal;
+  font-weight: normal;
+  color: #666666;
 }
-.appointment .appointment_1 .appointment_6 {
-  position: absolute;
-  left: 321rpx;
-  top: 52rpx;
-  font-size: 22rpx;
-  font-weight: 400;
-  color: #CCCCCC;
+.body .list .list_3 .list_3_2 view:nth-child(3) {
+  margin-top: 10rpx;
+  font-family: PingFang SC;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 36rpx;
+  color: #F2743F;
 }
-.appointment .appointment_1 .appointment_12 text{
-  margin-left: 4rpx;
+.body .list .list_3 .list_3_2 view:nth-child(4) {
+  font-family: PingFang SC;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 36rpx;
+  color: #F2743F;
 }
-.appointment .appointment_1 .appointment_13 {
-  width: 104rpx;
-  height: 36rpx;
-  line-height: 36rpx;
-  position: absolute;
-  top: 139rpx;
-  left: 222rpx;
-  font-size: 34rpx;
-  font-weight: 500;
-  color: #FC7140;
-}
-.appointment .appointment_1 .appointment_7 {
-  width: 104rpx;
-  height: 36rpx;
-  line-height: 36rpx;
-  position: absolute;
-  top: 139rpx;
-  left: 194rpx;
-  font-size: 28rpx;
-  font-weight: 500;
-  color: #FC7140;
-}
-.appointment .appointment_1 .appointment_15 {
-  width: 100rpx;
-  height: 22rpx;
-  line-height: 22rpx;
-  font-size: 22rpx;
-  font-weight: 500;
-  color: #CCCCCC;
-  position: absolute;
-  left: 322rpx;
-  top: 152rpx;
-}
-.appointment .appointment_1 .appointment_16 {
-  width: 82rpx;
-  height: 41rpx;
-  line-height: 41rpx;
-  font-size:24rpx;
-  font-weight: 400;
-  color: #FC7140;
-  border-radius:20rpx 20rpx 20rpx 20rpx;
-  border: 2rpx solid #FC7140;
-  text-align: center;
-  position: absolute;
-  bottom: 20rpx;
-  right: 0;
-}
-page {
-  background-color: #ffffff;
+.body .list .list_3 .list_3_3 {
+  line-height: 172rpx;
+  font-family: PingFang SC;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24rpx;
+  color: #999999;
+  margin-left: 68rpx;
 }
